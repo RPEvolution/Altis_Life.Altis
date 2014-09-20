@@ -55,6 +55,27 @@ class CfgSounds
 		titles[] = {};
 	};
 	
+	class car_lock
+	{
+		name="Car_Lock";
+		sound[] = {"\sounds\car_lock.ogg", 1.0, 1};
+		titles[] = {0, " "};
+	};
+	 
+	class car_unlock
+  	{
+		name="Car_Unlock";
+		sound[] = {"\sounds\car_unlock.ogg", 1.0, 1};
+		titles[] = {0, " "};
+	};
+	
+	class car_alarm
+	{
+		name="Car_Alarm";
+		sound[] = {"\sounds\car_alarm.ogg", 1.0, 1};
+		titles[] = {0, " "};
+	};
+	
 	class flashbang
 	{
 		name = "flashbang";
