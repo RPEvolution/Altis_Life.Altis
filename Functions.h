@@ -49,10 +49,25 @@ class Life_Client_Core
 	{
 		file = "core\admin";
 		class admininfo {};
+		class admininfo_Extended {};
 		class adminid {};
-		class admingetID {};
+		class admingetID {};		
 		class adminMenu {};
-		class adminQuery {};
+		class adminQuery {};		
+		class adminKick {};
+		class adminBan {};	
+		class adminMenu_Extended {};
+		class adminQuery_Extended {};	
+		class adminGodMode {};
+		class adminAddMoney {};	
+		class adminSpawnVehicle {};
+		class adminInstaHealth {};		
+		class adminTpTo {};
+		class adminTpHere {};	
+		class adminRestrain {};
+		class adminUnrestrain {};		
+		class adminAuthentificate {};
+		class adminCheckAuth {};
 	};
 	
 	class Medical_System
@@ -175,6 +190,9 @@ class Life_Client_Core
 		class updateViewDistance {};
 		class settingsMenu {};
 		class settingsInit {};
+		class smartphone {};
+		class newMsg {};
+		class showMsg {};
 	};
 	
 	class Functions
@@ -219,6 +237,8 @@ class Life_Client_Core
 		class saveGear {};
 		class loadGear {};
 		class stripDownPlayer {};
+		class randomRound {};
+		class random {};
 	};
 	
 	class Network
@@ -373,5 +393,24 @@ class Life_Client_Core
 		class safeFix {};
 		class vehicleGarage {};
 		class gangDeposit {};
+	};
+	
+	class Market
+	{
+		file = "core\market";
+		
+		class openMarketView;
+		class refreshMarketView;
+		class marketShortView;		
+		class marketBuy;
+		class marketSell;
+		class marketGetBuyPrice;
+		class marketGetSellPrice;		
+		class marketconfiguration;
+		class marketReset;		
+		class marketChange;		
+		class marketGetRow;
+		class marketGetPriceRow;
+		class marketSetPriceRow;
 	};
 };

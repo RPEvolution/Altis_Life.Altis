@@ -79,5 +79,35 @@ class life_admin_menu {
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
+		
+		/*class kickSelected : Life_RscButtonMenu {
+			idc = -1;
+			text = "Kick";
+			//onButtonClick = "[] call life_fnc_admingetID;";
+			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+		
+		class banSelected : Life_RscButtonMenu {
+			idc = -1;
+			text = "Ban";
+			//onButtonClick = "[] call life_fnc_admingetID;";
+			x = 0.42 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+		
+		class showMore : Life_RscButtonMenu {
+			idc = -1;
+			text = "Mehr ...";
+			//onButtonClick = "[] call life_fnc_admingetID;";
+			x = 0.58 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};*/
 	};
 };

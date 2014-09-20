@@ -282,7 +282,7 @@ class playerSettings {
 		class ButtonCell : Life_RscButtonMenu {
 			idc = 2014;
 			text = "$STR_PM_CellPhone";
-			onButtonClick = "createDialog ""Life_cell_phone"";";
+			onButtonClick = "createDialog ""Life_my_smartphone"";";
 			x = 0.42 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
@@ -292,7 +292,7 @@ class playerSettings {
 		class ButtonAdminMenu : Life_RscButtonMenu {
 			idc = 2021;
 			text = "$STR_PM_AdminMenu";
-			onButtonClick = "createDialog ""life_admin_menu"";";
+			onButtonClick = "createDialog ""life_extended_admin_menu"";";
 			x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.805;
 			w = (6.25 / 40);
@@ -305,6 +305,17 @@ class playerSettings {
 			text = "$STR_PM_SyncData";
 			onButtonClick = "[] call SOCK_fnc_syncData;";
 			x = 0.1;
+			y = 0.805;
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+		
+		class ButtonMarket : Life_RscButtonMenu {
+			idc = -1;
+			text = "Market";
+			onButtonClick = "[] spawn life_fnc_openMarketView;";
+			//x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
+			x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
 			y = 0.805;
 			w = (6.25 / 40);
 			h = (1 / 25);
