@@ -239,7 +239,7 @@ class Life_Client_Core
 		class stripDownPlayer {};
 		class randomRound {};
 		class random {};
-		class globalSound {];
+		class globalSound {};
 		class globalSoundClient {};
 	};
 	
