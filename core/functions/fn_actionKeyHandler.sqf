@@ -20,8 +20,17 @@ if(isNull _curTarget) exitWith {
 			[_fish] call life_fnc_catchFish;
 		};
 	} else {
+		if( (missionNamespace getVariable "life_inv_pickaxe") >= 1) then
+		{
+			life_action_inUse = true;
+			private["_handle"];
+			_handle = [true] spawn life_fnc_pickaxeUse;
+			waitUntil {scriptDone _handle};
+			life_action_inUse = false;
+		/*
 		if(playerSide == civilian) then {
 			[] call life_fnc_gather;
+		*/
 		};
 	};
 };
