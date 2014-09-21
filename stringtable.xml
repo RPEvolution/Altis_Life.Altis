@@ -5078,9 +5078,6 @@
 		<Key ID="STR_SMARTPHONE_RANDOMTITLE">
 			<Original>Nachricht zum Lesen auswählen</Original>
 		</Key>
-		<Key ID="STR_Global_Close">
-			<Original>Schließen</Original>
-		</Key>
 		<Key ID="STR_SMARTPHONE_SCHREIBEN">
 			<Original>Schreiben</Original>
 		</Key>

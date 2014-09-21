@@ -2,6 +2,8 @@
 	Master UI Resource File
 */
 #include "common.hpp"
+//#include "common_editor.hpp"
+#include "common_EditorWrapper.hpp"
 #include "shop_items.hpp"
 #include "player_inv.hpp"
 #include "gang.hpp"
@@ -12,7 +14,7 @@
 #include "shops.hpp"
 #include "ui.hpp"
 #include "admin_menu.hpp"
-//#include "admin_pw.hpp"
+#include "admin_pw.hpp"
 #include "cell_phone.hpp"
 #include "wanted_list.hpp"
 #include "ticket.hpp"
@@ -26,7 +28,6 @@
 #include "settings.h"
 #include "federalReserve.h"
 #include "smartphone.hpp"
-#include "common_EditorWrapper.hpp"
 #include "market.hpp"
 #include "extended_admin_menu.hpp"
-#inlcude "perm_dlg_new.hpp"
+#include "perm_dlg_new.hpp"
