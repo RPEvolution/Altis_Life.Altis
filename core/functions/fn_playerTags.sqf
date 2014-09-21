@@ -20,7 +20,7 @@ if(isNull _ui) then {
 	_ui = uiNamespace getVariable ["Life_HUD_nameTags",displayNull];
 };
 
-_units = nearestObjects[(visiblePosition player),["Man","Land_Pallet_MilBoxes_F","Land_Sink_F"],50];
+_units = nearestObjects[(visiblePosition player),["Man","Land_Pallet_MilBoxes_F","Land_Sink_F"],1];
 
 _units = _units - [player];
 
