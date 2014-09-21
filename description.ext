@@ -69,12 +69,14 @@ class CfgSounds
 		titles[] = {0, " "};
 	};
 	
+	/*
 	class car_alarm
 	{ 
 	name = "car_alarm";
 	sound[] = {"\sounds\Car_alarm.ogg"­, 1.0, 1};
 	titles[] = {};
 	};
+	*/
 	
 	class flashbang
 	{
