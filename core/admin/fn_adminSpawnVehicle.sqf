@@ -27,6 +27,11 @@ for "_i" from 5 to 1 step -1 do
 
 //Spawn
 _veh = _unit createVehicle (_position);
+_veh setVariable ["Sarge",1,true];
+clearWeaponCargoGlobal _veh;
+clearMagazineCargoGlobal _veh;
+clearItemCargoGlobal _veh; 
+
 [[0,format["ADMIN: %1 hat Fahrzeug gespawnt: %2",name player, _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 
 sleep 2;
