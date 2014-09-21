@@ -33,13 +33,12 @@ switch(_shop) do
 						["hgun_P07_snds_F","Stun Pistol",2000],
 						["hgun_P07_F",nil,7500],
 						["HandGrenade_Stone","Flashbang",1700],
-						["Binocular",nil,150],
+						["Rangefinder",nil,150],
 						["ItemGPS",nil,100],
 						["ToolKit",nil,250],
 						["muzzle_snds_L",nil,650],
 						["FirstAidKit",nil,150],
-						["Medikit",nil,1000],
-						["NVGoggles",nil,2000],
+						["NVGoggles_OPFOR",nil,2000],
 						["16Rnd_9x21_Mag",nil,50],
 						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125]
 					]
@@ -204,11 +203,13 @@ switch(_shop) do
 	{
 		["Altis General Store",
 			[
-				["Binocular",nil,150],
+				["Rangefinder",nil,500],
 				["ItemGPS",nil,100],
 				["ToolKit",nil,250],
 				["FirstAidKit",nil,150],
 				["NVGoggles",nil,2000],
+				["NVGoggles_INDEP",nil,2000],
+				["NVGoggles_OPFOR",nil,2000],
 				["Chemlight_red",nil,300],
 				["Chemlight_yellow",nil,300],
 				["Chemlight_green",nil,300],

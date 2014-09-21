@@ -71,7 +71,11 @@ if(!_isVehicle) then {
 	_curTarget setVariable["Escorting",false,true];
 	_curTarget setVariable["transporting",false,true];
 } else {
+
+	/*	
 	[[_curTarget],"life_fnc_CarAlarmSou­nd",nil,true] spawn life_fnc_MP;
+	*/
+	
 	_dice = random(100);
 	if(_dice < 30) then {
 		titleText[localize "STR_ISTR_Lock_Success","PLAIN"];

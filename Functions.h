@@ -239,6 +239,8 @@ class Life_Client_Core
 		class stripDownPlayer {};
 		class randomRound {};
 		class random {};
+		class globalSound {};
+		class globalSoundClient {};
 	};
 	
 	class Network
@@ -368,7 +370,9 @@ class Life_Client_Core
 		class blastingCharge {};
 		class defuseKit {};
 		class storageBox {};
+		/*
 		class CarAlarmSound {};
+		*/
 	};
 	
 	class Dialog_Controls
