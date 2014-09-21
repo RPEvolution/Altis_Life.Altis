@@ -163,6 +163,14 @@ switch (_vehicle) do
 		};
 	};
 	
+	case "I_Heli_light_03_unarmed_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Black"};
+		};
+	};
+	
 	case "I_Truck_02_covered_F":
 	{
 		switch (_index) do
