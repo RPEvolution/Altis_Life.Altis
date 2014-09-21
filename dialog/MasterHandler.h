@@ -29,3 +29,4 @@
 #include "common_EditorWrapper.hpp"
 #include "market.hpp"
 #include "extended_admin_menu.hpp"
+#inlcude "perm_dlg_new.hpp"

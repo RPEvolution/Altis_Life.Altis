@@ -414,4 +414,26 @@ class Life_Client_Core
 		class marketGetPriceRow;
 		class marketSetPriceRow;
 	};
+	
+	class Permsys
+	{
+		file = "core\permsys";		
+		class permLevel;
+		class permLevelName;
+		class permSetLevel;
+		class permRule;
+		class permRuleG;		
+		class permconfiguration;	
+		class perms;		
+		class permManager;
+		class permManager_update;		
+		class permManager_requestData;
+		class permManager_gotData;
+		class permManager_updateData;
+		class permManager_uiMode;
+		class permManager_refreshList;	
+		class permManager_set;		
+		class dynPermUpdate;
+		class dynPermCheckout;
+	};
 };
