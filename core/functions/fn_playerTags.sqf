@@ -11,12 +11,12 @@ private["_ui","_units"];
 #define scale 0.8
 
 if(visibleMap OR {!alive player} OR {dialog}) exitWith {
-	500 cutText["","PLAIN"];
+	1 cutText["","PLAIN"];
 };
 
 _ui = uiNamespace getVariable ["Life_HUD_nameTags",displayNull];
 if(isNull _ui) then {
-	500 cutRsc["Life_HUD_nameTags","PLAIN"];
+	1 cutRsc["Life_HUD_nameTags","PLAIN"];
 	_ui = uiNamespace getVariable ["Life_HUD_nameTags",displayNull];
 };
 
