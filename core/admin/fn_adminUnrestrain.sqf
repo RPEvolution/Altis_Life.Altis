@@ -17,5 +17,6 @@ _unit setVariable["Escorting",FALSE,TRUE];
 _unit setVariable["transporting",FALSE,TRUE];
 detach _unit;
 
-[[0,format["ADMIN: %1 wurde von %2 entfesselt.",name _unit, name player]],"life_fnc_broadcast",west,FALSE] call life_fnc_MP;
+/* [[0,format["ADMIN: %1 wurde von %2 entfesselt.",name _unit, name player]],"life_fnc_broadcast",west,FALSE] call life_fnc_MP;*/
+
 hint format["%1 entfesselt.", name _unit];
