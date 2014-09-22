@@ -14,7 +14,7 @@ _unit = lbData[1501,lbCurSel (1501)];
 
 hint _unit;
 
-if(isNil "_unit") exitWith {hint "a";};
+if(isNil "_unit") exitWith {hint "Support";};
 
 //
 _position = position player;
@@ -32,7 +32,7 @@ clearWeaponCargoGlobal _veh;
 clearMagazineCargoGlobal _veh;
 clearItemCargoGlobal _veh; 
 
-[[0,format["ADMIN: %1 hat Fahrzeug gespawnt: %2",name player, _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+/*[[0,format["ADMIN: %1 hat Fahrzeug gespawnt: %2",name player, _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;*/
 
 sleep 2;
 
