@@ -20,8 +20,8 @@ _name = [([_type,0] call life_fnc_varHandle)] call life_fnc_varToStr;
 
 if(([true,_type,_amount] call life_fnc_handleInv)) then
 {
-	hint format["Du hast dir %1 %2 ercheatet.",_amount,_name] call life_fnc_numberText];
-	[[0,format["ADMIN: %1 hat sich Item %2 gegeben.",name player, _type]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	hint format["Du hast %1 %2 gefunden.",_amount,_name] call life_fnc_numberText];
+	/* [[0,format["ADMIN: %1 hat sich Item %2 gegeben.",name player, _type]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;*/
 	
 	[] call life_fnc_virt_update;
 };
