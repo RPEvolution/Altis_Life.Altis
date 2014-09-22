@@ -16,7 +16,7 @@ if((call life_adminlevel) < 1) exitWith {};
 
 if(_health) then
 {
-	[[0,format["ADMIN: %1 hat Gesundheit auf 100 gesetzt.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	/*[[0,format["ADMIN: %1 hat Gesundheit auf 100 gesetzt.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;*/
 
 	player setDamage 0;
 	player setFatigue 0;
@@ -24,7 +24,7 @@ if(_health) then
 
 if(_food) then
 {
-	[[0,format["ADMIN: %1 hat Hunger auf 100 gesetzt.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	/*[[0,format["ADMIN: %1 hat Hunger auf 100 gesetzt.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;*/
 
 	life_hunger = 100;
 	player setFatigue 0;
@@ -32,7 +32,7 @@ if(_food) then
 
 if(_water) then
 {
-	[[0,format["ADMIN: %1 hat Durst auf 100 gesetzt.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	/*[[0,format["ADMIN: %1 hat Durst auf 100 gesetzt.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;*/
 	
 	life_thirst = 100;
 	player setFatigue 0;
