@@ -18,8 +18,9 @@ if(_money <= 0) exitWith
 life_cash = life_cash + _money;
 
 //Hint + Infos
-hint format["Du hast $%1 ercheatet.", _money];
-[[0,format["ADMIN: %1 hat sich $%2 gegeben.",name player, _money]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+hint format["Du hast $%1 gefunden.", _money];
+
+/* [[0,format["ADMIN: %1 hat sich $%2 gegeben.",name player, _money]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;*/
 
 //Additional info
 sleep 2;
