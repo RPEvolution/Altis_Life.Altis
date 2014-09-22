@@ -163,6 +163,15 @@ switch (_vehicle) do
 		};
 	};
 	
+	case "I_MRAP_03_hmg_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Black"};
+		};
+	};
+	
+	
 	case "I_Heli_light_03_unarmed_F":
 	{
 		switch (_index) do
