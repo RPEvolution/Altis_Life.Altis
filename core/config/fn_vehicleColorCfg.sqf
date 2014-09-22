@@ -165,6 +165,14 @@ switch (_vehicle) do
 		];
 	};
 	
+	case "I_MRAP_03_hmg_F":
+	{
+		_ret = 
+		[
+			["#(argb,8,8,3)color(0.05,0.05,0.05,1)","cop"]
+		];
+	};
+	
 	case "I_Truck_02_covered_F":
 	{
 		_ret = 
