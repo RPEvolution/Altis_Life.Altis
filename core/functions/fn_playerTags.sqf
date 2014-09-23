@@ -11,12 +11,12 @@ private["_ui","_units"];
 #define scale 0.8
 
 if(visibleMap OR {!alive player} OR {dialog}) exitWith {
-	5 cutText["","PLAIN"];
+	2 cutText["","PLAIN"];
 };
 
 _ui = uiNamespace getVariable ["Life_HUD_nameTags",displayNull];
 if(isNull _ui) then {
-	5 cutRsc["Life_HUD_nameTags","PLAIN"];
+	2 cutRsc["Life_HUD_nameTags","PLAIN"];
 	_ui = uiNamespace getVariable ["Life_HUD_nameTags",displayNull];
 };
 
@@ -35,7 +35,7 @@ _units = _units - [player];
 		};
 		_sPos = worldToScreen _pos;
 		_distance = _pos distance player;
-		if(count _sPos > 1 && {_distance < 5}) then {
+		if(count _sPos > 1 && {_distance < 2}) then {
 			_text = switch (true) do {
 				case (_x in (units grpPlayer) && playerSide == civilian): {format["<t color='#00FF00'>%1</t>",(_x getVariable ["realname",name _x])];};
 				case (!isNil {(_x getVariable "rank")}): {format["<img image='%1' size='1'></img> %2",switch ((_x getVariable "rank")) do {
