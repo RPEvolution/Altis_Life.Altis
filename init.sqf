@@ -29,6 +29,4 @@ if(isDedicated && isNil("life_market_prices")) then
 
 StartProgress = true;
 
-[] execVM "zlt_fastrope.sqf";
-
 "BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec};
