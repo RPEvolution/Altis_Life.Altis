@@ -113,7 +113,7 @@ _vlist lbSetData [(lbSize _vlist) - 1,"C_Hatchback_01_sport_F"];
 
 
 _vlist lbAdd "Auto | Offroader";
-_vlist lbSetData [(lbSize _vlist) - 1,"B_G_Offroad_01_F"];
+_vlist lbSetData [(lbSize _vlist) - 1,"C_Offroad_01_F"];
 
 
 _vlist lbAdd "Auto | Offroader Repair";
