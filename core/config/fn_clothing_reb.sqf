@@ -143,7 +143,7 @@ switch (_filter) do
 			["V_PlateCarrierIA1_dgtl",nil,800],
 			["V_PlateCarrierIAGL_dgtl",nil,1000],
 			["V_PlateCarrierIA2_dgtl",nil,1000],
-			["V_RebreatherIA",nil,1500]
+			["V_RebreatherIA",nil,1250]
 		];
 	};
 	
