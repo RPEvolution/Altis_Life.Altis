@@ -26,6 +26,7 @@ switch (_filter) do
 	case 1:
 	{
 		[
+			["H_Cap_headphones","Olives Headset",200],
 			["H_Booniehat_khk_hs",nil,100]
 		];
 	};
