@@ -44,6 +44,9 @@ if(count (actionKeys "User10") != 0 && {(inputAction "User10" > 0)}) exitWith {
 	true;
 };
 
+//^ Key disable
+if((_code in (actionKeys "SelectAll") || _code in (actionKeys "ForceCommandingMode"))) then {_handled = true;};
+
 switch (_code) do
 {
 	//Space key for Jumping
