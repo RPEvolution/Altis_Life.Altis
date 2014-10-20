@@ -56,12 +56,11 @@ switch(_shop) do
 				["Hospital EMS Shop",
 					[
 						["ItemGPS",nil,100],
-						["Binocular",nil,150],
-						["ToolKit",nil,250],
-						["FirstAidKit",nil,150],
-						["Medikit",nil,500],
-						["NVGoggles",nil,1200],
-						["B_FieldPack_ocamo",nil,3000]
+						["Binocular",nil,20],
+						["ToolKit",nil,50],
+						["FirstAidKit",nil,10],
+						["Medikit",nil,100],
+						["NVGoggles",nil,400]
 					]
 				];
 			};
@@ -203,17 +202,20 @@ switch(_shop) do
 	{
 		["Altis General Store",
 			[
-				["Rangefinder",nil,500],
+				["Rangefinder",nil,100],
+				["Binocular",nil,20],
+				["ItemMap",nil,1],
+				["ItemWatch",nil,100],
 				["ItemGPS",nil,100],
-				["ToolKit",nil,250],
-				["FirstAidKit",nil,150],
-				["NVGoggles",nil,2000],
-				["NVGoggles_INDEP",nil,2000],
-				["NVGoggles_OPFOR",nil,2000],
-				["Chemlight_red",nil,300],
-				["Chemlight_yellow",nil,300],
-				["Chemlight_green",nil,300],
-				["Chemlight_blue",nil,300]
+				["ToolKit",nil,50],
+				["FirstAidKit",nil,10],
+				["NVGoggles",nil,500],
+				["NVGoggles_INDEP",nil,500],
+				["NVGoggles_OPFOR",nil,500],
+				["Chemlight_red",nil,5],
+				["Chemlight_yellow",nil,5],
+				["Chemlight_green",nil,5],
+				["Chemlight_blue",nil,5]
 			]
 		];
 	};
