@@ -78,10 +78,11 @@ switch (_filter) do
 	//Backpacks
 	case 4:
 	{
-		_ret =
-		[
-			["B_AssaultPack_blk",nil,100]
-		];
+		_ret set[count _ret,["B_AssaultPack_blk",nil,100]];
+		if(__GETC__(life_coplevel) > 1) then
+		{
+			_ret set[count _ret,["B_UAV_01_backpack_F",nil,1000]];
+		};
 	};
 };
 
