@@ -29,18 +29,15 @@ switch(_shop) do
 			{
 				["Altis Cop Shop",
 					[
-						["arifle_sdar_F","Taser Rifle",20000],
-						["hgun_P07_snds_F","Stun Pistol",2000],
-						["hgun_P07_F",nil,7500],
-						["HandGrenade_Stone","Flashbang",1700],
+						["hgun_P07_snds_F","Stun Pistol",500],
 						["Rangefinder",nil,100],
 						["ItemGPS",nil,100],
 						["ToolKit",nil,50],
-						["muzzle_snds_L",nil,650],
 						["FirstAidKit",nil,10],
 						["NVGoggles_OPFOR",nil,400],
 						["16Rnd_9x21_Mag",nil,50],
-						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125]
+						["30Rnd_9x21_Mag",nil,100],
+						["Chemlight_red",nil,5]
 					]
 				];
 			};
@@ -60,7 +57,8 @@ switch(_shop) do
 						["ToolKit",nil,50],
 						["FirstAidKit",nil,10],
 						["Medikit",nil,100],
-						["NVGoggles",nil,400]
+						["NVGoggles",nil,400],
+						["Chemlight_red",nil,5]
 					]
 				];
 			};
@@ -77,16 +75,19 @@ switch(_shop) do
 			{
 				["Altis Patrol Officer Shop",
 					[
-						["arifle_MX_F",nil,35000],
-						["SMG_02_ACO_F",nil,30000],
-						["HandGrenade_Stone","Flashbang",1700],
-						["MineDetector",nil,1000],
+						["arifle_sdar_F",nil,1500],
+						["arifle_MXC_Black_F",nil,2000],
+						["HandGrenade_Stone","Flashbang",100],
+						["MineDetector",nil,100],
+						["B_UavTerminal",nil,100],
 						["acc_flashlight",nil,750],
-						["optic_Holosight",nil,1200],
-						["optic_Arco",nil,2500],
+						["acc_pointer_IR",nil,500],
+						["optic_Holosight",nil,500],
+						["optic_Arco",nil,600],
+						["optic_Hamr",nil,700],
 						["muzzle_snds_H",nil,2750],
-						["30Rnd_65x39_caseless_mag",nil,130],
-						["30Rnd_9x21_Mag",nil,250]
+						["30Rnd_65x39_caseless_mag",nil,100],
+						["20Rnd_556x45_UW_mag",nil,75]
 					]
 				];
 			};
@@ -103,15 +104,18 @@ switch(_shop) do
 			{
 				["Altis Sergeant Officer Shop",
 					[
-						["SMG_02_ACO_F",nil,15000],
-						["hgun_ACPC2_F",nil,17500],
-						["HandGrenade_Stone","Flashbang",1700],
-						["arifle_MXC_F",nil,30000],
-						["optic_Arco",nil,2500],
+						["arifle_MXM_Black_F",nil,3000],
+						["HandGrenade_Stone","Flashbang",100],
+						["acc_flashlight",nil,750],
+						["acc_pointer_IR",nil,500],
+						["optic_Holosight",nil,1200],
+						["optic_Arco",nil,500],
+						["optic_Hamr",nil,600],
+						["optic_MRCO",nil,700],
+						["optic_DMS",nil,1750],
+						["optic_LRPS",nil,2000],
 						["muzzle_snds_H",nil,2750],
-						["30Rnd_65x39_caseless_mag",nil,100],
-						["30Rnd_9x21_Mag",nil,60],
-						["9Rnd_45ACP_Mag",nil,200]
+						["30Rnd_65x39_caseless_mag",nil,100]
 					]
 				];
 			};
@@ -157,16 +161,18 @@ switch(_shop) do
 			{
 				["Billy Joe's Firearms",
 					[
-						["hgun_Rook40_F",nil,6500],
-						["hgun_Pistol_heavy_02_F",nil,9850],
-						["hgun_ACPC2_F",nil,11500],
-						["hgun_PDW2000_F",nil,20000],
-						["optic_ACO_grn_smg",nil,2500],
+						["hgun_Rook40_F",nil,500],
+						["hgun_ACPC2_F",nil,750],
+						["hgun_Pistol_heavy_01_F",nil,850],
+						["hgun_Pistol_heavy_02_F",nil,1000],
+						["hgun_PDW2000_F",nil,2000],
+						["optic_ACO_grn_smg",nil,300],
 						["V_Rangemaster_belt",nil,150],
-						["16Rnd_9x21_Mag",nil,25],
-						["9Rnd_45ACP_Mag",nil,45],
+						["16Rnd_9x21_Mag",nil,50],
+						["9Rnd_45ACP_Mag",nil,50],
+						["11Rnd_45ACP_Mag",nil,75],
 						["6Rnd_45ACP_Cylinder",nil,50],
-						["30Rnd_9x21_Mag",nil,75]
+						["30Rnd_9x21_Mag",nil,100]
 					]
 				];
 			};
@@ -182,16 +188,18 @@ switch(_shop) do
 			{
 				["Hideout Armament",
 					[
-						["hgun_Rook40_F",nil,1500],
-						["hgun_Pistol_heavy_02_F",nil,2500],
-						["hgun_ACPC2_F",nil,4500],
-						["hgun_PDW2000_F",nil,9500],
-						["optic_ACO_grn_smg",nil,950],
+						["hgun_Rook40_F",nil,500],
+						["hgun_ACPC2_F",nil,750],
+						["hgun_Pistol_heavy_01_F",nil,850],
+						["hgun_Pistol_heavy_02_F",nil,1000],
+						["hgun_PDW2000_F",nil,2000],
+						["optic_ACO_grn_smg",nil,300],
 						["V_Rangemaster_belt",nil,150],
-						["16Rnd_9x21_Mag",nil,25],
-						["9Rnd_45ACP_Mag",nil,45],
+						["16Rnd_9x21_Mag",nil,50],
+						["9Rnd_45ACP_Mag",nil,50],
+						["11Rnd_45ACP_Mag",nil,75],
 						["6Rnd_45ACP_Cylinder",nil,50],
-						["30Rnd_9x21_Mag",nil,75]
+						["30Rnd_9x21_Mag",nil,100]
 					]
 				];
 			};
