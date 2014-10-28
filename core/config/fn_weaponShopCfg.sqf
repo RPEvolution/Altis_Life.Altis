@@ -91,7 +91,7 @@ switch(_shop) do
 						["optic_Holosight",nil,500],
 						["optic_Arco",nil,600],
 						["optic_Hamr",nil,700],
-						["muzzle_snds_H",nil,2750],
+						["muzzle_snds_H",nil,100],
 						["30Rnd_65x39_caseless_mag",nil,100],
 						["20Rnd_556x45_UW_mag",nil,75]
 					]
@@ -120,7 +120,7 @@ switch(_shop) do
 						["optic_MRCO",nil,700],
 						["optic_DMS",nil,1750],
 						["optic_LRPS",nil,2000],
-						["muzzle_snds_H",nil,2750],
+						["muzzle_snds_H",nil,100],
 						["30Rnd_65x39_caseless_mag",nil,100]
 					]
 				];
