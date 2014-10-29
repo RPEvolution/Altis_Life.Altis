@@ -113,7 +113,7 @@ class perm_dlg_new
 		};
 		class tRank: RscEdit
 		{
-			idc = 1400;
+			idc = 3100;
 			text = "0"; //--- ToDo: Localize;
 			x = 14.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 21 * GUI_GRID_H + GUI_GRID_Y;

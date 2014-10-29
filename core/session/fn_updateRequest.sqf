@@ -22,4 +22,6 @@ switch (playerSide) do {
 	};
 };
 
+_packet set[8, format["%1", str life_player_perms]];
+
 [_packet,"DB_fnc_updateRequest",false,false] spawn life_fnc_MP;

@@ -58,6 +58,7 @@ if(_perm_max_level == -1 || _perm_name == "INVALID") exitWith
 
 //Access and integrity check
 _valid = true;
+
 switch(true) do
 {
 	//Integrity Check (here!!!!)

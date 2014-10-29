@@ -41,19 +41,21 @@ if((count _perm_row) == 0) exitWith
 if(_level == -1) then
 {
 	//read level from controls
-	_level = ctrlText 1400;
+	_level = ctrlText 3100;	
 	
-	
-	if(([_level] call fnc_isnumber)) then
+	if(([_level] call TON_fnc_isnumber)) then
 	{
-		_level = parseNumber _level;
-		_level = round _level;
+		_level = parseNumber(_level);
+		_level = round(_level);
 	}
 	else
 	{
 		_level = -1;
 	};
 };
+
+hint format ["Level: %1, Perm Row: %2",_level, _perm_row select 2];
+diag_log format ["Level: %1, Perm Row: %2",_level, _perm_row select 2];
 
 //check 
 if( _level < 0 || _level > (_perm_row select 2)) exitWith
@@ -67,8 +69,7 @@ if(life_permmanager_admin) then
 {
 	_adminlevel = call life_adminlevel;
 };
-
-
+	
 //send
 if(_destination == player) then
 {

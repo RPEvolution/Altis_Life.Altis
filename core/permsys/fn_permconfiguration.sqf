@@ -43,7 +43,7 @@ life_perms = [
 		[8, ["VIEW","RESTRAIN"]],
 		[9, ["LEADER", "RANKUP", "RANKDOWN", "SUPER", "VIEW","RESTRAIN"]]
 	], 
-	[], "images\police_gold.paa",
+	[], "textures\perms\police.paa",
 	["Kein Mitglied","Rekrut", "Officer", "Corporal","Sergeant","Lieutenant","Captain","Major","Colonel","Chief"]], 
 	
 	//ADAC
@@ -53,7 +53,7 @@ life_perms = [
 		[2, ["VIEW","RESTRAIN"]],
 		[3, ["LEADER", "RANKUP", "RANKDOWN", "VIEW","RESTRAIN"]]
 	],  
-	[], "images\ADAC_256.paa",
+	[], "textures\perms\adac.paa",
 	["Kein Mitglied","ADAC-Rekrut", "ADAC-Mitarbeiter", "ADAC-Chef"]],
 	
 	//Medic
