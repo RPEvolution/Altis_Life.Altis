@@ -119,7 +119,7 @@ switch (_vehicle) do
 		_ret = 
 		[
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_sheriff_co.paa","cop"],
-			["\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_ion_co.paa","fed"],
+			["\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_ion_co.paa","cop"],
 			["\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_blue_co.paa","civ"],
 			["\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_co.paa","civ"],
 			["\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_indp_co.paa","reb"],
@@ -132,6 +132,7 @@ switch (_vehicle) do
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_vrana_co.paa","civ"],
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_wave_co.paa","civ"],
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_digital_co.paa","reb"],
+			["\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_blufor_co.paa","civ"],
 			["#(argb,8,8,3)color(1,1,1,0.8)","med"]
 		];
 	};
