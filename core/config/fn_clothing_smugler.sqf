@@ -1,5 +1,5 @@
 /*
-	File: fn_clothing_smuggler.sqf
+	File: fn_clothing_smugler.sqf
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:
