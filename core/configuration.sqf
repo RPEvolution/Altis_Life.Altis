@@ -197,6 +197,36 @@ life_dp_points = ["dp_1","dp_2","dp_3","dp_4","dp_5","dp_6","dp_7","dp_8","dp_9"
 //[shortVar,reward]
 life_illegal_items = [["heroinu",1200],["heroinp",2500],["cocaine",1500],["cocainep",3500],["marijuana",2000],["turtle",3000],["blastingcharge",10000],["boltcutter",500]];
 
+//illegale Waffen
+life_illegalweapons =
+[
+	"hgun_P07_snds_F",
+	"hgun_P07_F",
+	"arifle_MXC_Black_F",
+	"arifle_MXM_Black_F",
+	"SMG_01_F",
+	"arifle_Mk20C_plain_F",
+	"arifle_Mk20C_F",
+	"arifle_Mk20_plain_F",
+	"arifle_Mk20_F",
+	"arifle_TRG20_F",
+	"arifle_TRG21_F",
+	"arifle_Katiba_C_F",
+	"arifle_Katiba_F",
+	"srifle_DMR_01_F",
+	"srifle_EBR_F",
+	"arifle_SDAR_F",
+	"arifle_MX_F",
+	"arifle_MXC_F",
+	"arifle_MXM_F",
+	"10Rnd_762x51_Mag",
+	"20Rnd_556x45_UW_mag",
+	"30Rnd_556x45_Stanag",
+	"20Rnd_762x51_Mag",
+	"30Rnd_65x39_caseless_mag",
+	"HandGrenade_Stone",
+	"30Rnd_45ACP_Mag_SMG_01"
+];
 
 /*
 	Sell / buy arrays
@@ -314,7 +344,6 @@ life_weapon_shop_array =
 	["arifle_Katiba_F",2250],
 	["srifle_DMR_01_F",3750],
 	["srifle_EBR_F",3750],
-	["arifle_SDAR_F",1600],
 	["arifle_MXC_Holo_pointer_snds_F",2750],
 	["arifle_MX_F",2500],
 	["arifle_MXC_F",2000],
