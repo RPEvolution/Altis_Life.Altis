@@ -43,6 +43,15 @@ switch (_vehicle) do
 		};
 	};
 	
+	case "B_G_Offroad_01_repair_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Yellow";};
+		};
+	};
+	
+	
 	case "C_Hatchback_01_sport_F":
 	{
 		switch(_index) do
@@ -131,7 +140,8 @@ switch (_vehicle) do
 			case 12: {_color = "Waves Blue"};
 			case 13: {_color = "Rebel Digital"};
 			case 14: {_color = "Olive"};
-			case 15: {_color = "EMS White"};
+			case 15: {_color = "Yellow"};
+			case 16: {_color = "EMS White"};
 		};
 	};
 	
