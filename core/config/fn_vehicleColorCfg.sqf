@@ -53,6 +53,14 @@ switch (_vehicle) do
 		];
 	};
 	
+	case "B_G_Offroad_01_repair_F":
+	{
+		_ret = 
+		[
+			["\A3\soft_f_bootcamp\Offroad_01\Data\offroad_01_ext_repair_civ_CO.paa","civ"]
+		];
+	};
+	
 	case "C_Hatchback_01_F":
 	{
 		_ret =
@@ -133,6 +141,7 @@ switch (_vehicle) do
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_wave_co.paa","civ"],
 			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_digital_co.paa","reb"],
 			["\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_blufor_co.paa","civ"],
+			["#(argb,8,8,3)color(1,0.725,0,059.8)","civ"],
 			["#(argb,8,8,3)color(1,1,1,0.8)","med"]
 		];
 	};
