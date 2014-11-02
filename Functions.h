@@ -193,6 +193,8 @@ class Life_Client_Core
 		class smartphone {};
 		class newMsg {};
 		class showMsg {};
+		class wantedAdd {};
+		class wantedAddList {};
 	};
 	
 	class Functions
@@ -241,6 +243,8 @@ class Life_Client_Core
 		class random {};
 		class globalSound {};
 		class globalSoundClient {};
+		class handleItemPicture {};
+		class handleItemTooltip {};
 	};
 	
 	class Network

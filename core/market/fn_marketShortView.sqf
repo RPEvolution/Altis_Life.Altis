@@ -34,20 +34,20 @@ _didanything = false;
 	
 	if(_globalchange >= 0) then
 	{
-		_text = format["%1<img size='2' image='icons\trendup.paa'/> $%2 <br/>", _text, _globalchange];
+		_text = format["%1<img size='2' image='textures\icons\trendup.paa'/> $%2 <br/>", _text, _globalchange];
 	}
 	else
 	{
-		_text = format["%1<img size='2' image='icons\trenddown.paa'/> $%2 <br/>", _text, _globalchange];
+		_text = format["%1<img size='2' image='textures\icons\trenddown.paa'/> $%2 <br/>", _text, _globalchange];
 	};
 	
 	if(_lastchange >= 0) then
 	{
-		_text = format["%1<img size='2' image='icons\trendup.paa'/> $%2 <br/>", _text, _globalchange];
+		_text = format["%1<img size='2' image='textures\icons\trendup.paa'/> $%2 <br/>", _text, _globalchange];
 	}
 	else
 	{
-		_text = format["%1<img size='2' image='icons\trenddown.paa'/> $%2 <br/>", _text, _globalchange];
+		_text = format["%1<img size='2' image='textures\icons\trenddown.paa'/> $%2 <br/>", _text, _globalchange];
 	};
 	
 	};

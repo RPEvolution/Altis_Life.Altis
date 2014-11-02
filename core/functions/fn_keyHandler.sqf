@@ -258,9 +258,8 @@ switch (_code) do
 						
 						//play sound
 						//_veh say3D "Car_Lock";
-						[player,"Car_Lock"] call life_fnc_globalSound;
-						
-					};
+						[player,"Car_Lock"] call life_fnc_globalSound;						
+					};					
 				};
 			};
 		};

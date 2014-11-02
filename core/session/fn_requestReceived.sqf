@@ -42,12 +42,14 @@ life_gear = _this select 8;
 //Parse side specific information.
 switch(playerSide) do {
 	case west: {
-		//__CONST__(life_coplevel, parseNumber(_this select 7));
+		__CONST__(life_coplevel, parseNumber(_this select 7));
 		__CONST__(life_medicLevel,0);
 		life_blacklisted = _this select 9;
+		
 		life_player_perms = (_session select 11);					
 		life_player_perms = call compile format["%1", life_player_perms];
 		
+		/*
 		//PERM coplevel
 		_coplevel = parseNumber(_session select 7); //this is the MORE important DATABASE coplevel  - it ALWAYS overrides the PERM coplevel
 		_perm_coplevel = ["cop"] call life_fnc_permLevel;
@@ -65,6 +67,7 @@ switch(playerSide) do {
 			
 			systemChat "CopLevel loaded from PERM";
 		};
+		*/
 		
 	};
 	
@@ -92,6 +95,7 @@ switch(playerSide) do {
 	case independent: {
 		__CONST__(life_medicLevel, parseNumber(_this select 7));
 		__CONST__(life_copLevel,0);
+		
 		life_player_perms = (_session select 11);					
 		life_player_perms = call compile format["%1", life_player_perms];
 	};

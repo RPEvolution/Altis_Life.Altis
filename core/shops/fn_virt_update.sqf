@@ -6,7 +6,7 @@
 	Description:
 	Update and fill the virtual shop menu.
 */
-private["_display","_item_list","_gear_list","_shop_data","_name","_price","_marketprice"];
+private["_display","_item_list","_gear_list","_shop_data","_name","_price","_marketprice","_picture","_tooltip"];
 disableSerialization;
 
 //Setup control vars.
@@ -23,6 +23,9 @@ ctrlSetText[2403,format["%1", _shop_data select 0]];
 
 {
 	_name = [([_x,0] call life_fnc_varHandle)] call life_fnc_vartostr;
+	_picture = [([_x,0] call life_fnc_varHandle)] call life_fnc_handleItemPicture;
+	_tooltip = [([_x,0] call life_fnc_varHandle)] call life_fnc_handleItemTooltip;
+	
 	_index = [_x,__GETC__(buy_array)] call TON_fnc_index;
 	if(_index != -1) then
 	{
@@ -35,14 +38,17 @@ ctrlSetText[2403,format["%1", _shop_data select 0]];
 		};
 		_item_list lbAdd format["%1  ($%2)",_name,[_price] call life_fnc_numberText];
 		_item_list lbSetData [(lbSize _item_list)-1,_x];
-		_item_list lbSetPicture[(lbSize _item_list)-1,"\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"];
-		_item_list lbSetTooltip[(lbSize _item_list)-1,"tooltip"];
+		_item_list lbSetPicture[(lbSize _item_list)-1,_picture];
+		_item_list lbSetTooltip[(lbSize _item_list)-1,_tooltip];
 		_item_list lbSetValue [(lbSize _item_list)-1,_price];
 	};
 } foreach (_shop_data select 1);
 
 {
 	_var = [_x,0] call life_fnc_varHandle;
+	_picture = [([_x,0] call life_fnc_varHandle)] call life_fnc_handleItemPicture;
+	_tooltip = [([_x,0] call life_fnc_varHandle)] call life_fnc_handleItemTooltip;
+	
 	_val = missionNameSpace getVariable _var;
 	_name = [_var] call life_fnc_vartostr;
 	
@@ -50,7 +56,8 @@ ctrlSetText[2403,format["%1", _shop_data select 0]];
 	{
 		_gear_list lbAdd format["%1x %2",_val,_name];
 		_gear_list lbSetData [(lbSize _gear_list)-1,_x];
-		_gear_list lbSetPicture[(lbSize _item_list)-1,"\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"];
+		_gear_list lbSetPicture[(lbSize _item_list)-1,_picture];
+		_gear_list lbSetTooltip[(lbSize _item_list)-1,_tooltip];
 	};
 } foreach (_shop_data select 1);
 

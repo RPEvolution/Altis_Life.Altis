@@ -46,11 +46,16 @@ ctrlSetText[2009,format["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
 {
 	_str = [_x] call life_fnc_varToStr;
 	_shrt = [_x,1] call life_fnc_varHandle;
+	_picture = [([_x,1] call life_fnc_varHandle)] call life_fnc_handleItemPicture;
+	_tooltip = [([_x,1] call life_fnc_varHandle)] call life_fnc_handleItemTooltip;
+	
 	_val = missionNameSpace getVariable _x;
 	if(_val > 0) then
 	{
 		_inv lbAdd format["%1x - %2",_val,_str];
 		_inv lbSetData [(lbSize _inv)-1,_shrt];
+		_inv lbSetPicture[(lbSize _item_list)-1,_picture];
+		_inv lbSetTooltip[(lbSize _item_list)-1,_tooltip];
 	};
 } foreach life_inv_items;
 {

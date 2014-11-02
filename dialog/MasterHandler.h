@@ -31,3 +31,4 @@
 #include "market.hpp"
 #include "extended_admin_menu.hpp"
 #include "perm_dlg_new.hpp"
+#include "wanted_Add.hpp"

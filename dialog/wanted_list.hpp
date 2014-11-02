@@ -96,5 +96,15 @@ class life_wanted_menu {
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
+		
+		class AppendButtonKey : Life_RscButtonMenu {
+			idc = 2405;
+			text = "Hinzufügen";
+			onButtonClick = "closeDialog 0; [] spawn life_fnc_wantedAddList;";
+			x = 0.3 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.8 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
 	};
 };
