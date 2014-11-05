@@ -55,6 +55,10 @@ _vlist lbAdd "Bike | Quad";
 _vlist lbSetData [(lbSize _vlist) - 1,"B_Quadbike_01_F"];
 	
 	
+_vlist lbAdd "Kart | Kart";
+_vlist lbSetData [(lbSize _vlist) - 1,"C_Kart_01_Blu_F"];	
+	
+	
 _vlist lbAdd "Boot | Rescue Boat";
 _vlist lbSetData [(lbSize _vlist) - 1,"B_Lifeboat"];
 
@@ -168,6 +172,10 @@ _vlist lbAdd "Heli | MH-9 Hummingbird";
 _vlist lbSetData [(lbSize _vlist) - 1,"B_Heli_Light_01_F"];
 
 
+_vlist lbAdd "Heli | M-900";
+_vlist lbSetData [(lbSize _vlist) - 1,"C_Heli_Light_01_civil_F"];
+
+
 _vlist lbAdd "Heli | PO-30 Orca";
 _vlist lbSetData [(lbSize _vlist) - 1,"O_Heli_Light_02_unarmed_F"];
 
@@ -176,9 +184,29 @@ _vlist lbAdd "Heli | WY-55 Hellcat";
 _vlist lbSetData [(lbSize _vlist) - 1,"I_Heli_light_03_unarmed_F"];
 
 
+_vlist lbAdd "Heli | Mi-290 Taru";
+_vlist lbSetData [(lbSize _vlist) - 1,"O_Heli_Transport_04_F"];
+
+
+_vlist lbAdd "Heli | Mi-290 Taru (Medical)";
+_vlist lbSetData [(lbSize _vlist) - 1,"O_Heli_Transport_04_medevac_F"];
+
+
+_vlist lbAdd "Heli | CH-67 Huron";
+_vlist lbSetData [(lbSize _vlist) - 1,"B_Heli_Transport_03_unarmed_F"];
+
+
 _vlist lbAdd "Heli | CH-49 Mohawk";
 _vlist lbSetData [(lbSize _vlist) - 1,"I_Heli_Transport_02_F"];
 
 
 _vlist lbAdd "Heli | UH-80 Ghosthawk";
 _vlist lbSetData [(lbSize _vlist) - 1,"B_Heli_Transport_01_camo_F"];
+
+
+_vlist lbAdd "Container | Frachtcontainer";
+_vlist lbSetData [(lbSize _vlist) - 1,"B_Slingload_01_Cargo_F"];
+
+
+_vlist lbAdd "Container | Medizin Container";
+_vlist lbSetData [(lbSize _vlist) - 1,"B_Slingload_01_Medevac_F"];
