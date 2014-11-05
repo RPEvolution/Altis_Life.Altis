@@ -139,7 +139,7 @@ switch (_code) do
 			}
 				else
 			{
-				if((cursorTarget isKindOf "Car" OR cursorTarget isKindOf "Air" OR cursorTarget isKindOf "Ship" OR cursorTarget isKindOf "House_F") && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
+				if((cursorTarget isKindOf "Car" OR cursorTarget isKindOf "B_Slingload_01_Cargo_F" OR cursorTarget isKindOf "Air" OR cursorTarget isKindOf "Ship" OR cursorTarget isKindOf "House_F") && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
 				{
 					if(cursorTarget in life_vehicles OR {!(cursorTarget getVariable ["locked",true])}) then
 					{
@@ -258,8 +258,9 @@ switch (_code) do
 						
 						//play sound
 						//_veh say3D "Car_Lock";
-						[player,"Car_Lock"] call life_fnc_globalSound;						
-					};					
+						[player,"Car_Lock"] call life_fnc_globalSound;
+						
+					};
 				};
 			};
 		};
