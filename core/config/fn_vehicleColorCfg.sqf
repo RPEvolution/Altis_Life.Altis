@@ -146,6 +146,23 @@ switch (_vehicle) do
 		];
 	};
 	
+		case "C_Heli_Light_01_civil_F":
+	{
+		_ret = 
+		[
+			["\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_blue_co.paa","civ"],
+			["\a3\air_f\Heli_Light_01\Data\heli_light_01_ext_co.paa","civ"],
+			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_blueline_co.paa","civ"],
+			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_elliptical_co.paa","civ"],
+			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_furious_co.paa","civ"],
+			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_jeans_co.paa","civ"],
+			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_speedy_co.paa","civ"],
+			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_sunset_co.paa","civ"],
+			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_vrana_co.paa","civ"],
+			["\a3\air_f\Heli_Light_01\Data\Skins\heli_light_01_ext_wave_co.paa","civ"]
+		];
+	};
+	
 	case "O_Heli_Light_02_unarmed_F":
 	{
 		_ret = 
@@ -162,7 +179,7 @@ switch (_vehicle) do
 	{
 		_ret = 
 		[
-			["\A3\Soft_F\MRAP_01\Data\mrap_01_base_co.paa","cop"],
+			["\A3\Soft_F\MRAP_01\Data\mrap_01_base_co.paa","civ"],
 			["#(argb,8,8,3)color(0.05,0.05,0.05,1)","fed"]
 		];
 	};
@@ -214,6 +231,22 @@ switch (_vehicle) do
 		_ret = 
 		[
 			["#(argb,8,8,3)color(0.05,0.05,0.05,1)","cop"]
+		];
+	};
+	
+	case "O_Heli_Transport_04_bench_F":
+	{
+		_ret = 
+		[
+			["#(argb,8,8,3)color(0.05,0.05,0.05,1)","cop","#(argb,8,8,3)color(0.05,0.05,0.05,1)","#(argb,8,8,3)color(0.05,0.05,0.05,1)"]
+		];
+	};
+	
+	case "O_Heli_Transport_04_medevac_F":
+	{
+		_ret = 
+		[
+			["#(argb,8,8,3)color(1,1,1,0.8)","med","#(argb,8,8,3)color(1,1,1,0.8)","#(argb,8,8,3)color(1,1,1,0.8)"]
 		];
 	};
 	
