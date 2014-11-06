@@ -167,6 +167,11 @@ class Life_Client_Core
 		class clothing_reb {};
 		class clothing_dive {};
 		class clothing_kart {};
+		class clothing_smugler {};
+		class clothing_sec {};
+		class clothing_garage {};
+		class clothing_don {};
+		class clothing_medic {};
 	};
 
 	class Player_Menu
@@ -193,8 +198,8 @@ class Life_Client_Core
 		class smartphone {};
 		class newMsg {};
 		class showMsg {};
-		class wantedAdd {};
-		class wantedAddList {};
+		class newwanted_send {};
+		class newwanted {};
 	};
 	
 	class Functions
@@ -243,8 +248,6 @@ class Life_Client_Core
 		class random {};
 		class globalSound {};
 		class globalSoundClient {};
-		class handleItemPicture {};
-		class handleItemTooltip {};
 	};
 	
 	class Network
