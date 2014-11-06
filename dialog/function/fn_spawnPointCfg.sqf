@@ -27,8 +27,23 @@ switch (_side) do
 	
 	case civilian:
 	{
+	
+		if(call life_adminlevel) > 0) then
+		{
+			_spawns = _spawns + [
+			["admin_spawn_1","Ponyhof","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
+			];
+		};
+		
+		if(license_civ_rebel) then
+		{
+			_spawns = _spawns + [
+			["civ_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]	
+			];
+		};
+		
 		_return = [
-			["civ_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+			/*["civ_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],*/
 			["civ_spawn_2","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
 			["civ_spawn_3","Athira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
 			["civ_spawn_4","Sofia","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
