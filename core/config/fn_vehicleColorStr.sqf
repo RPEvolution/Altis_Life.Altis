@@ -43,6 +43,15 @@ switch (_vehicle) do
 		};
 	};
 	
+	case "B_G_Offroad_01_repair_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Yellow";};
+		};
+	};
+	
+	
 	case "C_Hatchback_01_sport_F":
 	{
 		switch(_index) do
@@ -131,7 +140,25 @@ switch (_vehicle) do
 			case 12: {_color = "Waves Blue"};
 			case 13: {_color = "Rebel Digital"};
 			case 14: {_color = "Olive"};
-			case 15: {_color = "EMS White"};
+			case 15: {_color = "Yellow"};
+			case 16: {_color = "EMS White"};
+		};
+	};
+
+	case "C_Heli_Light_01_civil_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Civ Blue"};
+			case 1: {_color = "Civ Red"};
+			case 2: {_color = "Blueline"};
+			case 3: {_color = "Elliptical"};
+			case 4: {_color = "Furious"};
+			case 5: {_color = "Jeans Blue"};
+			case 6: {_color = "Speedy Redline"};
+			case 7: {_color = "Sunset"};
+			case 8: {_color = "Vrana"};
+			case 9: {_color = "Waves Blue"};
 		};
 	};
 	
@@ -212,6 +239,22 @@ switch (_vehicle) do
 		switch (_index) do
 		{
 			case 0: {_color = "Black"};
+		};
+	};
+	
+	case "O_Heli_Transport_04_bench_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Black"};
+		};
+	};
+	
+	case "O_Heli_Transport_04_medevac_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "EMS White"};
 		};
 	};
 	
