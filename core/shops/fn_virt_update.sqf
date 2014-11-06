@@ -46,8 +46,8 @@ ctrlSetText[2403,format["%1", _shop_data select 0]];
 
 {
 	_var = [_x,0] call life_fnc_varHandle;
-	_picture = [([_x,0] call life_fnc_varHandle)] call life_fnc_handleItemPicture;
-	_tooltip = [([_x,0] call life_fnc_varHandle)] call life_fnc_handleItemTooltip;
+	_picture = [_var] call life_fnc_handleItemPicture;
+	_tooltip = [_var] call life_fnc_handleItemTooltip;
 	
 	_val = missionNameSpace getVariable _var;
 	_name = [_var] call life_fnc_vartostr;
@@ -56,8 +56,8 @@ ctrlSetText[2403,format["%1", _shop_data select 0]];
 	{
 		_gear_list lbAdd format["%1x %2",_val,_name];
 		_gear_list lbSetData [(lbSize _gear_list)-1,_x];
-		_gear_list lbSetPicture[(lbSize _item_list)-1,_picture];
-		_gear_list lbSetTooltip[(lbSize _item_list)-1,_tooltip];
+		_gear_list lbSetPicture[(lbSize _gear_list)-1,_picture];
+		_gear_list lbSetTooltip[(lbSize _gear_list)-1,_tooltip];
 	};
 } foreach (_shop_data select 1);
 

@@ -54,9 +54,9 @@ switch(_item) do
 	case "life_inv_rock": {"textures\icons\water.paa"};
 	case "life_inv_cement": {"textures\icons\water.paa"};
 	case "life_inv_goldbar": {"textures\icons\water.paa"};
-	case "life_inv_blastingcharge": {"textures\icons\water.paa"};
-	case "life_inv_boltcutter": {"textures\icons\water.paa"};
-	case "life_inv_defusekit": {"textures\icons\water.paa"};
+	case "life_inv_blastingcharge": {"textures\icons\blastingcharge.paa"};
+	case "life_inv_boltcutter": {"textures\icons\boltcutter.paa"};
+	case "life_inv_defusekit": {"textures\icons\defusekit.paa"};
 	case "life_inv_storagesmall": {"textures\icons\storagesmall.paa"};
 	case "life_inv_storagebig": {"textures\icons\storagebig.paa"};
 	default {"textures\icons\house.paa"};
