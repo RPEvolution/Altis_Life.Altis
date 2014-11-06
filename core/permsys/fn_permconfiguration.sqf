@@ -47,14 +47,15 @@ life_perms = [
 	["Kein Mitglied","Rekrut", "Officer", "Corporal","Sergeant","Lieutenant","Captain","Major","Colonel","Chief"]], 
 	
 	//ADAC
-	["adac", "ADAC", 3, [ 
-		[0, ["VIEW"]],
-		[1, ["VIEW","RESTRAIN"]],
+	["adac", "ADAC", 4, [ 
+		[0, []],
+		[1, []],
 		[2, ["VIEW","RESTRAIN"]],
-		[3, ["LEADER", "RANKUP", "RANKDOWN", "VIEW","RESTRAIN"]]
+		[3, ["VIEW","RESTRAIN"]],
+		[4, ["LEADER", "RANKUP", "RANKDOWN", "VIEW","RESTRAIN"]]
 	],  
 	[], "textures\perms\adac.paa",
-	["Kein Mitglied","ADAC-Rekrut", "ADAC-Mitarbeiter", "ADAC-Chef"]],
+	["Kein Mitglied", "Kunde", "ADAC-Rekrut", "ADAC-Mitarbeiter", "ADAC-Chef"]],
 	
 	//Medic
 	["medic","Medics", 2,[ 
@@ -64,6 +65,28 @@ life_perms = [
 	],  
 	[], "",
 	["Kein Mitglied","Mitglied", "Leiter"]]
+	
+	//Security
+	["sec", "Security", 4, [ 
+		[0, []],
+		[1, []],
+		[2, ["VIEW","RESTRAIN"]],
+		[3, ["VIEW","RESTRAIN"]],
+		[4, ["LEADER", "RANKUP", "RANKDOWN", "VIEW","RESTRAIN"]]
+	],  
+	[], "",
+	["Kein Mitglied", "Kunde", "Anwärter", "Mitarbeiter", "Security-Chef"]],
+	
+	//Schmggler
+	["smugler", "Waffenschieber", 4, [ 
+		[0, []],
+		[1, []],
+		[2, ["VIEW","RESTRAIN"]],
+		[3, ["VIEW","RESTRAIN"]],
+		[4, ["LEADER", "RANKUP", "RANKDOWN", "VIEW","RESTRAIN"]]
+	],  
+	[], "",
+	["Kein Mitglied", "Kunde", "Anwärter", "Mitarbeiter", "Chef"]],
 	
 	/*
 	User requested groups
