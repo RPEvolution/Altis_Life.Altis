@@ -64,10 +64,10 @@ life_perms = [
 		[2, ["LEADER", "RANKUP", "RANKDOWN", "VIEW"]]
 	],  
 	[], "",
-	["Kein Mitglied","Mitglied", "Leiter"]]
+	["Kein Mitglied","Mitglied", "Leiter"]],
 	
 	//Security
-	["sec", "Security", 4, [ 
+	["sec","Security", 4, [ 
 		[0, []],
 		[1, []],
 		[2, ["VIEW","RESTRAIN"]],
@@ -86,7 +86,7 @@ life_perms = [
 		[4, ["LEADER", "RANKUP", "RANKDOWN", "VIEW","RESTRAIN"]]
 	],  
 	[], "",
-	["Kein Mitglied", "Kunde", "Anwärter", "Mitarbeiter", "Chef"]],
+	["Kein Mitglied", "Kunde", "Anwärter", "Mitarbeiter", "Chef"]]
 	
 	/*
 	User requested groups
