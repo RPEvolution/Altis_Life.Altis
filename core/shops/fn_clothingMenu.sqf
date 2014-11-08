@@ -14,7 +14,12 @@ disableSerialization;
 if((_this select 3) in ["bruce","dive","reb","kart"] && playerSide != civilian) exitWith {hint localize "STR_Shop_NotaCiv"; closeDialog 0;};
 if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint localize "STR_Shop_NotaReb"; closeDialog 0;};
 if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
+if((_this select 3) in ["medic"] && playerSide != independent) exitWith {hint "Du bist kein Arzt"; closeDialog 0;};
 if((_this select 3) in ["dive"] && !license_civ_dive) exitWith { hint localize "STR_Shop_NotaDive"; closeDialog 0;};
+if((_this select 3) == "sec" && (["sec"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Mitglied der Security!"; closeDialog 0;};
+if((_this select 3) == "smugler" && (["smugler"] call life_fnc_permLevel) < 2) exitWith {hint "Du bist kein Mitglied der Waffenschieber!"; closeDialog 0;};
+if((_this select 3) == "adac" && (["adac"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Mitglied der Werkstatt!"; closeDialog 0;};
+
 
 life_clothing_store = _this select 3;
 
