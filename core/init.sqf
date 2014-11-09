@@ -98,3 +98,11 @@ life_fnc_moveIn = compileFinal
 __CONST__(life_paycheck,life_paycheck); //Make the paycheck static.
 
 [] execVM "core\fn_richtax.sqf"; 
+
+[] spawn {
+    while {true} do {
+        sleep 600;
+        [] call SOCK_fnc_updateRequest;
+        hint "Spiel gespeichert";
+    };
+};
