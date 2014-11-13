@@ -31,20 +31,18 @@
 life_perms = [
 
 	//Polizei-Verwaltung, will overwrite sessionReceive!
-	["cop", "Altis Police Department", 9, [ 
+	["cop", "Altis Police Department", 7, [ 
 	
 		[1, ["VIEW"]],
-		[2, ["VIEW","RESTRAIN"]],
+		[2, ["VIEW"]],
 		[3, ["VIEW","RESTRAIN"]],
 		[4, ["VIEW","RESTRAIN"]],
 		[5, ["VIEW","RESTRAIN"]],
 		[6, ["VIEW","RESTRAIN"]],
-		[7, ["VIEW","RESTRAIN"]],
-		[8, ["VIEW","RESTRAIN"]],
-		[9, ["LEADER", "RANKUP", "RANKDOWN", "SUPER", "VIEW","RESTRAIN"]]
+		[7, ["LEADER", "RANKUP", "RANKDOWN", "SUPER", "VIEW","RESTRAIN"]]
 	], 
 	[], "textures\perms\police.paa",
-	["Kein Mitglied","Rekrut", "Officer", "Corporal","Sergeant","Lieutenant","Captain","Major","Colonel","Chief"]], 
+	["Kein Mitglied","Rekrut", "Rekrut", "Polizist","Polizist","Bundespolizist","Bundespolizist","Polizeichef"]], 
 	
 	//ADAC
 	["adac", "ADAC", 4, [ 
@@ -86,7 +84,20 @@ life_perms = [
 		[4, ["LEADER", "RANKUP", "RANKDOWN", "VIEW","RESTRAIN"]]
 	],  
 	[], "",
-	["Kein Mitglied", "Kunde", "Anwärter", "Mitarbeiter", "Chef"]]
+	["Kein Mitglied", "Kunde", "Anwärter", "Mitarbeiter", "Chef"]],
+	
+	//Donator
+	["don", "Donator", 5, [ 
+		[0, []],
+		[1, []],
+		[2, []],
+		[3, []],
+		[4, []],
+		[5, ["LEADER", "RANKUP", "RANKDOWN", "VIEW","RESTRAIN"]]
+		
+	],  
+	[], "",
+	["Kein Mitglied", "Donator", "Donator", "Donator", "Donator", "Admin"]]
 	
 	/*
 	User requested groups
