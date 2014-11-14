@@ -21,6 +21,7 @@ diag_log "::Life Client:: Setting up Eventhandlers";
 diag_log "::Life Client:: Eventhandlers completed";
 diag_log "::Life Client:: Setting up user actions";
 [] call life_fnc_setupActions;
+[] execVM "core\welcome.sqf";
 diag_log "::Life Client:: User actions completed";
 diag_log "::Life Client:: Waiting for server functions to transfer..";
 waitUntil {(!isNil {TON_fnc_clientGangLeader})};
