@@ -104,6 +104,6 @@ __CONST__(life_paycheck,life_paycheck); //Make the paycheck static.
     while {true} do {
         sleep 600;
         [] call SOCK_fnc_updateRequest;
-        hint "Spiel gespeichert";
+        systemChat "Spiel gespeichert";
     };
 };
