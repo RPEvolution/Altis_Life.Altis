@@ -20,7 +20,7 @@ switch (true) do
 	default {_mine = "";};
 };
 //Mine check
-if(_mine == "") exitWith {hint localize "STR_ISTR_Pick_NotNear"};
+/*if(_mine == "") exitWith {hint localize "STR_ISTR_Pick_NotNear"};*/
 if(vehicle player != player) exitWith {hint localize "STR_ISTR_Pick_MineVeh";};
 
 _diff = [_mine,_val,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
