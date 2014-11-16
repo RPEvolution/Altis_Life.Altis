@@ -250,6 +250,14 @@ switch (_vehicle) do
 		];
 	};
 	
+	case "O_Heli_Transport_04_repair_F":
+	{
+		_ret = 
+		[
+			["#(argb,8,8,3)color(1,0.725,0,059.8)","civ","#(argb,8,8,3)color(1,0.725,0,059.8)","#(argb,8,8,3)color(1,0.725,0,059.8)"]
+		];
+	};
+	
 	case "O_Heli_Attack_02_black_F":
 	{
 		_ret = 

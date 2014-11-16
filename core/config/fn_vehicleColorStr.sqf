@@ -250,11 +250,43 @@ switch (_vehicle) do
 		};
 	};
 	
+	case "O_Heli_Transport_04_repair_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Yellow"};
+		};
+	};
+	
 	case "O_Heli_Transport_04_medevac_F":
 	{
 		switch (_index) do
 		{
 			case 0: {_color = "EMS White"};
+		};
+	};
+	
+	case "B_Truck_01_medical_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "EMS White"};
+		};
+	};
+	
+	case "I_Truck_02_medical_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "EMS White"};
+		};
+	};
+
+	case "B_Truck_01_Repair_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Yellow"};
 		};
 	};
 	

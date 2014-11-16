@@ -8,7 +8,8 @@
 	sort through the information, validate it and if all valid 
 	set the client up.
 */
-private["_coplevel", "_perm_coplevel"];
+private["_session", "_coplevel", "_perm_coplevel"];
+_session = _this;
 life_session_tries = life_session_tries + 1;
 if(life_session_completed) exitWith {}; //Why did this get executed when the client already initialized? Fucking arma...
 if(life_session_tries > 3) exitWith {cutText[localize "STR_Session_Error","BLACK FADED"]; 0 cutFadeOut 999999999;};
@@ -27,7 +28,7 @@ if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery
 life_cash = parseNumber (_this select 2);
 life_atmcash = parseNumber (_this select 3);
 __CONST__(life_adminlevel,parseNumber(_this select 4));
-__CONST__(life_donator,0);
+__CONST__(life_donator,parseNumber(_this select 5));
 
 //Loop through licenses
 if(count (_this select 6) > 0) then {
@@ -42,14 +43,12 @@ life_gear = _this select 8;
 //Parse side specific information.
 switch(playerSide) do {
 	case west: {
-		__CONST__(life_coplevel, parseNumber(_this select 7));
+		//__CONST__(life_coplevel, parseNumber(_this select 7));
 		__CONST__(life_medicLevel,0);
 		life_blacklisted = _this select 9;
-		
 		life_player_perms = (_session select 11);					
 		life_player_perms = call compile format["%1", life_player_perms];
 		
-		/*
 		//PERM coplevel
 		_coplevel = parseNumber(_session select 7); //this is the MORE important DATABASE coplevel  - it ALWAYS overrides the PERM coplevel
 		_perm_coplevel = ["cop"] call life_fnc_permLevel;
@@ -67,7 +66,6 @@ switch(playerSide) do {
 			
 			systemChat "CopLevel loaded from PERM";
 		};
-		*/
 		
 	};
 	
@@ -95,12 +93,38 @@ switch(playerSide) do {
 	case independent: {
 		__CONST__(life_medicLevel, parseNumber(_this select 7));
 		__CONST__(life_copLevel,0);
-		
 		life_player_perms = (_session select 11);					
 		life_player_perms = call compile format["%1", life_player_perms];
 	};
 };
 
+switch(__GETC__(life_donator)) do
+{
+	case 1: {life_paycheck = life_paycheck + 50;};
+	case 2: {life_paycheck = life_paycheck + 75;};
+	case 3: {life_paycheck = life_paycheck + 100;};
+	case 4: {life_paycheck = life_paycheck + 125;};	
+	case 5: {life_paycheck = life_paycheck + 150;};	
+};
+
 [true] call life_fnc_dynPermCheckout;
+
+if(playerSide == civilian) then
+{
+	if((["adac"] call life_fnc_permLevel) > 2) then
+	{
+		life_paycheck = life_paycheck + 50;
+	};
+
+	if((["security"] call life_fnc_permLevel) > 2) then
+	{
+		life_paycheck = life_paycheck + 50;
+	};
+	
+	if((["smugler"] call life_fnc_permLevel) > 2) then
+	{
+		life_paycheck = life_paycheck + 50;
+	};
+};
 
 life_session_completed = true;
