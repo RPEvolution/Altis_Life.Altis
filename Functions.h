@@ -406,20 +406,16 @@ class Life_Client_Core
 	class Market
 	{
 		file = "core\market";
-		
 		class openMarketView;
-		class refreshMarketView;
-		class marketShortView;		
-		class marketBuy;
-		class marketSell;
-		class marketGetBuyPrice;
-		class marketGetSellPrice;		
-		class marketconfiguration;
-		class marketReset;		
-		class marketChange;		
-		class marketGetRow;
-		class marketGetPriceRow;
-		class marketSetPriceRow;
+        class refreshMarketView;
+        class marketShortView;
+        class marketGetBuyPrice;
+        class marketGetSellPrice;
+        class marketGetRow;
+        class marketGetPriceRow;
+        class marketSetPriceRow;
+        class marketBuy;
+        class marketSell;
 	};
 	
 	class Permsys
@@ -429,6 +425,7 @@ class Life_Client_Core
 		class permLevelName;
 		class permSetLevel;
 		class permRule;
+		class permMarkers;
 		class permRuleG;		
 		class permconfiguration;	
 		class perms;		

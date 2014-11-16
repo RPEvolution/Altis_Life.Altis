@@ -27,11 +27,10 @@ if(isNull _curTarget) exitWith {
 			_handle = [true] spawn life_fnc_pickaxeUse;
 			waitUntil {scriptDone _handle};
 			life_action_inUse = false;
-		/*
-		if(playerSide == civilian) then {
-			[] call life_fnc_gather;
-		*/
 		};
+		
+		_handle = [] spawn life_fnc_gather;
+		waitUntil {scriptDone _handle};
 	};
 };
 

@@ -15,7 +15,7 @@ life_versionInfo = "Altis Life RPG v3.1.4.7";
 
 if(isDedicated && isNil("life_market_prices")) then
 {
-	[] call life_fnc_marketconfiguration;
+	[] call TON_fnc_marketconfiguration;
 	diag_log "Market prices generated!";
 	 
 	"life_market_prices" addPublicVariableEventHandler
