@@ -77,7 +77,11 @@ _vlist lbSetData [(lbSize _vlist) - 1,"B_SVD_01_F, O_SVD_01_F"];
 
 
 _vlist lbAdd "Auto | HEMTT";
-_vlist lbSetData [(lbSize _vlist) - 1,"B_Truck_01_box_F"];
+_vlist lbSetData [(lbSize _vlist) - 1,"B_Truck_01_transport_F"];
+
+
+_vlist lbAdd "Auto | HEMTT abgedeckt";
+_vlist lbSetData [(lbSize _vlist) - 1,"B_Truck_01_covered_F"];
 
 
 _vlist lbAdd "Auto | HEMTT Container";
