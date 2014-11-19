@@ -16,6 +16,7 @@ switch (_shop) do
 	case "medic": {["Snack Automat", ["water","rabbit","apple","redgull","tbacon","fuelF","peach"]]};		
 	case "adac": {["Kantine", ["water","rabbit","apple","redgull","tbacon","lockpick","fuelF","peach"]]};	
 	case "sec": {["Snack Automat", ["water","rabbit","apple","redgull","tbacon","fuelF","peach"]]};	
+	case "jail": {["Snack Automat", ["water","rabbit","apple","redgull","tbacon","peach"]]};	
 	case "smugler": {["Kiosk", ["water","rabbit","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","blastingcharge","boltcutter"]]};	
 	case "wongs": {["Wong's China Imbiss",["turtlesoup","turtle"]]};
 	case "coffee": {["Stratis Coffee Club",["coffee","donuts"]]};
@@ -26,7 +27,7 @@ switch (_shop) do
 	case "iron": {["Altis Metall Händler",["iron_r","copper_r"]]};
 	case "diamond": {["Juwelier",["diamond","diamondc"]]};
 	case "salt": {["Salz Händler",["salt_r"]]};
-	case "cop": {["Cop Shop",["donuts","coffee","spikeStrip","water","rabbit","apple","redgull","fuelF","defusekit"]]};
+	case "cop": {["Polizei Shop",["donuts","coffee","spikeStrip","water","rabbit","apple","redgull","fuelF","defusekit"]]};
 	case "cement": {["Baustoff Händler",["cement"]]};
 	case "gold": {["Gold Ankäufer",["goldbar"]]};
 };
