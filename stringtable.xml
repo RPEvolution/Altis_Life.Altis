@@ -3597,6 +3597,11 @@
 			<Italian>Licenza possesso Casa</Italian>
 			<Portuguese>Licença de Casas</Portuguese>
 		</Key>
+		<Key ID="STR_License_Citizen">
+			<Original>Citizen License</Original>
+			<English>Citizen License</English>
+			<German>Bürgerurkunde</German>
+		</Key>
 	</Package>
 	<Package name="More_Item_Strings">
 		<Key ID="STR_ISTR_Blast_VaultOnly">
@@ -4444,6 +4449,14 @@
 			<French>Mettre dans le kart</French>
 			<Italian>Entra nel Kart</Italian>
 			<Portuguese>Entrar no Kart</Portuguese>
+		</Key>
+		<Key ID="STR_vInAct_GetInHeli">
+			<Original>Get In Helicopter</Original>
+			<English>Get In Helicopter</English>
+			<German>Ins Helikopter setzen</German>
+			<French>Mettre dans le helicopter</French>
+			<Italian>Entra nel Helicopter</Italian>
+			<Portuguese>Entrar no Helicopter</Portuguese>
 		</Key>
 		<Key ID="STR_vInAct_PushBoat">
 			<Original>Push Boat</Original>

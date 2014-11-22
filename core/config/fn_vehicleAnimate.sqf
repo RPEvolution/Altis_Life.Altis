@@ -66,5 +66,13 @@ if(!_preset) then
 			_vehicle animate ["HideBumper1", 0];
 			_vehicle setVariable["lights",false,true];
 		};
+		case "repair_offroad":
+		{
+			if(typeOf _vehicle == "B_G_Offroad_01_repair_F") then {
+				waitUntil {!isNil {_vehicle getVariable "Life_VEH_color"}};
+			};
+			_vehicle animate ["HideBumper1", 0];
+			_vehicle setVariable["lights",false,true];
+		};
 	};
 };

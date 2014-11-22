@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_clothing_garage.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -5,18 +6,20 @@
 	Description:
 	Master configuration file for Charlie's Werkstatt Bekleidung.
 */
-private["_filter"];
+private["_filter","_ret"];
 _filter = [_this,0,0,[0]] call BIS_fnc_param;
 //Classname, Custom Display name (use nil for Cfg->DisplayName, price
 
 //Shop Title Name
 ctrlSetText[3103,"Charlie's Werkstatt Bekleidung"];
 
+_ret = [];
 switch (_filter) do
 {
 	//Uniforms
 	case 0:
 	{
+		_ret =
 		[
 			["U_Competitor","Arbeitsbekleidung",50]
 		];
@@ -25,6 +28,7 @@ switch (_filter) do
 	//Hats
 	case 1:
 	{
+		_ret =
 		[
 			["H_Cap_blk_ION",nil,20]
 		];
@@ -33,6 +37,7 @@ switch (_filter) do
 	//Glasses
 	case 2:
 	{
+		_ret =
 		[
 			["G_Shades_Black",nil,20],
 			["G_Shades_Blue",nil,20],
@@ -54,6 +59,7 @@ switch (_filter) do
 	//Vest
 	case 3:
 	{
+		_ret =
 		[
 			["V_Rangemaster_belt","Werkzeuggürtel",150]
 		];
@@ -62,8 +68,11 @@ switch (_filter) do
 	//Backpacks
 	case 4:
 	{
+		_ret =
 		[
-			["B_AssaultPack_blk",nil,100]
+			["B_FieldPack_cbr",nil,100]
 		];
 	};
 };
+
+_ret;

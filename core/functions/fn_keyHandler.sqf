@@ -153,13 +153,16 @@ switch (_code) do
 	case 38: 
 	{
 		//If cop run checks for turning lights on.
-		if(_shift && playerSide in [west,independent]) then {
-			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","I_MRAP_03_F","C_SUV_01_F"]) then {
+		if(_shift && (playerSide in [west,independent] OR (["adac"] call life_fnc_permLevel) > 0)) then {
+			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","I_MRAP_03_F","C_SUV_01_F","B_G_Offroad_01_repair_F"]) then {
 				if(!isNil {vehicle player getVariable "lights"}) then {
 					if(playerSide == west) then {
 						[vehicle player] call life_fnc_sirenLights;
-					} else {
+					};
+					if(playerSide == independent ) then {
 						[vehicle player] call life_fnc_medicSirenLights;
+					} else {
+						[vehicle player] call life_fnc_adacSirenLights;
 					};
 					_handled = true;
 				};

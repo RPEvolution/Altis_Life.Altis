@@ -15,4 +15,15 @@ if(life_cash < _price) exitWith {hint format[localize "STR_NOTF_NE_1",[_price] c
 
 life_cash = life_cash - _price;
 titleText[format[localize "STR_NOTF_B_1", _license select 1,[_price] call life_fnc_numberText],"PLAIN"];
+
+if(_license == "license_civ_citizen" && license_civ_rebel) then {
+	license_civ_rebel = false;
+	hint "Aufgrund des Erwerbs einer Bürgerurkunde hast du deine Rebellenlizenz verloren!";
+};
+
+if(_license == "license_civ_rebel" && license_civ_citizen) then {
+	license_civ_citizen = false;
+	hint "Aufgrund des Erwerbs einer Rebellenlizenz hast du deine Bürgerurkunde verloren!";
+};
+
 missionNamespace setVariable[(_license select 0),true];

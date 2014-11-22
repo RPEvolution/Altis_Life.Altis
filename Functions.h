@@ -45,6 +45,18 @@ class Life_Client_Core
 		class welcomeNotification {};
 	};
 	
+	class ADAC
+	{
+		file = "core\adac";
+		
+		class adacRepairTruck;
+		class adacImpound;
+		class adacRepaintMenu;
+		class adacRepaintVehicle;
+		class adacSirenLights {};
+		class adacLights {};
+	};
+	
 	class Admin
 	{
 		file = "core\admin";

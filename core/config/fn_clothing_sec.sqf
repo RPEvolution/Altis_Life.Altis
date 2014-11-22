@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_clothing_sec.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -5,18 +6,20 @@
 	Description:
 	Master configuration file for Larry's Militär Sicherheitsbekleidung.
 */
-private["_filter"];
+private["_filter","_ret"];
 _filter = [_this,0,0,[0]] call BIS_fnc_param;
 //Classname, Custom Display name (use nil for Cfg->DisplayName, price
 
 //Shop Title Name
 ctrlSetText[3103,"Larry's Militär Sicherheitsbekleidung"];
 
+_ret = [];
 switch (_filter) do
 {
 	//Uniforms
 	case 0:
 	{
+		_ret =
 		[
 			["U_BG_Guerrilla_6_1","Uniform",250]
 		];
@@ -25,6 +28,7 @@ switch (_filter) do
 	//Hats
 	case 1:
 	{
+		_ret =
 		[
 			["H_Cap_headphones","Olives Headset",200],
 			["H_Booniehat_khk_hs",nil,100]
@@ -34,6 +38,7 @@ switch (_filter) do
 	//Glasses
 	case 2:
 	{
+		_ret =
 		[
 			["G_Shades_Black",nil,20],
 			["G_Shades_Blue",nil,20],
@@ -56,6 +61,7 @@ switch (_filter) do
 	//Vest
 	case 3:
 	{
+		_ret =
 		[
 			["V_PlateCarrierL_CTRG",nil,1000]
 		];
@@ -64,8 +70,11 @@ switch (_filter) do
 	//Backpacks
 	case 4:
 	{
+		_ret =
 		[
 			["B_AssaultPack_rgr",nil,100]
 		];
 	};
 };
+
+_ret;

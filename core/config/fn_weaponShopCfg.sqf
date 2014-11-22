@@ -27,19 +27,17 @@ switch(_shop) do
 			case (playerSide != west): {"Du bist kein Polizist!"};
 			default
 			{
-				["Altis Cop Shop",
+				["Altis Polizei Ausrüstung",
 					[
-						["hgun_P07_snds_F","Stun Pistol",500],
-						["Rangefinder",nil,100],
-						["ItemGPS",nil,100],
 						["ToolKit",nil,50],
-						["FirstAidKit",nil,10],
-						["NVGoggles_OPFOR",nil,400],
-						["16Rnd_9x21_Mag",nil,50],
-						["30Rnd_9x21_Mag",nil,100],
-						["hgun_Pistol_Signal_F",nil,100],
-						["6Rnd_GreenSignal_F",nil,30],
-						["Chemlight_red",nil,5]
+						["FirstAidKit",nil,10],		
+						["Rangefinder",nil,100],
+						["MineDetector",nil,100],
+						["ItemGPS",nil,100],
+						["B_UavTerminal",nil,100],							
+						["Chemlight_red",nil,5],
+						["HandGrenade_Stone","Flashbang",100],					
+						["NVGoggles_OPFOR",nil,400]		
 					]
 				];
 			};
@@ -52,7 +50,7 @@ switch(_shop) do
 		{
 			case (playerSide != independent): {"Du bist kein Arzt"};
 			default {
-				["Hospital EMS Shop",
+				["Altis Johanniter Ausrüstung",
 					[
 						["ItemGPS",nil,100],
 						["Binocular",nil,20],
@@ -71,64 +69,73 @@ switch(_shop) do
 		};
 	};
 
-	case "cop_patrol":
+	case "cop_weapons":
 	{
 		switch(true) do
 		{
 			case (playerSide != west): {"Du bist kein Polizist!"};
-			case (__GETC__(life_coplevel) < 2): {"Falscher Rang!"};
-			default
+			case (playerSide == west && __GETC__(life_coplevel) < 2):
 			{
-				["Altis Patrol Officer Shop",
+				["Altis Polizei Rekrutenwaffen",
 					[
+						["hgun_P07_snds_F","Stun Pistol",500],
+						["30Rnd_9x21_Mag",nil,100],
+						["hgun_Pistol_Signal_F",nil,100],
+						["6Rnd_GreenSignal_F",nil,30]
+					]
+				];
+			};
+			case (playerSide == west && __GETC__(life_coplevel) > 2 && __GETC__(life_coplevel) < 5):
+			{
+				["Altis Polizei Polizistenwaffen",
+					[
+						["hgun_P07_snds_F","Stun Pistol",500],
+						["30Rnd_9x21_Mag",nil,100],
+						["hgun_Pistol_Signal_F",nil,100],
+						["6Rnd_GreenSignal_F",nil,30],
 						["arifle_sdar_F",nil,1500],
+						["20Rnd_556x45_UW_mag",nil,75],
 						["arifle_MXC_Black_F",nil,2000],
-						["HandGrenade_Stone","Flashbang",100],
-						["MineDetector",nil,100],
-						["B_UavTerminal",nil,100],
+						["30Rnd_65x39_caseless_mag",nil,100],
 						["acc_flashlight",nil,100],
 						["acc_pointer_IR",nil,150],
 						["optic_Holosight",nil,500],
 						["optic_Arco",nil,600],
 						["optic_Hamr",nil,700],
-						["muzzle_snds_H",nil,100],
-						["30Rnd_65x39_caseless_mag",nil,100],
-						["20Rnd_556x45_UW_mag",nil,75]
+						["muzzle_snds_H",nil,100]
 					]
 				];
-			};
-		};
-	};
-
-	case "cop_sergeant":
-	{
-		switch(true) do
-		{
-			case (playerSide != west): {"Du bist kein Polizist!"};
-			case (__GETC__(life_coplevel) < 3): {"Falscher Rang!"};
+			};						
+			//case (playerSide == west && __GETC__(life_coplevel) > 4):
 			default
 			{
-				["Altis Sergeant Officer Shop",
+				["Altis Polizei Bundespolizistenwaffen",
 					[
+						["hgun_P07_snds_F","Stun Pistol",500],
+						["30Rnd_9x21_Mag",nil,100],
+						["hgun_Pistol_Signal_F",nil,100],
+						["6Rnd_GreenSignal_F",nil,30],
+						["arifle_sdar_F",nil,1500],
+						["20Rnd_556x45_UW_mag",nil,75],
+						["arifle_MXC_Black_F",nil,2000],
 						["arifle_MXM_Black_F",nil,3000],
-						["HandGrenade_Stone","Flashbang",100],
+						["30Rnd_65x39_caseless_mag",nil,100],
 						["acc_flashlight",nil,100],
 						["acc_pointer_IR",nil,150],
 						["optic_Holosight",nil,500],
-						["optic_Arco",nil,500],
-						["optic_Hamr",nil,600],
+						["optic_Arco",nil,600],
+						["optic_Hamr",nil,700],
 						["optic_MRCO",nil,700],
 						["optic_DMS",nil,1750],
 						["optic_LRPS",nil,2000],
-						["muzzle_snds_H",nil,100],
-						["30Rnd_65x39_caseless_mag",nil,100]
+						["muzzle_snds_H",nil,100]
 					]
 				];
 			};
 		};
 	};
 	
-	case "rebel":
+	case "reb_basic":
 	{
 		switch(true) do
 		{
@@ -136,7 +143,7 @@ switch(_shop) do
 			case (!license_civ_rebel): {"Du besitzt keine Rebellenlizenz!"};
 			default
 			{
-				["Mohammed's Jihadi Shop",
+				["Mohammed's Jihadis Ausrüstung",
 					[
 						["Rangefinder",nil,100],
 						["Binocular",nil,20],
@@ -148,18 +155,40 @@ switch(_shop) do
 						["FirstAidKit",nil,10],
 						["NVGoggles",nil,400],
 						["NVGoggles_INDEP",nil,400],
-						["NVGoggles_OPFOR",nil,400],
+						["NVGoggles_OPFOR",nil,400]
+					]
+				];
+			};
+		};
+	};
+	
+	case "reb_weapons":
+	{
+		switch(true) do
+		{
+			case (playerSide != civilian): {"Du bist kein Zivilist!"};
+			case (!license_civ_rebel): {"Du besitzt keine Rebellenlizenz!"};
+			default
+			{
+				["Mohammed's Jihadis Waffen",
+					[
 						["SMG_01_F",nil,2200],
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["arifle_Mk20C_plain_F",nil,2500],
 						["arifle_Mk20C_F",nil,2500],
 						["arifle_Mk20_plain_F",nil,2500],
 						["arifle_Mk20_F",nil,2500],
+						["30Rnd_556x45_Stanag",nil,175],
 						["arifle_TRG20_F",nil,2750],
 						["arifle_TRG21_F",nil,2750],
+						["20Rnd_556x45_UW_mag",nil,125],
 						["arifle_Katiba_C_F",nil,3000],
 						["arifle_Katiba_F",nil,3000],
 						["srifle_DMR_01_F",nil,5000],
+						["30Rnd_65x39_caseless_green",nil,200],
 						["srifle_EBR_F",nil,5000],
+						["10Rnd_762x51_Mag",nil,500],
+						["20Rnd_762x51_Mag",nil,1000],
 						["arifle_SDAR_F",nil,2400],
 						["muzzle_snds_L",nil,100],
 						["muzzle_snds_acp",nil,100],
@@ -172,21 +201,22 @@ switch(_shop) do
 						["optic_Hamr",nil,600],
 						["optic_MRCO",nil,700],
 						["optic_DMS",nil,1750],
-						["optic_LRPS",nil,2000],
-						["30Rnd_45ACP_Mag_SMG_01",nil,150],
-						["30Rnd_556x45_Stanag",nil,175],
-						["30Rnd_65x39_caseless_green",nil,200],
-						["10Rnd_762x51_Mag",nil,500],
-						["20Rnd_762x51_Mag",nil,1000],
-						["20Rnd_556x45_UW_mag",nil,125]
+						["optic_LRPS",nil,2000]
 					]
 				];
 			};
 		};
 	};
+	
 
 	case "smugler":
 	{
+		switch (true) do
+		{
+			case (playerSide != civilian): {"Du bist kein Zivilist!"};
+			case ((["smugler"] call life_fnc_permLevel) < 2): {"Du bist kein Mitglied der Schmuggler!"};
+			default
+			{
 				["Ed's Waffensammlung",
 					[
 						["SMG_01_F",nil,1100],
@@ -221,55 +251,57 @@ switch(_shop) do
 						["20Rnd_556x45_UW_mag",nil,65]
 					]
 				];
+			};
+		};
 	};
 	
 	case "don":
 	{
-				["Igor's Waffenstube",
-					[
-						["Rangefinder",nil,75],
-						["Binocular",nil,15],
-						["ItemMap",nil,1],
-						["ItemWatch",nil,75],
-						["ItemCompass",nil,25],
-						["ItemGPS",nil,75],
-						["ToolKit",nil,35],
-						["FirstAidKit",nil,8],
-						["NVGoggles",nil,300],
-						["NVGoggles_INDEP",nil,300],
-						["NVGoggles_OPFOR",nil,300],
-						["SMG_01_F",nil,1650],
-						["arifle_Mk20C_plain_F",nil,1875],
-						["arifle_Mk20C_F",nil,1875],
-						["arifle_Mk20_plain_F",nil,1875],
-						["arifle_Mk20_F",nil,1875],
-						["arifle_TRG20_F",nil,2100],
-						["arifle_TRG21_F",nil,2100],
-						["arifle_Katiba_C_F",nil,2250],
-						["arifle_Katiba_F",nil,2250],
-						["srifle_DMR_01_F",nil,3750],
-						["srifle_EBR_F",nil,3750],
-						["arifle_SDAR_F",nil,1600],
-						["muzzle_snds_L",nil,75],
-						["muzzle_snds_acp",nil,75],
-						["muzzle_snds_B",nil,75],
-						["acc_flashlight",nil,75],
-						["acc_pointer_IR",nil,110],
-						["optic_ACO_grn",nil,260],
-						["optic_Holosight",nil,375],
-						["optic_Arco",nil,375],
-						["optic_Hamr",nil,450],
-						["optic_MRCO",nil,525],
-						["optic_DMS",nil,1300],
-						["optic_LRPS",nil,1500],
-						["30Rnd_45ACP_Mag_SMG_01",nil,110],
-						["30Rnd_556x45_Stanag",nil,130],
-						["30Rnd_65x39_caseless_green",nil,150],
-						["10Rnd_762x51_Mag",nil,375],
-						["20Rnd_762x51_Mag",nil,750],
-						["20Rnd_556x45_UW_mag",nil,90]
-					]
-				];
+		["Igor's Waffenstube",
+			[
+				["Rangefinder",nil,75],
+				["Binocular",nil,15],
+				["ItemMap",nil,1],
+				["ItemWatch",nil,75],
+				["ItemCompass",nil,25],
+				["ItemGPS",nil,75],
+				["ToolKit",nil,35],
+				["FirstAidKit",nil,8],
+				["NVGoggles",nil,300],
+				["NVGoggles_INDEP",nil,300],
+				["NVGoggles_OPFOR",nil,300],
+				["SMG_01_F",nil,1650],
+				["arifle_Mk20C_plain_F",nil,1875],
+				["arifle_Mk20C_F",nil,1875],
+				["arifle_Mk20_plain_F",nil,1875],
+				["arifle_Mk20_F",nil,1875],
+				["arifle_TRG20_F",nil,2100],
+				["arifle_TRG21_F",nil,2100],
+				["arifle_Katiba_C_F",nil,2250],
+				["arifle_Katiba_F",nil,2250],
+				["srifle_DMR_01_F",nil,3750],
+				["srifle_EBR_F",nil,3750],
+				["arifle_SDAR_F",nil,1600],
+				["muzzle_snds_L",nil,75],
+				["muzzle_snds_acp",nil,75],
+				["muzzle_snds_B",nil,75],
+				["acc_flashlight",nil,75],
+				["acc_pointer_IR",nil,110],
+				["optic_ACO_grn",nil,260],
+				["optic_Holosight",nil,375],
+				["optic_Arco",nil,375],
+				["optic_Hamr",nil,450],
+				["optic_MRCO",nil,525],
+				["optic_DMS",nil,1300],
+				["optic_LRPS",nil,1500],
+				["30Rnd_45ACP_Mag_SMG_01",nil,110],
+				["30Rnd_556x45_Stanag",nil,130],
+				["30Rnd_65x39_caseless_green",nil,150],
+				["10Rnd_762x51_Mag",nil,375],
+				["20Rnd_762x51_Mag",nil,750],
+				["20Rnd_556x45_UW_mag",nil,90]
+			]
+		];
 	};
 	
 	case "gun":
@@ -304,56 +336,71 @@ switch(_shop) do
 	
 	case "garage":
 	{
-		["Big Earl's Egosteigerer",
-			[
-				["hgun_P07_snds_F","Stun Pistol",500],
-				["30Rnd_9x21_Mag",nil,100],
-				["Rangefinder",nil,100],
-				["Binocular",nil,20],
-				["ItemMap",nil,1],
-				["ItemWatch",nil,100],
-				["ItemCompass",nil,25],
-				["ItemGPS",nil,100],
-				["ToolKit",nil,50],
-				["FirstAidKit",nil,10],
-				["NVGoggles",nil,400],
-				["hgun_Pistol_Signal_F",nil,100],
-				["6Rnd_GreenSignal_F",nil,30],
-				["Chemlight_red",nil,5],
-				["Chemlight_yellow",nil,5],
-				["Chemlight_green",nil,5],
-				["Chemlight_blue",nil,5]
-			]
-		];
+		switch (true) do
+		{
+			case (playerSide != civilian): {"Du bist kein Zivilist!"};
+			case ((["adac"] call life_fnc_permLevel) < 2): {"Du bist kein Mitglied des ADAC!"};
+			default
+			{
+				["Big Earl's Egosteigerer",
+					[
+						["hgun_P07_snds_F","Stun Pistol",500],
+						["30Rnd_9x21_Mag",nil,100],
+						["hgun_Pistol_Signal_F",nil,100],
+						["6Rnd_GreenSignal_F",nil,30],
+						["Rangefinder",nil,100],
+						["Binocular",nil,20],
+						["ItemMap",nil,1],
+						["ItemWatch",nil,100],
+						["ItemCompass",nil,25],
+						["ItemGPS",nil,100],
+						["ToolKit",nil,50],
+						["FirstAidKit",nil,10],
+						["NVGoggles",nil,400],
+						["Chemlight_red",nil,5],
+						["Chemlight_yellow",nil,5],
+						["Chemlight_green",nil,5],
+						["Chemlight_blue",nil,5]
+					]
+				];
+			};
+		};
 	};
 	
 	case "sec":
 	{
-		["Happy Triggers Spielzeugladen",
-			[
-				["Rangefinder",nil,100],
-				["Binocular",nil,20],
-				["ItemMap",nil,1],
-				["ItemWatch",nil,100],
-				["ItemCompass",nil,25],
-				["ItemGPS",nil,100],
-				["ToolKit",nil,50],
-				["FirstAidKit",nil,10],
-				["NVGoggles",nil,400],
-				["hgun_Pistol_Signal_F",nil,100],
-				["hgun_Pistol_heavy_01_F",nil,850],
-				["arifle_MXC_Holo_pointer_snds_F",nil,2750],
-				["6Rnd_GreenSignal_F",nil,30],
-				["11Rnd_45ACP_Mag",nil,75],
-				["30Rnd_65x39_caseless_mag",nil,100],
-				["Chemlight_red",nil,5],
-				["Chemlight_yellow",nil,5],
-				["Chemlight_green",nil,5],
-				["Chemlight_blue",nil,5]
-			]
-		];
+		switch (true) do
+		{
+			case (playerSide != civilian): {"Du bist kein Zivilist!"};
+			case ((["sec"] call life_fnc_permLevel) < 2): {"Du bist kein Mitglied der Security!"};
+			default
+			{
+				["Happy Triggers Spielzeugladen",
+					[
+						["Rangefinder",nil,100],
+						["Binocular",nil,20],
+						["ItemMap",nil,1],
+						["ItemWatch",nil,100],
+						["ItemCompass",nil,25],
+						["ItemGPS",nil,100],
+						["ToolKit",nil,50],
+						["FirstAidKit",nil,10],
+						["NVGoggles",nil,400],
+						["hgun_Pistol_Signal_F",nil,100],
+						["hgun_Pistol_heavy_01_F",nil,850],
+						["arifle_MXC_Holo_pointer_snds_F",nil,2750],
+						["6Rnd_GreenSignal_F",nil,30],
+						["11Rnd_45ACP_Mag",nil,75],
+						["30Rnd_65x39_caseless_mag",nil,100],
+						["Chemlight_red",nil,5],
+						["Chemlight_yellow",nil,5],
+						["Chemlight_green",nil,5],
+						["Chemlight_blue",nil,5]
+					]
+				];
+			};
+		};
 	};
-	
 	
 	case "gang":
 	{
@@ -386,7 +433,7 @@ switch(_shop) do
 	
 	case "genstore":
 	{
-		["Altis General Store",
+		["Altis Ausrüstung",
 			[
 				["Rangefinder",nil,100],
 				["Binocular",nil,20],

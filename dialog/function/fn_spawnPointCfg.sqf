@@ -17,37 +17,32 @@ switch (_side) do
 	case west:
 	{
 		_return = [
-			["cop_spawn_1","Kavala HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["cop_spawn_2","Pyrgos HQ","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"],
-			["cop_spawn_3","Athira HQ","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"],
-			["cop_spawn_4","Air HQ","\a3\ui_f\data\map\Markers\NATO\b_air.paa"],
-			["cop_spawn_5","HW Patrol","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"]
+			["cop_spawn_1","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+			["cop_spawn_2","Sofia","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"],
+			["cop_spawn_3","Athira","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"]
 		];
 	};
 	
 	case civilian:
 	{
-	
-		if(call life_adminlevel) > 0) then
-		{
-			_spawns = _spawns + [
-			["admin_spawn_1","Ponyhof","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
+		if(license_civ_citizen) then {
+			_return = [
+				["civ_spawn","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
 			];
 		};
 		
-		if(license_civ_rebel) then
-		{
-			_spawns = _spawns + [
-			["civ_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]	
-			];
+		// Only Player with Rebel License can spawn in Kavala
+		if(license_civ_rebel) then {
+			_return set[count _return,["reb_spawn","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 		};
 		
-		_return = [
-			/*["civ_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],*/
-			["civ_spawn_2","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["civ_spawn_3","Athira","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["civ_spawn_4","Sofia","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
-		];
+		if((["adac"] call life_fnc_permLevel) > 1) then {
+			_return set[count _return,["civ_adac_spawn","ADAC","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+		};
+		
+		if((["smugler"] call life_fnc_permLevel) > 1) then {
+			_return set[count _return,["civ_smugler_spawn","Schmuggler","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+		};
 		
 		if(count life_houses > 0) then {
 			{
@@ -62,9 +57,9 @@ switch (_side) do
 	
 	case independent: {
 		_return = [
-			["medic_spawn_1","Kavala Hospital","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-			["medic_spawn_2","Athira Regional","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-			["medic_spawn_3","Pygros Hospital","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
+			["medic_spawn_1","Kavala Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+			["medic_spawn_2","Athira Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+			["medic_spawn_3","Pygros Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
 		];
 	};
 };
