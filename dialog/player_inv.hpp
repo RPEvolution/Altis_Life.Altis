@@ -302,7 +302,7 @@ class playerSettings {
 		class ButtonSyncData : life_RscButtonMenu {
 			idc = -1;
 			//shortcuts[] = {0x00050000 + 2};
-			text = "$STR_PM_SyncData";
+			text = "Speichern";
 			onButtonClick = "[] call SOCK_fnc_syncData;";
 			x = 0.1;
 			y = 0.805;

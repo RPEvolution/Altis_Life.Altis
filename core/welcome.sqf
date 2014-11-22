@@ -10,11 +10,11 @@ sleep 8; //Zeit bis die Willkommensnachricht erscheint (in Sekunden)
 _role1 = "Willkommen"; //In Gelb
 _role1names = ["bei RP Evolution Alpha"]; //In Weiß
 _role2 = "Information";
-_role2names = ["Dieser Server bietet ein anderes Konzept"];
+_role2names = ["Eigenständiges Konzept vorhanden, bei Fragen bei Admins melden"];
 _role3 = "TeamSpeak 3";
 _role3names = ["ts79.nitrado.net:14600"];
 _role4 = "Steam Gruppe";
-_role4names = ["RPEvolution"];
+_role4names = ["Ihr findet uns bei Steam unter der Bezeichnung: RPEvolution"];
 _role5 = "Verbesserungen";
 _role5names = ["Ideen, Bugs und Verbesserungen können via Steam/TS mitgeteilt werden"];
 _role6 = "Admins";

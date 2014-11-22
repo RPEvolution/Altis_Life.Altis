@@ -51,7 +51,7 @@ class SettingsMenu
 		class RevealNearestHeader : PlayerTagsHeader
 		{
 			idc = -1;
-			text = "Reveal Nearest Objects";
+			text = "Objektsichtweite";
 			
 			y = 0.53;
 		};

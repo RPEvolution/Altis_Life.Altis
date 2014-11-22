@@ -102,8 +102,8 @@ __CONST__(life_paycheck,life_paycheck); //Make the paycheck static.
 
 [] spawn {
     while {true} do {
-        sleep 600;
+        sleep 300;
         [] call SOCK_fnc_updateRequest;
-        systemChat "Spiel gespeichert";
+        /*systemChat "Spiel gespeichert";*/
     };
 };
