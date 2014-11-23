@@ -16,32 +16,40 @@ switch (_side) do
 {
 	case west:
 	{
-		_return = [
-			["cop_spawn_1","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-			["cop_spawn_2","Sofia","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"],
-			["cop_spawn_3","Athira","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"]
-		];
+		if(life_spawn_base) then {
+		
+			_return = [
+				["cop_spawn_1","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+				["cop_spawn_2","Sofia","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"],
+				["cop_spawn_3","Athira","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"]
+			];	
+			
+			life_spawn_base = false;
+		} else {
+			
+			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+		};
 	};
 	
 	case civilian:
 	{
-		if(license_civ_citizen) then {
-			_return = [
-				["civ_spawn","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
-			];
-		};
-		
-		// Only Player with Rebel License can spawn in Kavala
-		if(license_civ_rebel) then {
-			_return set[count _return,["reb_spawn","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
-		};
-		
-		if((["adac"] call life_fnc_permLevel) > 1) then {
-			_return set[count _return,["civ_adac_spawn","ADAC","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
-		};
-		
-		if((["smugler"] call life_fnc_permLevel) > 1) then {
-			_return set[count _return,["civ_smugler_spawn","Schmuggler","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+		if(life_spawn_base) then {
+			
+			if(license_civ_rebel) then { 			
+				_return = [["reb_spawn","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+			} else {			
+				_return = [["civ_spawn","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+			};
+			
+			switch (true) do {
+				case ((["adac"] call life_fnc_permLevel) > 1): {_return set[count _return,["civ_adac_spawn","ADAC","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];};
+				case ((["smugler"] call life_fnc_permLevel) > 1): {_return set[count _return,["civ_smugler_spawn","Schmuggler","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];};
+				case ((["security"] call life_fnc_permLevel) > 1): {_return set[count _return,["civ_smugler_spawn","Schmuggler","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];};
+			};
+			
+			life_spawn_base = false;
+		} else {
+			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 		};
 		
 		if(count life_houses > 0) then {
@@ -56,11 +64,19 @@ switch (_side) do
 	};
 	
 	case independent: {
-		_return = [
-			["medic_spawn_1","Kavala Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-			["medic_spawn_2","Athira Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-			["medic_spawn_3","Pygros Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
-		];
+		
+		if(life_spawn_base) then {
+		
+			_return = [
+				["medic_spawn_1","Kavala Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+				["medic_spawn_2","Athira Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+				["medic_spawn_3","Pygros Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
+			];
+			
+			life_spawn_base = false;
+		} else {
+			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+		};
 	};
 };
 

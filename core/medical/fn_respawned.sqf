@@ -14,6 +14,7 @@ life_carryWeight = 0;
 life_cash = 0; //Make sure we don't get our cash back.
 life_respawned = false;
 player playMove "amovpercmstpsnonwnondnon";
+life_spawn_base = true;
 
 life_corpse setVariable["Revive",nil,TRUE];
 life_corpse setVariable["name",nil,TRUE];

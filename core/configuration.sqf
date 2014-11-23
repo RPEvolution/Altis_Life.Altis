@@ -24,7 +24,7 @@ life_bail_paid = false;
 life_impound_inuse = false;
 life_action_inUse = false;
 life_spikestrip = ObjNull;
-life_respawn_timer = 2; //Scaled in minutes
+life_respawn_timer = 0; //Scaled in minutes
 life_knockout = false;
 life_interrupted = false;
 life_respawned = false;
@@ -69,6 +69,7 @@ life_siren_active = false;
 life_bank_fail = false;
 life_use_atm = true;
 life_is_arrested = false;
+life_spawn_base = false;
 life_delivery_in_progress = false;
 life_action_in_use = false;
 life_thirst = 100;
@@ -79,7 +80,10 @@ __CONST__(life_impound_car,150);
 __CONST__(life_impound_boat,150);
 __CONST__(life_impound_air,250);
 life_istazed = false;
+
 life_my_gang = ObjNull;
+life_last_positions = ObjNull;
+life_last_position = ObjNull;
 
 life_vehicles = [];
 bank_robber = [];

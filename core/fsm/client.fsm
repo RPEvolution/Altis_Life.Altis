@@ -86,7 +86,7 @@ class FSM
        "		systemChat format[localize ""STR_FSM_ReceivedPay"",[(call life_paycheck) + 1500] call life_fnc_numberText];" \n
        "		life_atmcash = life_atmcash + (call life_paycheck) + 1500;" \n
        "	};" \n
-       "	if(license_civ_citizen) then" \n
+       "	if(license_civ_citizen OR playerSide in [west,independent]) then" \n
        "	{" \n
        "		life_atmcash = life_atmcash + (call life_paycheck);" \n
        "		systemChat format[localize ""STR_FSM_ReceivedPay"",[(call life_paycheck)] call life_fnc_numberText];" \n

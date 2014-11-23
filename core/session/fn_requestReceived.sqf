@@ -8,7 +8,7 @@
 	sort through the information, validate it and if all valid 
 	set the client up.
 */
-private["_session", "_coplevel", "_perm_coplevel"];
+private["_session", "_coplevel", "_perm_coplevel", "_last_positions"];
 _session = _this;
 life_session_tries = life_session_tries + 1;
 if(life_session_completed) exitWith {}; //Why did this get executed when the client already initialized? Fucking arma...
@@ -40,39 +40,45 @@ if(count (_this select 6) > 0) then {
 life_gear = _this select 8;
 [] call life_fnc_loadGear;
 
+//Queries the PERMS of a Player
+life_player_perms = (_session select 11);					
+life_player_perms = call compile format["%1", life_player_perms];
+
+// Queries the Last Positions of Player
+life_last_positions = _this select 12;
+
 //Parse side specific information.
 switch(playerSide) do {
+
 	case west: {
-		//__CONST__(life_coplevel, parseNumber(_this select 7));
+		__CONST__(life_coplevel, parseNumber(_this select 7));
 		__CONST__(life_medicLevel,0);
 		life_blacklisted = _this select 9;
-		life_player_perms = (_session select 11);					
-		life_player_perms = call compile format["%1", life_player_perms];
 		
-		//PERM coplevel
-		_coplevel = parseNumber(_session select 7); //this is the MORE important DATABASE coplevel  - it ALWAYS overrides the PERM coplevel
-		_perm_coplevel = ["cop"] call life_fnc_permLevel;
-		
-		if(_coplevel > 0) then
-		{
-			//use DB coplevel
-			__CONST__(life_coplevel,_coplevel);
-			systemChat "CopLevel loaded from DB";
-		}
-		else
-		{
+		_perm_coplevel = ["cop"] call life_fnc_permLevel;	
+		if(_perm_coplevel > __GETC__(life_coplevel)) then {		
 			//use PERM coplevel
 			__CONST__(life_coplevel,_perm_coplevel);
-			
-			systemChat "CopLevel loaded from PERM";
+			systemChat "CopLevel loaded from PERM";		
+		} else {
+			//use DB coplevel
+			__CONST__(life_coplevel,_coplevel);			
+			systemChat "CopLevel loaded from DB";		
 		};
 		
+		life_last_position = life_last_positions select 0;
+		for "_i" from 0 to (count life_last_position)-1 do
+		{
+			life_last_position set[_i, call compile format["%1", life_last_position select _i]];
+		};	
+		life_last_position = createMarker ["last_position", life_last_position];
 	};
 	
 	case civilian: {
 		life_is_arrested = _this select 7;
 		__CONST__(life_coplevel, 0);
 		__CONST__(life_medicLevel, 0);
+		
 		life_houses = _this select 9;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
@@ -83,18 +89,34 @@ switch(playerSide) do {
 		if(count life_gangData != 0) then {
 			[] spawn life_fnc_initGang;
 		};
-
-		life_player_perms = _this select 11;		
-		life_player_perms = call compile format["%1", life_player_perms];
 		
 		[] spawn life_fnc_initHouses;
+		
+		life_last_position = life_last_positions select 1;
+		for "_i" from 0 to (count life_last_position)-1 do
+		{
+			life_last_position set[_i, call compile format["%1", life_last_position select _i]];
+		};	
+		life_last_position = createMarker ["last_position", life_last_position];
+		
+		// Adds more Paycheck for PERMS
+		switch (true) do {
+			case ((["adac"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
+			case ((["security"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
+			case ((["smugler"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
+		};
 	};
 	
-	case independent: {
+	case independent: {	
 		__CONST__(life_medicLevel, parseNumber(_this select 7));
 		__CONST__(life_copLevel,0);
-		life_player_perms = (_session select 11);					
-		life_player_perms = call compile format["%1", life_player_perms];
+		
+		life_last_position = life_last_positions select 2;
+		for "_i" from 0 to (count life_last_position)-1 do
+		{
+			life_last_position set[_i, call compile format["%1", life_last_position select _i]];
+		};	
+		life_last_position = createMarker ["last_position", life_last_position];
 	};
 };
 
@@ -108,23 +130,4 @@ switch(__GETC__(life_donator)) do
 };
 
 [true] call life_fnc_dynPermCheckout;
-
-if(playerSide == civilian) then
-{
-	if((["adac"] call life_fnc_permLevel) > 2) then
-	{
-		life_paycheck = life_paycheck + 50;
-	};
-
-	if((["security"] call life_fnc_permLevel) > 2) then
-	{
-		life_paycheck = life_paycheck + 50;
-	};
-	
-	if((["smugler"] call life_fnc_permLevel) > 2) then
-	{
-		life_paycheck = life_paycheck + 50;
-	};
-};
-
 life_session_completed = true;

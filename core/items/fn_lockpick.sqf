@@ -34,6 +34,8 @@ _cP = 0.01;
 
 while {true} do
 {
+	hint format["%1", animationState player];
+	
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
 		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
