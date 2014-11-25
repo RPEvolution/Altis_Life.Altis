@@ -331,7 +331,7 @@
 		<Key ID="STR_CELL_TextPolice">
 			<Original>Text Police</Original>
 			<English>Text Police</English>
-			<German>An die Polizei</German>
+			<German>Polizei</German>
 			<French>Text Police</French>
 			<Italian>Msg Polizia</Italian>		
 			<Portuguese>Polícia</Portuguese>
@@ -339,7 +339,7 @@
 		<Key ID="STR_CELL_TextAdmins">
 			<Original>Text Admins</Original>
 			<English>Text Admins</English>
-			<German>An die Admins</German>
+			<German>Admins</German>
 			<French>Text Admins</French>
 			<Italian>Msg Admin</Italian>
 			<Portuguese>Text Admin</Portuguese>
@@ -363,7 +363,7 @@
 		<Key ID="STR_CELL_EMSRequest">
 			<Original>Request EMS</Original>
 			<English>Request EMS</English>
-			<German>An die Sanitäter</German>
+			<German>Sanitäter</German>
 			<French>Requête Medecin</French>
 			<Italian>Msg medici</Italian>
 			<Portuguese>Chamar SAMU</Portuguese>
@@ -1269,7 +1269,7 @@
 	</Package>
 	<Package name="Ticket_Menu">
 		<Key ID="STR_Ticket_GiveTicket">
-			<Original>Give Ticket</Original>
+			<Original>Ticket geben</Original>
 			<English>Give Ticket</English>
 			<German>Ticket geben</German>
 			<French>Verbaliser</French>
@@ -1277,17 +1277,17 @@
 			<Portuguese>Dar Multa</Portuguese>
 		</Key>
 		<Key ID="STR_Ticket_PayTicket">
-			<Original>Pay Ticket</Original>
+			<Original>Bezahlen</Original>
 			<English>Pay Ticket</English>
-			<German>Ticket bezahlen</German>
+			<German>Bezahlen</German>
 			<French>Payer l'amende</French>
 			<Italian>Paga Multa</Italian>
 			<Portuguese>Pagar Multa</Portuguese>
 		</Key>
 		<Key ID="STR_Ticket_RefuseTicket">
-			<Original>Refuse Ticket</Original>
+			<Original>Ablehnen</Original>
 			<English>Refuse Ticket</English>
-			<German>Ticket ablehnen</German>
+			<German>Ablehnen</German>
 			<French>Contester l'amende</French>
 			<Italian>Rifiuta Multa</Italian>
 			<Portuguese>Recusar Multa</Portuguese>
@@ -4283,7 +4283,7 @@
 		<Key ID="STR_pInAct_Escort">
 			<Original>Escort Player</Original>
 			<English>Escort-Player</English>
-			<German>Spieler eskortieren</German>
+			<German>Eskortieren</German>
 			<French>Escorter Joueur</French>
 			<Italian>Scorta Giocatore</Italian>
 			<Portuguese>Escoltar Jogador</Portuguese>
@@ -4291,7 +4291,7 @@
 		<Key ID="STR_pInAct_TicketBtn">
 			<Original>Ticket Player</Original>
 			<English>Ticket-Player</English>
-			<German>Strafzettel ausstellen</German>
+			<German>Strafzettel</German>
 			<French>Amende Joueur</French>
 			<Italian>Multa Giocatore</Italian>
 			<Portuguese>Multar Jogador</Portuguese>
@@ -4445,7 +4445,7 @@
 		<Key ID="STR_vInAct_GetInKart">
 			<Original>Get In Kart</Original>
 			<English>Get In Kart</English>
-			<German>Ins Kart setzen</German>
+			<German>Einsteigen</German>
 			<French>Mettre dans le kart</French>
 			<Italian>Entra nel Kart</Italian>
 			<Portuguese>Entrar no Kart</Portuguese>
@@ -4453,7 +4453,7 @@
 		<Key ID="STR_vInAct_GetInHeli">
 			<Original>Get In Helicopter</Original>
 			<English>Get In Helicopter</English>
-			<German>Ins Helikopter setzen</German>
+			<German>Einsteigen</German>
 			<French>Mettre dans le helicopter</French>
 			<Italian>Entra nel Helicopter</Italian>
 			<Portuguese>Entrar no Helicopter</Portuguese>
@@ -4485,7 +4485,7 @@
 		<Key ID="STR_vInAct_SearchVehicle">
 			<Original>Search Vehicle</Original>
 			<English>Search Vehicle</English>
-			<German>Fahrzeug durchsuchen</German>
+			<German>Durchsuchen</German>
 			<French>Fouiller Véhicule</French>
 			<Italian>Cerca Veicolo</Italian>
 			<Portuguese>Vasculhar Veículo</Portuguese>
@@ -4501,7 +4501,7 @@
 		<Key ID="STR_vInAct_Impound">
 			<Original>Impound Vehicle</Original>
 			<English>Impound Vehicle</English>
-			<German>Fahrzeug beschlagnahmen</German>
+			<German>Beschlagnahmen</German>
 			<French>Mise en fourrière</French>
 			<Italian>Sequestra Veicolo</Italian>
 			<Portuguese>Apreender Veículo</Portuguese>
@@ -4817,7 +4817,7 @@
 		<Key ID="STR_Shop_Veh_UI_HPower">
 			<Original>Horse Power:</Original>
 			<English>Horse Power:</English>
-			<German>Pferdestärken:</German>
+			<German>Leistung:</German>
 			<French>Puissance en chevaux:</French>
 			<Italian>Cavalli:</Italian>
 			<Portuguese>Cavalos de Força:</Portuguese>
