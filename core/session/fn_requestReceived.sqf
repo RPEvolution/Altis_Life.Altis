@@ -45,7 +45,8 @@ life_player_perms = (_session select 11);
 life_player_perms = call compile format["%1", life_player_perms];
 
 // Queries the Last Positions of Player
-life_last_positions = _this select 12;
+life_last_positions = (_session select 12);
+life_last_positions = call compile format["%1", life_last_positions];
 
 //Parse side specific information.
 switch(playerSide) do {
