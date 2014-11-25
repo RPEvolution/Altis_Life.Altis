@@ -70,7 +70,10 @@ switch (_filter) do
 	{
 		_ret =
 		[
-			["B_FieldPack_cbr",nil,100]
+			["B_AssaultPack_cbr",nil,50],
+			["B_FieldPack_cbr",nil,90],
+			["B_Kitbag_cbr",nil,100],
+			["B_Carryall_cbr",nil,125]
 		];
 	};
 };
