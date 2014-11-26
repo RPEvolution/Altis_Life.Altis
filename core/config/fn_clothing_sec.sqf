@@ -4,14 +4,14 @@
 	Author: Bryan "Tonic" Boardwine
 	
 	Description:
-	Master configuration file for Larry's Militär Sicherheitsbekleidung.
+	Master configuration file for Larry's Militär Shop.
 */
 private["_filter","_ret"];
 _filter = [_this,0,0,[0]] call BIS_fnc_param;
 //Classname, Custom Display name (use nil for Cfg->DisplayName, price
 
 //Shop Title Name
-ctrlSetText[3103,"Larry's Militär Sicherheitsbekleidung"];
+ctrlSetText[3103,"Larry's Militär Shop"];
 
 _ret = [];
 switch (_filter) do
