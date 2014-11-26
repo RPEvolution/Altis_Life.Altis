@@ -1,10 +1,11 @@
+#include <macro.h>
 /*
 	Impound for ADAC
 */
 private["_vehicle","_type","_time","_price","_vehicleData","_upp","_ui","_progress","_pgText","_cP","_vehownerid","_costful_impound"];
 _vehicle = cursorTarget;
 
-if((["adac"] call life_fnc_permLevel) < 1) exitWith
+if(((["adac"] call life_fnc_permLevel) < 2) or (__GETC__(life_adminlevel) < 0)) exitWith
 {
 	hint "Du bist kein ADAC-Mitglied!";
 };
@@ -15,14 +16,14 @@ if(count _vehicleData == 0) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
 
 if(player distance cursorTarget > 10) exitWith {};
 // ##16 ^v swapped
-if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship"))) exitWith {};
+if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "B_Slingload_01_Cargo_F") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship"))) exitWith {};
 
-if(!([false,"uitem_adac_tow",1] call life_fnc_handleInv)) exitWith
+/*if(!([false,"uitem_adac_tow",1] call life_fnc_handleInv)) exitWith
 {
 	hint "Du hast kein Abschleppseil!";
-};
+};*/
 
-if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship")) then
+if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "B_Slingload_01_Cargo_F") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") || (_vehicle isKindOf "Ship")) then
 {
 	//DEL ##16
 	//_vehicleData = _vehicle getVariable["vehicle_info_owners",[]];
@@ -65,11 +66,13 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 	//if((time - _time)  < 120) exitWith {hint "This is a freshly spawned vehicle, you have no right impounding it."};
 	if((count crew _vehicle) == 0) then
 	{
-		if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship"))) exitWith {life_action_inUse = false;};
+		if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "B_Slingload_01_Cargo_F") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") || (_vehicle isKindOf "Ship"))) exitWith {life_action_inUse = false;};
 		_type = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
 		switch (true) do
 		{
 			case (_vehicle isKindOf "Car"): {_price = life_impound_car;};
+			case (_vehicle isKindOf "B_Slingload_01_Cargo_F"): {_price = life_impound_car;};
+			case (_vehicle isKindOf "B_Slingload_01_Medevac_F"): {_price = life_impound_car;};
 			case (_vehicle isKindOf "Ship"): {_price = life_impound_boat;};
 			case (_vehicle isKindOf "Air"): {_price = life_impound_air;};
 		};
