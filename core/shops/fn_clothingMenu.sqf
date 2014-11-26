@@ -19,7 +19,7 @@ if((_this select 3) in ["dive"] && !license_civ_dive) exitWith { hint localize "
 if((_this select 3) in ["sec"] && (["sec"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Mitglied der Security!"; closeDialog 0;};
 if((_this select 3) in ["smugler"] && (["smugler"] call life_fnc_permLevel) < 2) exitWith {hint "Du bist kein Mitglied der Waffenschieber!"; closeDialog 0;};
 if((_this select 3) in ["adac"] && (["adac"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Mitglied des ADAC!"; closeDialog 0;};
-
+if((_this select 3) in ["don"] && (["don"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Donator!"; closeDialog 0;};
 
 life_clothing_store = _this select 3;
 
