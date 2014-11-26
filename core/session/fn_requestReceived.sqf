@@ -45,8 +45,7 @@ life_player_perms = (_session select 11);
 life_player_perms = call compile format["%1", life_player_perms];
 
 // Queries the Last Positions of Player
-life_last_positions = (_session select 12);
-life_last_positions = call compile format["%1", life_last_positions];
+life_last_positions = _this select 12;
 
 //Parse side specific information.
 switch(playerSide) do {
@@ -105,6 +104,7 @@ switch(playerSide) do {
 			case ((["adac"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
 			case ((["security"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
 			case ((["smugler"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
+			case ((["don"] call life_fnc_permLevel) > 1): {life_paycheck = life_paycheck + 150;};
 		};
 	};
 	
