@@ -28,8 +28,14 @@ switch (life_veh_shop select 0) do
 	case "civ_truck":	{_ret = license_civ_truck;};
 	case "reb_car": {_ret = license_civ_rebel;};
 	case "cop_car": {_ret = true;};
-	case "garage_car": {_ret = (["adac"] call life_fnc_permLevel ) > 1;};
-	case "garage_air": {_ret = (["adac"] call life_fnc_permLevel ) > 1;};
+	case "garage_car": {_ret = (["adac"] call life_fnc_permLevel ) > 2;};
+	case "garage_air": {_ret = (["adac"] call life_fnc_permLevel ) > 2;};
+	case "sec_car": {_ret = (["sec"] call life_fnc_permLevel ) > 2;};
+	case "sec_air": {_ret = (["sec"] call life_fnc_permLevel ) > 2;};
+	case "don_car": {_ret = (["don"] call life_fnc_permLevel ) > 1;};
+	case "don_air": {_ret = (["don"] call life_fnc_permLevel ) > 1;};
+	case "smugler_car": {_ret = (["smugler"] call life_fnc_permLevel ) > 2;};
+	case "smugler_air": {_ret = (["smugler"] call life_fnc_permLevel ) > 2;};	
 	case "cop_ship": 
 	{
 		if(_veh == "B_Boat_Armed_01_minigun_F") then
