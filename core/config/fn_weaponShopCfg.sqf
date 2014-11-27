@@ -58,7 +58,7 @@ switch(_shop) do
 						["FirstAidKit",nil,10],
 						["Medikit",nil,100],
 						["NVGoggles",nil,400],
-						["hgun_P07_snds_F","Stun Pistol",500],
+						["hgun_P07_snds_F","Taser",500],
 						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
@@ -80,7 +80,7 @@ switch(_shop) do
 			{
 				["Altis Polizei Rekrutenwaffen",
 					[
-						["hgun_P07_snds_F","Stun Pistol",500],
+						["hgun_P07_snds_F","Taser",500],
 						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
@@ -93,7 +93,7 @@ switch(_shop) do
 			{
 				["Altis Polizei Polizistenwaffen",
 					[
-						["hgun_P07_snds_F","Stun Pistol",500],
+						["hgun_P07_snds_F","Taser",500],
 						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
@@ -117,7 +117,7 @@ switch(_shop) do
 			{
 				["Altis Polizei Bundespolizistenwaffen",
 					[
-						["hgun_P07_snds_F","Stun Pistol",500],
+						["hgun_P07_snds_F","Taser",500],
 						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
@@ -363,7 +363,7 @@ switch(_shop) do
 			{
 				["Big Earl's Egosteigerer",
 					[
-						["hgun_P07_snds_F","Stun Pistol",500],
+						["hgun_P07_snds_F","Taser",500],
 						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
@@ -407,6 +407,8 @@ switch(_shop) do
 						["ToolKit",nil,50],
 						["FirstAidKit",nil,10],
 						["NVGoggles",nil,400],
+						["hgun_P07_snds_F","Taser",500],
+						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
 						["hgun_Pistol_heavy_01_F",nil,850],
