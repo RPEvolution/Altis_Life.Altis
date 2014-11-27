@@ -17,7 +17,7 @@ _colorIndex = lbValue[2304,(lbCurSel 2304)];
 //Series of checks (YAY!)
 if(_basePrice < 0) exitWith {}; //Bad price entry
 if(life_atmcash < _basePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_basePrice - life_atmcash] call life_fnc_numberText];};
-if(!([_className] call life_fnc_vehShopLicenses) && _className != "B_MRAP_01_hmg_F") exitWith {hint localize "STR_Shop_Veh_NoLicense"};
+if(!([_className] call life_fnc_vehShopLicenses) && _className != "I_MRAP_03_hmg_F") exitWith {hint localize "STR_Shop_Veh_NoLicense"};
 
 _spawnPoints = life_veh_shop select 1;
 _spawnPoint = "";
@@ -74,9 +74,9 @@ switch(playerSide) do {
 	};
 	
 	case civilian: {
-		if((life_veh_shop select 2) == "civ" && {_className == "B_Heli_Light_01_F"}) then {
+		/*if((life_veh_shop select 2) == "civ" && {_className == "B_Heli_Light_01_F"}) then {
 			[_vehicle,"civ_littlebird",true] spawn life_fnc_vehicleAnimate;
-		};
+		};*/
 		if((life_veh_shop select 2) == "civ" && {_className == "B_G_Offroad_01_repair_F"}) then {
 			[_vehicle,"repair_offroad",true] spawn life_fnc_vehicleAnimate;
 		};
