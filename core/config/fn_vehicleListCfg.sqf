@@ -174,6 +174,15 @@ switch (_shop) do
 			_return set[count _return,
 			["O_MRAP_02_F",22500]];
 			_return set[count _return,
+			["B_G_Offroad_01_armed_F",750000]];
+		};
+	};
+	
+	case "reb_air":
+	{
+		if(license_civ_rebel) then
+		{
+			_return set[count _return,
 			["B_Heli_Light_01_F",49500]];
 			_return set[count _return,
 			["O_Heli_Light_02_unarmed_F",75000]];
@@ -181,8 +190,6 @@ switch (_shop) do
 			["O_Heli_Transport_04_F",60000]];
 			_return set[count _return,
 			["O_Heli_Transport_04_covered_F",112500]];
-			_return set[count _return,
-			["B_G_Offroad_01_armed_F",750000]];
 		};
 	};
 	
