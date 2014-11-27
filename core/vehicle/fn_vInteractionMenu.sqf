@@ -104,11 +104,13 @@ if(playerSide == west) then {
 	
 	if(((["adac"] call life_fnc_permLevel) > 2) || (__GETC__(life_adminlevel) > 1)) then {
 		if ((_curTarget isKindOf "landVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "B_Slingload_01_Cargo_F") OR (_curTarget isKindOf "B_Slingload_01_Medevac_F") OR (_curTarget isKindOf "Air")) then {
-			_Btn4 ctrlSetText localize "STR_vInAct_Impound";
+			_Btn4 ctrlSetText "Abschleppen";
 			_Btn4 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_adacImpound;";
 		} else {
 			_Btn4 ctrlShow false;
 		};
+	} else {
+		_Btn4 ctrlShow false;
 	};
 	
 	_Btn5 ctrlShow false;
