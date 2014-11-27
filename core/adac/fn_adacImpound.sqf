@@ -5,10 +5,10 @@
 private["_vehicle","_type","_time","_price","_vehicleData","_upp","_ui","_progress","_pgText","_cP","_vehownerid","_costful_impound"];
 _vehicle = cursorTarget;
 
-if(((["adac"] call life_fnc_permLevel) < 2) or (__GETC__(life_adminlevel) < 0)) exitWith
+/*if(((["adac"] call life_fnc_permLevel) < 2) or (__GETC__(life_adminlevel) < 0)) exitWith
 {
 	hint "Du bist kein ADAC-Mitglied!";
-};
+};*/
 
 //ADD ##16
 _vehicleData = _vehicle getVariable["vehicle_info_owners",[]];
