@@ -16,6 +16,7 @@ switch (_shop) do
 	case "medic": {["Snack Automat", ["water","rabbit","apple","redgull","tbacon","fuelF","peach"]]};		
 	case "adac": {["Kantine", ["water","rabbit","apple","redgull","tbacon","lockpick","fuelF","peach"]]};	
 	case "sec": {["Snack Automat", ["water","rabbit","apple","redgull","tbacon","fuelF","peach"]]};	
+	case "gas": {["Tankstelle", ["water","rabbit","apple","redgull","tbacon","peach","fuelF"]]};	
 	case "jail": {["Snack Automat", ["water","rabbit","apple","redgull","tbacon","peach"]]};	
 	case "smugler": {["Kiosk", ["water","rabbit","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","blastingcharge","boltcutter"]]};	
 	case "wongs": {["Wong's China Imbiss",["turtlesoup","turtle"]]};
