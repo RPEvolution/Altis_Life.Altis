@@ -8,8 +8,10 @@
 	sort through the information, validate it and if all valid 
 	set the client up.
 */
-private["_session", "_coplevel", "_perm_coplevel", "_last_positions"];
+private["_session", "_flag", "_damage", "_perm_level"];
 _session = _this;
+_flag = 1;
+_damage = 0;
 life_session_tries = life_session_tries + 1;
 if(life_session_completed) exitWith {}; //Why did this get executed when the client already initialized? Fucking arma...
 if(life_session_tries > 3) exitWith {cutText[localize "STR_Session_Error","BLACK FADED"]; 0 cutFadeOut 999999999;};
@@ -24,81 +26,69 @@ if(count _this == 0) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if((_this select 0) == "Error") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery;};
 
-//Parse basic player information.
+hint "1";
+
+// Parse basic player information.
 life_cash = parseNumber (_this select 2);
 life_atmcash = parseNumber (_this select 3);
 __CONST__(life_adminlevel,parseNumber(_this select 4));
-__CONST__(life_donator,parseNumber(_this select 5));
 
-//Loop through licenses
-if(count (_this select 6) > 0) then {
+// Loop through licenses
+if(count (_this select 5) > 0) then {
 	{
 		missionNamespace setVariable [(_x select 0),(_x select 1)];
-	} foreach (_this select 6);
+	} foreach (_this select 5);
 };
 
-life_gear = _this select 8;
+life_gear = _this select 6;
 [] call life_fnc_loadGear;
 
-//Queries the PERMS of a Player
-life_player_perms = (_session select 11);					
+// Queries the PERMS
+life_player_perms = _this select 7;				
 life_player_perms = call compile format["%1", life_player_perms];
 
-// Queries the Last Positions of Player
-life_last_positions = (_session select 12);
-life_last_positions = call compile format["%1", life_last_positions];
+// Queries the Last Positions
+life_player_positions = _this select 8;
+life_player_positions = call compile format["%1", life_player_positions];
+
+life_player_stats = _this select 9;
+life_player_stats = call compile format["%1", life_player_stats];
+
+// Queries if Player on Blacklist
+life_blacklisted = _this select 10;
+
+hint "2";
 
 //Parse side specific information.
 switch(playerSide) do {
 
 	case west: {
-		__CONST__(life_coplevel, parseNumber(_this select 7));
+		_perm_level = ["cop"] call life_fnc_permLevel;
+	
+		__CONST__(life_copLevel, _perm_level);
 		__CONST__(life_medicLevel,0);
-		life_blacklisted = _this select 9;
 		
-		_perm_coplevel = ["cop"] call life_fnc_permLevel;	
-		if(_perm_coplevel > __GETC__(life_coplevel)) then {		
-			//use PERM coplevel
-			__CONST__(life_coplevel,_perm_coplevel);
-			systemChat "CopLevel loaded from PERM";		
-		} else {
-			//use DB coplevel
-			__CONST__(life_coplevel,_coplevel);			
-			systemChat "CopLevel loaded from DB";		
-		};
-		
-		life_last_position = life_last_positions select 0;
-		for "_i" from 0 to (count life_last_position)-1 do
-		{
-			life_last_position set[_i, call compile format["%1", life_last_position select _i]];
-		};	
-		life_last_position = createMarker ["last_position", life_last_position];
+		_flag = 0;
 	};
 	
 	case civilian: {
-		life_is_arrested = _this select 7;
-		__CONST__(life_coplevel, 0);
+		__CONST__(life_copLevel, 0);
 		__CONST__(life_medicLevel, 0);
 		
-		life_houses = _this select 9;
+		life_is_arrested = _this select 13;
+		
+		life_houses = _this select 11;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
 			life_vehicles set[count life_vehicles,_house];
 		} foreach life_houses;
 		
-		life_gangData = _this select 10;
+		life_gangData = _this select 12;
 		if(count life_gangData != 0) then {
 			[] spawn life_fnc_initGang;
 		};
 		
 		[] spawn life_fnc_initHouses;
-		
-		life_last_position = life_last_positions select 1;
-		for "_i" from 0 to (count life_last_position)-1 do
-		{
-			life_last_position set[_i, call compile format["%1", life_last_position select _i]];
-		};	
-		life_last_position = createMarker ["last_position", life_last_position];
 		
 		// Adds more Paycheck for PERMS
 		switch (true) do {
@@ -106,20 +96,39 @@ switch(playerSide) do {
 			case ((["security"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
 			case ((["smugler"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
 		};
+		
+		_flag = 1;
 	};
 	
 	case independent: {	
-		__CONST__(life_medicLevel, parseNumber(_this select 7));
+		_perm_level = ["medic"] call life_fnc_permLevel;
+	
+		__CONST__(life_medicLevel, _perm_level);
 		__CONST__(life_copLevel,0);
 		
-		life_last_position = life_last_positions select 2;
-		for "_i" from 0 to (count life_last_position)-1 do
-		{
-			life_last_position set[_i, call compile format["%1", life_last_position select _i]];
-		};	
-		life_last_position = createMarker ["last_position", life_last_position];
+		_flag = 2;
 	};
 };
+
+hint "3";
+
+// Get the Last Position of the PlayerSide
+life_player_position = life_player_positions select _flag;
+for "_i" from 0 to (count life_player_position)-1 do
+{
+	life_player_position set[_i, call compile format["%1", life_player_position select _i]];
+};	
+life_player_position = createMarker ["last_position", life_player_position];
+
+_damage = parseNumber((life_player_stats select _flag) select 2);
+_perm_level = ["don"] call life_fnc_permLevel;
+
+// Get the Stats of the PlayerSide
+life_hunger = (life_player_stats select _flag) select 0;
+life_thirst = (life_player_stats select _flag) select 1;
+player setDamage _damage;
+
+__CONST__(life_donator, _perm_level);
 
 switch(__GETC__(life_donator)) do
 {
@@ -129,6 +138,8 @@ switch(__GETC__(life_donator)) do
 	case 4: {life_paycheck = life_paycheck + 125;};	
 	case 5: {life_paycheck = life_paycheck + 150;};	
 };
+
+hint "4";
 
 [true] call life_fnc_dynPermCheckout;
 life_session_completed = true;

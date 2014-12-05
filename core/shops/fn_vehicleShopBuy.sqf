@@ -67,6 +67,11 @@ if((life_veh_shop select 0) == "med_air_hs") then {
 	_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 };
 
+// Fixes the fucking Driving Style of the SUV
+if(_className == "C_SUV_01_F") then {
+	_vehicle setCenterofMass [0, -0.3, -0.7];
+};
+
 //Side Specific actions.
 switch(playerSide) do {
 	case west: {

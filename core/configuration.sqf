@@ -82,8 +82,9 @@ __CONST__(life_impound_air,250);
 life_istazed = false;
 
 life_my_gang = ObjNull;
-life_last_positions = ObjNull;
-life_last_position = ObjNull;
+life_player_position = ObjNull;
+life_payer_positions = ObjNull;
+life_player_stats = ObjNull;
 
 life_vehicles = [];
 bank_robber = [];
