@@ -26,8 +26,6 @@ if(count _this == 0) exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if((_this select 0) == "Error") exitWith {[] call SOCK_fnc_insertPlayerInfo;};
 if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery;};
 
-hint "1";
-
 // Parse basic player information.
 life_cash = parseNumber (_this select 2);
 life_atmcash = parseNumber (_this select 3);
@@ -56,8 +54,6 @@ life_player_stats = call compile format["%1", life_player_stats];
 
 // Queries if Player on Blacklist
 life_blacklisted = _this select 10;
-
-hint "2";
 
 //Parse side specific information.
 switch(playerSide) do {
@@ -110,8 +106,6 @@ switch(playerSide) do {
 	};
 };
 
-hint "3";
-
 // Get the Last Position of the PlayerSide
 life_player_position = life_player_positions select _flag;
 for "_i" from 0 to (count life_player_position)-1 do
@@ -138,8 +132,6 @@ switch(__GETC__(life_donator)) do
 	case 4: {life_paycheck = life_paycheck + 125;};	
 	case 5: {life_paycheck = life_paycheck + 150;};	
 };
-
-hint "4";
 
 [true] call life_fnc_dynPermCheckout;
 life_session_completed = true;
