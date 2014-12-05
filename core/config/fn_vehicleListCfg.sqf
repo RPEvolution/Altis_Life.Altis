@@ -63,7 +63,7 @@ switch (_shop) do
 	{
 		_return = 
 		[
-			["B_Heli_Light_01_F",300],
+			["C_Heli_Light_01_civil_F",300],
 			["O_Heli_Transport_04_repair_F",600]
 		];
 	};	
@@ -84,6 +84,65 @@ switch (_shop) do
 			["B_Heli_Light_01_F",300]
 		];
 	};	
+	
+	case "don_car":
+	{
+		_return = 
+		[
+			["B_Quadbike_01_F",180],
+			["C_Hatchback_01_F",1200],
+			["C_Hatchback_01_sport_F",1125],
+			["C_Offroad_01_F",1575],
+			["B_G_Offroad_01_F",1575],
+			["C_SUV_01_F",2000],
+			["O_MRAP_02_F",16875],
+			["C_Van_01_transport_F",2025],
+			["C_Van_01_box_F",2000],
+			["I_Truck_02_transport_F",5060],
+			["I_Truck_02_covered_F",5625],
+			["B_Truck_01_transport_F",13500],
+			["B_Truck_01_covered_F",15750],
+			["B_Truck_01_box_F",20000],
+			["O_Truck_03_transport_F",11250],
+			["O_Truck_03_covered_F",13500],
+			["O_Truck_03_device_F",29250]
+		];
+	};
+	
+	case "don_air":
+	{
+		_return = 
+		[
+			["B_Heli_Light_01_F",37125],
+			["C_Heli_Light_01_civil_F",37125],
+			["O_Heli_Light_02_unarmed_F",56250],
+			["O_Heli_Transport_04_F",45000],
+			["I_Heli_Transport_02_F",84375],
+			["B_Heli_Transport_03_unarmed_F",84375],
+			["O_Heli_Transport_04_covered_F",84375]
+		];
+	};	
+	
+	
+	case "smugler_car":
+	{
+		_return = 
+		[
+			["B_G_Offroad_01_F",2100],
+			["O_Truck_03_covered_F",18000],
+			["O_MRAP_02_F",22500]
+		];
+	};
+	
+	case "smugler_air":
+	{
+		_return = 
+		[
+			["B_Heli_Light_01_F",49500],
+			["O_Heli_Light_02_unarmed_F",75000],
+			["O_Heli_Transport_04_covered_F",112500]
+		];
+	};
 	
 	case "civ_truck":
 	{
@@ -115,6 +174,15 @@ switch (_shop) do
 			_return set[count _return,
 			["O_MRAP_02_F",22500]];
 			_return set[count _return,
+			["B_G_Offroad_01_armed_F",750000]];
+		};
+	};
+	
+	case "reb_air":
+	{
+		if(license_civ_rebel) then
+		{
+			_return set[count _return,
 			["B_Heli_Light_01_F",49500]];
 			_return set[count _return,
 			["O_Heli_Light_02_unarmed_F",75000]];
@@ -122,8 +190,6 @@ switch (_shop) do
 			["O_Heli_Transport_04_F",60000]];
 			_return set[count _return,
 			["O_Heli_Transport_04_covered_F",112500]];
-			_return set[count _return,
-			["B_G_Offroad_01_armed_F",750000]];
 		};
 	};
 	

@@ -12,6 +12,7 @@ life_versionInfo = "Altis Life RPG v3.1.4.7";
 [] execVM "briefing.sqf"; //Load Briefing
 [] execVM "KRON_Strings.sqf";
 [] execVM "zlt_fastrope.sqf";
+[] execVM "core\functions\D41_Wetter.sqf";
 
 if(isDedicated && isNil("life_market_prices")) then
 {
@@ -29,5 +30,7 @@ if(isDedicated && isNil("life_market_prices")) then
 };
 
 StartProgress = true;
+
+"BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec};
 
 "BIS_fnc_MP_packet" addPublicVariableEventHandler {_this call life_fnc_MPexec};

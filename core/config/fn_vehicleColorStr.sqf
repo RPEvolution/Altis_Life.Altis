@@ -47,7 +47,7 @@ switch (_vehicle) do
 	{
 		switch (_index) do
 		{
-			case 0: {_color = "Yellow";};
+			case 0: {_color = "ADAC";};
 		};
 	};
 	
@@ -127,21 +127,10 @@ switch (_vehicle) do
 		{
 			case 0: {_color = "Sheriff"};
 			case 1: {_color = "Black"};
-			case 2: {_color = "Civ Blue"};
-			case 3: {_color = "Civ Red"};
-			case 4: {_color = "Digi Green"};
-			case 5: {_color = "Blueline"};
-			case 6: {_color = "Elliptical"};
-			case 7: {_color = "Furious"};
-			case 8: {_color = "Jeans Blue"};
-			case 9: {_color = "Speedy Redline"};
-			case 10: {_color = "Sunset"};
-			case 11: {_color = "Vrana"};
-			case 12: {_color = "Waves Blue"};
-			case 13: {_color = "Rebel Digital"};
-			case 14: {_color = "Olive"};
-			case 15: {_color = "Yellow"};
-			case 16: {_color = "EMS White"};
+			case 2: {_color = "Digi Green"};
+			case 3: {_color = "Rebel Digital"};
+			case 4: {_color = "Olive"};
+			case 5: {_color = "Sanitäter"};
 		};
 	};
 
@@ -159,6 +148,7 @@ switch (_vehicle) do
 			case 7: {_color = "Sunset"};
 			case 8: {_color = "Vrana"};
 			case 9: {_color = "Waves Blue"};
+			case 10: {_color = "ADAC"};
 		};
 	};
 	
@@ -170,7 +160,7 @@ switch (_vehicle) do
 			case 1: {_color = "White / Blue"};
 			case 2: {_color = "Digi Green"};
 			case 3: {_color = "Desert Digi"};
-			case 4: {_color = "EMS White"};
+			case 4: {_color = "Sanitäter"};
 		};
 	};
 	
@@ -178,8 +168,7 @@ switch (_vehicle) do
 	{
 		switch (_index) do
 		{
-			case 0: {_color = "Regular"};
-			case 1: {_color = "Black"};
+			case 0: {_color = "Security"};
 		};
 	};
 	
@@ -254,7 +243,7 @@ switch (_vehicle) do
 	{
 		switch (_index) do
 		{
-			case 0: {_color = "Yellow"};
+			case 0: {_color = "ADAC"};
 		};
 	};
 	
@@ -262,7 +251,7 @@ switch (_vehicle) do
 	{
 		switch (_index) do
 		{
-			case 0: {_color = "EMS White"};
+			case 0: {_color = "Sanitäter"};
 		};
 	};
 	
@@ -270,7 +259,7 @@ switch (_vehicle) do
 	{
 		switch (_index) do
 		{
-			case 0: {_color = "EMS White"};
+			case 0: {_color = "Sanitäter"};
 		};
 	};
 	
@@ -278,7 +267,7 @@ switch (_vehicle) do
 	{
 		switch (_index) do
 		{
-			case 0: {_color = "EMS White"};
+			case 0: {_color = "Sanitäter"};
 		};
 	};
 
@@ -286,7 +275,7 @@ switch (_vehicle) do
 	{
 		switch (_index) do
 		{
-			case 0: {_color = "Yellow"};
+			case 0: {_color = "ADAC"};
 		};
 	};
 	

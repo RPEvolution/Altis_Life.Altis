@@ -262,6 +262,7 @@ class Life_Client_Core
 		class globalSoundClient {};
 		class handleItemPicture {};
  		class handleItemTooltip {};
+		class emptyFuel {};
 	};
 	
 	class Network

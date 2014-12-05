@@ -58,10 +58,12 @@ switch(_shop) do
 						["FirstAidKit",nil,10],
 						["Medikit",nil,100],
 						["NVGoggles",nil,400],
-						["hgun_P07_snds_F","Stun Pistol",500],
+						["hgun_P07_snds_F","Taser",500],
 						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
+						["optic_Yorris",nil,50],
+						["optic_MRD",nil,50],
 						["Chemlight_red",nil,5]
 					]
 				];
@@ -78,10 +80,12 @@ switch(_shop) do
 			{
 				["Altis Polizei Rekrutenwaffen",
 					[
-						["hgun_P07_snds_F","Stun Pistol",500],
+						["hgun_P07_snds_F","Taser",500],
 						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
-						["6Rnd_GreenSignal_F",nil,30]
+						["6Rnd_GreenSignal_F",nil,30],
+						["optic_Yorris",nil,50],
+						["optic_MRD",nil,50]
 					]
 				];
 			};
@@ -89,7 +93,7 @@ switch(_shop) do
 			{
 				["Altis Polizei Polizistenwaffen",
 					[
-						["hgun_P07_snds_F","Stun Pistol",500],
+						["hgun_P07_snds_F","Taser",500],
 						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
@@ -99,6 +103,8 @@ switch(_shop) do
 						["30Rnd_65x39_caseless_mag",nil,100],
 						["acc_flashlight",nil,100],
 						["acc_pointer_IR",nil,150],
+						["optic_Yorris",nil,50],
+						["optic_MRD",nil,50],
 						["optic_Holosight",nil,500],
 						["optic_Arco",nil,600],
 						["optic_Hamr",nil,700],
@@ -111,7 +117,7 @@ switch(_shop) do
 			{
 				["Altis Polizei Bundespolizistenwaffen",
 					[
-						["hgun_P07_snds_F","Stun Pistol",500],
+						["hgun_P07_snds_F","Taser",500],
 						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
@@ -195,6 +201,9 @@ switch(_shop) do
 						["muzzle_snds_B",nil,100],
 						["acc_flashlight",nil,100],
 						["acc_pointer_IR",nil,150],
+						["optic_ACO_grn_smg",nil,150],
+						["optic_Aco_smg",nil,150],
+						["optic_Holosight_smg",nil,150],
 						["optic_ACO_grn",nil,350],
 						["optic_Holosight",nil,500],
 						["optic_Arco",nil,500],
@@ -271,35 +280,41 @@ switch(_shop) do
 				["NVGoggles_INDEP",nil,300],
 				["NVGoggles_OPFOR",nil,300],
 				["SMG_01_F",nil,1650],
+				["30Rnd_45ACP_Mag_SMG_01",nil,110],
 				["arifle_Mk20C_plain_F",nil,1875],
 				["arifle_Mk20C_F",nil,1875],
 				["arifle_Mk20_plain_F",nil,1875],
 				["arifle_Mk20_F",nil,1875],
+				["30Rnd_556x45_Stanag",nil,130],
 				["arifle_TRG20_F",nil,2100],
 				["arifle_TRG21_F",nil,2100],
+				["30Rnd_556x45_Stanag",nil,130],
 				["arifle_Katiba_C_F",nil,2250],
 				["arifle_Katiba_F",nil,2250],
+				["30Rnd_65x39_caseless_green",nil,150],
 				["srifle_DMR_01_F",nil,3750],
+				["10Rnd_762x51_Mag",nil,375],
 				["srifle_EBR_F",nil,3750],
+				["20Rnd_762x51_Mag",nil,750],
 				["arifle_SDAR_F",nil,1600],
+				["20Rnd_556x45_UW_mag",nil,90],
 				["muzzle_snds_L",nil,75],
 				["muzzle_snds_acp",nil,75],
 				["muzzle_snds_B",nil,75],
 				["acc_flashlight",nil,75],
 				["acc_pointer_IR",nil,110],
+				["optic_Yorris",nil,100],
+				["optic_MRD",nil,100],
+				["optic_ACO_grn_smg",nil,100],
+				["optic_Aco_smg",nil,100],
+				["optic_Holosight_smg",nil,100],
 				["optic_ACO_grn",nil,260],
 				["optic_Holosight",nil,375],
 				["optic_Arco",nil,375],
 				["optic_Hamr",nil,450],
 				["optic_MRCO",nil,525],
 				["optic_DMS",nil,1300],
-				["optic_LRPS",nil,1500],
-				["30Rnd_45ACP_Mag_SMG_01",nil,110],
-				["30Rnd_556x45_Stanag",nil,130],
-				["30Rnd_65x39_caseless_green",nil,150],
-				["10Rnd_762x51_Mag",nil,375],
-				["20Rnd_762x51_Mag",nil,750],
-				["20Rnd_556x45_UW_mag",nil,90]
+				["optic_LRPS",nil,1500]
 			]
 		];
 	};
@@ -315,19 +330,23 @@ switch(_shop) do
 				["Billy Joe's Firearms",
 					[
 						["hgun_Pistol_Signal_F",nil,100],
-						["hgun_Rook40_F",nil,500],
-						["hgun_ACPC2_F",nil,750],
-						["hgun_Pistol_heavy_01_F",nil,850],
-						["hgun_Pistol_heavy_02_F",nil,1000],
-						["hgun_PDW2000_F",nil,2000],
-						["optic_ACO_grn_smg",nil,300],
-						["V_Rangemaster_belt",nil,150],
 						["6Rnd_GreenSignal_F",nil,30],
+						["hgun_Rook40_F",nil,500],
 						["16Rnd_9x21_Mag",nil,50],
+						["hgun_ACPC2_F",nil,750],
 						["9Rnd_45ACP_Mag",nil,50],
+						["hgun_Pistol_heavy_01_F",nil,850],
 						["11Rnd_45ACP_Mag",nil,75],
+						["hgun_Pistol_heavy_02_F",nil,1000],
 						["6Rnd_45ACP_Cylinder",nil,50],
-						["30Rnd_9x21_Mag",nil,100]
+						["hgun_PDW2000_F",nil,2000],
+						["30Rnd_9x21_Mag",nil,100],
+						["optic_ACO_grn_smg",nil,150],
+						["optic_Aco_smg",nil,150],
+						["optic_Yorris",nil,150],
+						["optic_MRD",nil,150],
+						["optic_Holosight_smg",nil,150],
+						["V_Rangemaster_belt",nil,150]
 					]
 				];
 			};
@@ -344,10 +363,12 @@ switch(_shop) do
 			{
 				["Big Earl's Egosteigerer",
 					[
-						["hgun_P07_snds_F","Stun Pistol",500],
+						["hgun_P07_snds_F","Taser",500],
 						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
+						["optic_Yorris",nil,50],
+						["optic_MRD",nil,50],
 						["Rangefinder",nil,100],
 						["Binocular",nil,20],
 						["ItemMap",nil,1],
@@ -386,12 +407,17 @@ switch(_shop) do
 						["ToolKit",nil,50],
 						["FirstAidKit",nil,10],
 						["NVGoggles",nil,400],
+						["hgun_P07_snds_F","Taser",500],
+						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
-						["hgun_Pistol_heavy_01_F",nil,850],
-						["arifle_MXC_Holo_pointer_snds_F",nil,2750],
 						["6Rnd_GreenSignal_F",nil,30],
+						["hgun_Pistol_heavy_01_F",nil,850],
 						["11Rnd_45ACP_Mag",nil,75],
+						["arifle_MXC_Holo_pointer_snds_F",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,100],
+						["optic_Yorris",nil,150],
+						["optic_MRD",nil,150],
+						["muzzle_snds_acp",nil,100],
 						["Chemlight_red",nil,5],
 						["Chemlight_yellow",nil,5],
 						["Chemlight_green",nil,5],
@@ -412,19 +438,23 @@ switch(_shop) do
 				["Waffenkiste",
 					[
 						["hgun_Rook40_F",nil,500],
-						["hgun_ACPC2_F",nil,750],
-						["hgun_Pistol_heavy_01_F",nil,850],
-						["hgun_Pistol_heavy_02_F",nil,1000],
-						["hgun_PDW2000_F",nil,2000],
-						["SMG_01_F",nil,2200],
-						["optic_ACO_grn_smg",nil,300],
-						["V_Rangemaster_belt",nil,150],
 						["16Rnd_9x21_Mag",nil,50],
+						["hgun_ACPC2_F",nil,750],
 						["9Rnd_45ACP_Mag",nil,50],
+						["hgun_Pistol_heavy_01_F",nil,850],
 						["11Rnd_45ACP_Mag",nil,75],
+						["hgun_Pistol_heavy_02_F",nil,1000],
 						["6Rnd_45ACP_Cylinder",nil,50],
+						["hgun_PDW2000_F",nil,2000],
 						["30Rnd_9x21_Mag",nil,100],
-						["30Rnd_45ACP_Mag_SMG_01",nil,150]
+						["SMG_01_F",nil,2200],
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["optic_ACO_grn_smg",nil,150],
+						["optic_Aco_smg",nil,150],
+						["optic_Holosight_smg",nil,150],
+						["optic_Yorris",nil,150],
+						["optic_MRD",nil,150],
+						["V_Rangemaster_belt",nil,150]
 					]
 				];
 			};
