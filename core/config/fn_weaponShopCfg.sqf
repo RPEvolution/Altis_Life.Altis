@@ -196,6 +196,7 @@ switch(_shop) do
 						["10Rnd_762x51_Mag",nil,500],
 						["20Rnd_762x51_Mag",nil,1000],
 						["arifle_SDAR_F",nil,2400],
+						["20Rnd_556x45_UW_mag",nil,90],
 						["muzzle_snds_L",nil,100],
 						["muzzle_snds_acp",nil,100],
 						["muzzle_snds_B",nil,100],
@@ -266,57 +267,65 @@ switch(_shop) do
 	
 	case "don":
 	{
-		["Igor's Waffenstube",
-			[
-				["Rangefinder",nil,75],
-				["Binocular",nil,15],
-				["ItemMap",nil,1],
-				["ItemWatch",nil,75],
-				["ItemCompass",nil,25],
-				["ItemGPS",nil,75],
-				["ToolKit",nil,35],
-				["FirstAidKit",nil,8],
-				["NVGoggles",nil,300],
-				["NVGoggles_INDEP",nil,300],
-				["NVGoggles_OPFOR",nil,300],
-				["SMG_01_F",nil,1650],
-				["30Rnd_45ACP_Mag_SMG_01",nil,110],
-				["arifle_Mk20C_plain_F",nil,1875],
-				["arifle_Mk20C_F",nil,1875],
-				["arifle_Mk20_plain_F",nil,1875],
-				["arifle_Mk20_F",nil,1875],
-				["30Rnd_556x45_Stanag",nil,130],
-				["arifle_TRG20_F",nil,2100],
-				["arifle_TRG21_F",nil,2100],
-				["30Rnd_556x45_Stanag",nil,130],
-				["arifle_Katiba_C_F",nil,2250],
-				["arifle_Katiba_F",nil,2250],
-				["30Rnd_65x39_caseless_green",nil,150],
-				["srifle_DMR_01_F",nil,3750],
-				["10Rnd_762x51_Mag",nil,375],
-				["srifle_EBR_F",nil,3750],
-				["20Rnd_762x51_Mag",nil,750],
-				["arifle_SDAR_F",nil,1600],
-				["20Rnd_556x45_UW_mag",nil,90],
-				["muzzle_snds_L",nil,75],
-				["muzzle_snds_acp",nil,75],
-				["muzzle_snds_B",nil,75],
-				["acc_flashlight",nil,75],
-				["acc_pointer_IR",nil,110],
-				["optic_Yorris",nil,100],
-				["optic_MRD",nil,100],
-				["optic_ACO_grn_smg",nil,100],
-				["optic_Aco_smg",nil,100],
-				["optic_Holosight_smg",nil,100],
-				["optic_ACO_grn",nil,260],
-				["optic_Holosight",nil,375],
-				["optic_Arco",nil,375],
-				["optic_Hamr",nil,450],
-				["optic_MRCO",nil,525],
-				["optic_DMS",nil,1300],
-				["optic_LRPS",nil,1500]
-			]
-		];
+		switch (true) do
+		{
+			case (playerSide != civilian): {"Du bist kein Zivilist!"};
+			case ((["don"] call life_fnc_permLevel) < 1): {"Du bist kein Donator!"};
+			default
+			{
+				["Igor's Waffenstube",
+					[
+						["Rangefinder",nil,75],
+						["Binocular",nil,15],
+						["ItemMap",nil,1],
+						["ItemWatch",nil,75],
+						["ItemCompass",nil,25],
+						["ItemGPS",nil,75],
+						["ToolKit",nil,35],
+						["FirstAidKit",nil,8],
+						["NVGoggles",nil,300],
+						["NVGoggles_INDEP",nil,300],
+						["NVGoggles_OPFOR",nil,300],
+						["SMG_01_F",nil,1650],
+						["30Rnd_45ACP_Mag_SMG_01",nil,110],
+						["arifle_Mk20C_plain_F",nil,1875],
+						["arifle_Mk20C_F",nil,1875],
+						["arifle_Mk20_plain_F",nil,1875],
+						["arifle_Mk20_F",nil,1875],
+						["30Rnd_556x45_Stanag",nil,130],
+						["arifle_TRG20_F",nil,2100],
+						["arifle_TRG21_F",nil,2100],
+						["30Rnd_556x45_Stanag",nil,130],
+						["arifle_Katiba_C_F",nil,2250],
+						["arifle_Katiba_F",nil,2250],
+						["30Rnd_65x39_caseless_green",nil,150],
+						["srifle_DMR_01_F",nil,3750],
+						["10Rnd_762x51_Mag",nil,375],
+						["srifle_EBR_F",nil,3750],
+						["20Rnd_762x51_Mag",nil,750],
+						["arifle_SDAR_F",nil,1600],
+						["20Rnd_556x45_UW_mag",nil,90],
+						["muzzle_snds_L",nil,75],
+						["muzzle_snds_acp",nil,75],
+						["muzzle_snds_B",nil,75],
+						["acc_flashlight",nil,75],
+						["acc_pointer_IR",nil,110],
+						["optic_Yorris",nil,100],
+						["optic_MRD",nil,100],
+						["optic_ACO_grn_smg",nil,100],
+						["optic_Aco_smg",nil,100],
+						["optic_Holosight_smg",nil,100],
+						["optic_ACO_grn",nil,260],
+						["optic_Holosight",nil,375],
+						["optic_Arco",nil,375],
+						["optic_Hamr",nil,450],
+						["optic_MRCO",nil,525],
+						["optic_DMS",nil,1300],
+						["optic_LRPS",nil,1500]
+					]
+				];
+			};	
+		};
 	};
 	
 	case "gun":
@@ -375,9 +384,33 @@ switch(_shop) do
 						["ItemWatch",nil,100],
 						["ItemCompass",nil,25],
 						["ItemGPS",nil,100],
-						["ToolKit",nil,50],
+						["ToolKit",nil,20],
 						["FirstAidKit",nil,10],
 						["NVGoggles",nil,400],
+						["Chemlight_red",nil,5],
+						["Chemlight_yellow",nil,5],
+						["Chemlight_green",nil,5],
+						["Chemlight_blue",nil,5]
+					]
+				];
+			};
+		};
+	};
+	
+	case "garage_gas":
+	{
+		switch (true) do
+		{
+			case (playerSide != civilian): {"Du bist kein Zivilist!"};
+			case ((["adac"] call life_fnc_permLevel) < 2): {"Du bist kein Mitglied des ADAC!"};
+			default
+			{
+				["Werkbank",
+					[
+						["30Rnd_9x21_Mag",nil,100],
+						["6Rnd_GreenSignal_F",nil,30],
+						["ToolKit",nil,20],
+						["FirstAidKit",nil,10],
 						["Chemlight_red",nil,5],
 						["Chemlight_yellow",nil,5],
 						["Chemlight_green",nil,5],
