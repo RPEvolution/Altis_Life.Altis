@@ -64,8 +64,8 @@ life_perms = [
 	[], "",
 	["Kein Mitglied","Mitglied", "Leiter"]],
 	
-	//Security
-	["sec","Security", 4, [ 
+	//Security aka Söldner
+	["sec","Söldner", 4, [ 
 		[0, []],
 		[1, []],
 		[2, ["VIEW","RESTRAIN"]],
@@ -73,7 +73,7 @@ life_perms = [
 		[4, ["LEADER", "RANKUP", "RANKDOWN", "VIEW","RESTRAIN"]]
 	],  
 	[], "",
-	["Kein Mitglied", "Kunde", "Anwärter", "Mitarbeiter", "Security-Chef"]],
+	["Kein Mitglied", "Kunde", "Anwärter", "Mitarbeiter", "Chef"]],
 	
 	//Schmggler
 	["smugler", "Waffenschieber", 4, [ 
