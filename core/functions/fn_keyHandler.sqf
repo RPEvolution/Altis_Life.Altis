@@ -105,8 +105,8 @@ switch (_code) do
 	//Restraining (Shift + R)
 	case 19:
 	{
-		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [civilian,independent]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
+		//(_shift) then {_handled = true;};
+		if(_shift /*&& playerSide == west*/ && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [civilian,independent,west]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
 		{
 			[] call life_fnc_restrainAction;
 		};
@@ -268,6 +268,160 @@ switch (_code) do
 			};
 		};
 	};
+	
+	//disable comuncation menu about 1-0. No spam from this not using tools
+	case 2: // 1
+	{
+		closeDialog 0;
+		_handled = true;
+	};
+	
+	case 3: // 2
+	{
+		closeDialog 0;
+		_handled = true;
+	};
+	
+	case 4: // 3
+	{
+		closeDialog 0;
+		_handled = true;
+	};
+	
+	case 5: // 4
+	{
+		closeDialog 0;
+		_handled = true;
+	};
+	
+	case 6: // 5
+	{
+		closeDialog 0;
+		_handled = true;
+	};
+	
+	case 7: // 6
+	{
+		closeDialog 0;
+		_handled = true;
+	};
+	
+	case 8: // 7
+	{
+		closeDialog 0;
+		_handled = true;
+	};
+	
+	case 9: // 8
+	{
+		closeDialog 0;
+		_handled = true;
+	};
+	
+	case 10: // 9
+	{
+		closeDialog 0;
+		_handled = true;
+	};
+	
+	case 11: // 0
+	{
+		closeDialog 0;
+		_handled = true;
+	};	
+	
+	case 14: // backspace
+	{
+		closeDialog 0;
+		_handled = true;
+	};
+	
+	
+	//disable F-Keys for cheating inclusive Add on Steam Screenshots ;) Free adds Yeah!!
+	case 59: // F1
+	{
+		closeDialog 0;
+		//hint "F1 - Computer sagt Nein";
+		_handled = true;
+	}; 
+	
+	case 60: // F2
+	{
+		closeDialog 0;
+		//hint "F2 - Computer sagt Nein";
+		_handled = true;
+	}; 
+	
+	case 61: // F3
+	{
+		closeDialog 0;
+		//hint "F3 - Computer sagt Nein";
+		_handled = true;
+	}; 
+	
+	case 62: // F4
+	{
+		closeDialog 0;
+		//hint "F4 - Computer sagt Nein";
+		_handled = true;
+	};
+	
+	case 63: // F5
+	{
+		closeDialog 0;
+		//hint "F5 - Computer sagt Nein";
+		_handled = true;
+	}; 
+	
+	case 64: // F6
+	{
+		closeDialog 0;
+		//hint "F6 - Computer sagt Nein";
+		_handled = true;
+	}; 
+	
+	case 65: // F7
+	{
+		closeDialog 0;
+		//hint "F7 - Computer sagt Nein";
+		_handled = true;
+	}; 
+	
+	case 66: // F8
+	{
+		closeDialog 0;
+		//hint "F8 - Computer sagt Nein";
+		_handled = true;
+	}; 
+	
+	case 67: // F9
+	{
+		closeDialog 0;
+		//hint "F9 - Computer sagt Nein";
+		_handled = true;
+	}; 
+	
+	case 68: // F10
+	{
+		closeDialog 0;
+		//hint "F10 - Computer sagt Nein";
+		_handled = true;
+	}; 
+	
+	case 87: // F11
+	{
+		closeDialog 0;
+		//hint "F11 - Computer sagt Nein";
+		_handled = true;
+	}; 
+	
+	case 88: // F12
+	{
+		closeDialog 0;
+		//hint "[GER] RPE Evolution 31.214.198.106:2302";
+		_handled = true;
+	}; 
+	
 };
 
 _handled;
