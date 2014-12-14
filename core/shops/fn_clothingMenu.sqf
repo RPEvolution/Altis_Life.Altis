@@ -16,7 +16,7 @@ if((_this select 3) in ["reb"] && !license_civ_rebel) exitWith {hint localize "S
 if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
 if((_this select 3) in ["medic"] && playerSide != independent) exitWith {hint "Du bist kein Arzt"; closeDialog 0;};
 if((_this select 3) in ["dive"] && !license_civ_dive) exitWith { hint localize "STR_Shop_NotaDive"; closeDialog 0;};
-if((_this select 3) in ["sec"] && (["sec"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Mitglied der Security!"; closeDialog 0;};
+if((_this select 3) in ["sec"] && (["sec"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Mitglied der Söldner!"; closeDialog 0;};
 if((_this select 3) in ["smugler"] && (["smugler"] call life_fnc_permLevel) < 2) exitWith {hint "Du bist kein Mitglied der Waffenschieber!"; closeDialog 0;};
 if((_this select 3) in ["adac"] && (["adac"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Mitglied des ADAC!"; closeDialog 0;};
 if((_this select 3) in ["don"] && (["don"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Donator!"; closeDialog 0;};
