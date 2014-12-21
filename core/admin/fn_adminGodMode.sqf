@@ -1,20 +1,23 @@
-/**
-* godMode(BOOLEAN ebale)
-*
-
-private ["_enable"];
-_enable = _this select 0;
+/*
+	File: fn_adminGodMode.sqf
+	Author: Spiderswine
+	
+	Description:
+	Handles damage for Admins
 */
 
-//Hint + Infos
-if( _enable ) then
-{
-/*[[0,format["ADMIN: %1 hat God-Mode angeschaltet.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;*/
-hint "Wegen Spy Glass deaktiviert";
+private ["_enable","_handled"];
+_enable = _this select 0;
+
+// Enables God Mode for Admin
+if(_enable) then {
+	life_is_god = true;
+	hint "Du bist jetzt unverwundbar!";
 }
+// Disables God Mode for Admin
 else
 {
-/*[[0,format["ADMIN: %1 hat God-Mode ausgeschaltet.",name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;*/
-hint "Wegen Spy Glass deaktiviert";
+	life_is_god = false;
+	hint "Du bist jetzt wieder verwundbar!";
 };
 

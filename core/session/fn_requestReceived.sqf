@@ -8,9 +8,8 @@
 	sort through the information, validate it and if all valid 
 	set the client up.
 */
-private["_session", "_flag", "_damage", "_perm_level"];
+private["_session","_damage","_perm_level"];
 _session = _this;
-_flag = 1;
 _damage = 0;
 life_session_tries = life_session_tries + 1;
 if(life_session_completed) exitWith {}; //Why did this get executed when the client already initialized? Fucking arma...
@@ -29,31 +28,42 @@ if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery
 // Parse basic player information.
 life_cash = parseNumber (_this select 2);
 life_atmcash = parseNumber (_this select 3);
-__CONST__(life_adminlevel,parseNumber(_this select 4));
+__CONST__(life_adminlevel,parseNumber(_this select 14));
+life_experience = parseNumber (_this select 4);
+life_is_arrested = _this select 5;
 
 // Loop through licenses
-if(count (_this select 5) > 0) then {
+if(count (_this select 6) > 0) then {
 	{
 		missionNamespace setVariable [(_x select 0),(_x select 1)];
-	} foreach (_this select 5);
+	} foreach (_this select 6);
 };
 
-life_gear = _this select 6;
+life_gear = _this select 7;
 [] call life_fnc_loadGear;
 
 // Queries the PERMS
-life_player_perms = _this select 7;				
+life_player_perms = _this select 15;				
 life_player_perms = call compile format["%1", life_player_perms];
 
-// Queries the Last Positions
-life_player_positions = _this select 8;
-life_player_positions = call compile format["%1", life_player_positions];
+// Queries the Last Position of PlayerSide
+life_player_position = _this select 8;
+life_player_position = call compile format["%1", life_player_position];
 
+for "_i" from 0 to (count life_player_position)-1 do
+{
+	life_player_position set[_i, call compile format["%1", life_player_position select _i]];
+};	
+life_player_position = createMarker ["last_position", life_player_position];
+
+// Get the Stats of PlayerSide
 life_player_stats = _this select 9;
 life_player_stats = call compile format["%1", life_player_stats];
+life_hunger = life_player_stats select 0;
+life_thirst = life_player_stats select 1;
 
-// Queries if Player on Blacklist
-life_blacklisted = _this select 10;
+_damage = parseNumber(life_player_stats select 2);
+player setDamage _damage;
 
 //Parse side specific information.
 switch(playerSide) do {
@@ -63,23 +73,19 @@ switch(playerSide) do {
 	
 		__CONST__(life_copLevel, _perm_level);
 		__CONST__(life_medicLevel,0);
-		
-		_flag = 0;
 	};
 	
 	case civilian: {
 		__CONST__(life_copLevel, 0);
 		__CONST__(life_medicLevel, 0);
 		
-		life_is_arrested = _this select 13;
-		
-		life_houses = _this select 11;
+		life_houses = _this select 12;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
 			life_vehicles set[count life_vehicles,_house];
 		} foreach life_houses;
 		
-		life_gangData = _this select 12;
+		life_gangData = _this select 13;
 		if(count life_gangData != 0) then {
 			[] spawn life_fnc_initGang;
 		};
@@ -92,8 +98,6 @@ switch(playerSide) do {
 			case ((["security"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
 			case ((["smugler"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
 		};
-		
-		_flag = 1;
 	};
 	
 	case independent: {	
@@ -101,27 +105,11 @@ switch(playerSide) do {
 	
 		__CONST__(life_medicLevel, _perm_level);
 		__CONST__(life_copLevel,0);
-		
-		_flag = 2;
 	};
 };
 
-// Get the Last Position of the PlayerSide
-life_player_position = life_player_positions select _flag;
-for "_i" from 0 to (count life_player_position)-1 do
-{
-	life_player_position set[_i, call compile format["%1", life_player_position select _i]];
-};	
-life_player_position = createMarker ["last_position", life_player_position];
-
-_damage = parseNumber((life_player_stats select _flag) select 2);
+// Checking Player for Donator Level
 _perm_level = ["don"] call life_fnc_permLevel;
-
-// Get the Stats of the PlayerSide
-life_hunger = (life_player_stats select _flag) select 0;
-life_thirst = (life_player_stats select _flag) select 1;
-player setDamage _damage;
-
 __CONST__(life_donator, _perm_level);
 
 switch(__GETC__(life_donator)) do

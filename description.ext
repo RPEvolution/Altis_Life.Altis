@@ -82,6 +82,48 @@ class CfgSounds
 		sound[] = {"\sounds\flashbang.ogg", 1.0, 1};
 		titles[] = {};
 	};
+	
+	class handcuffs
+	{
+		name="handcuffs";
+		sound[] = {"\sounds\handcuffs.ogg", 1.0, 1};
+		titles[] = {0, " "};
+	};
+	
+	class trunk_open
+	{
+		name="trunk_open";
+		sound[] = {"\sounds\trunk_open.ogg", 1.0, 1};
+		titles[] = {0, " "};
+	};
+	
+	class trunk_close
+	{
+		name="trunk_close";
+		sound[] = {"\sounds\trunk_close.ogg", 1.0, 1};
+		titles[] = {0, " "};
+	};
+	
+	class eat
+	{
+		name="eat";
+		sound[] = {"\sounds\eat.ogg", 1.0, 1};
+		titles[] = {0, " "};
+	};
+	
+	class drink
+	{
+		name="drink";
+		sound[] = {"\sounds\drink.ogg", 1.0, 1};
+		titles[] = {0, " "};
+	};
+	
+	class punch
+	{
+		name="punch";
+		sound[] = {"\sounds\punch.ogg", 1.0, 1};
+		titles[] = {0, " "};
+	};
 };
 
 class CfgDebriefing

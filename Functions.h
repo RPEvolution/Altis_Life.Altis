@@ -6,6 +6,8 @@ class Socket_Reciever
 		file = "core\session";
 		class requestReceived {};
 		class dataQuery {};
+		class playerQuery {};
+		class insertClientInfo {};
 		class insertPlayerInfo {};
 		class updateRequest {};
 		class syncData {};
@@ -42,6 +44,7 @@ class Life_Client_Core
 		class initCiv {};
 		class initCop {};
 		class initMedic {};
+		class initFuelstations {};
 		class welcomeNotification {};
 	};
 	
@@ -49,10 +52,10 @@ class Life_Client_Core
 	{
 		file = "core\adac";
 		
-		class adacRepairTruck;
-		class adacImpound;
-		class adacRepaintMenu;
-		class adacRepaintVehicle;
+		class adacRepairTruck {};
+		class adacImpound {};
+		class adacRepaintMenu {};
+		class adacRepaintVehicle {};
 		class adacSirenLights {};
 		class adacLights {};
 	};
@@ -133,6 +136,9 @@ class Life_Client_Core
 		class robAction {};
 		class captureHideout {};
 		class gather {};
+		class surrender {};
+		class craftAction {};
+		class fillAction {};
 	};
 	
 	class Housing
@@ -150,6 +156,9 @@ class Life_Client_Core
 		class lockupHouse {};
 		class copHouseOwner {};
 		class lockHouse {};
+		class craft {};
+		class craft_update {};
+		class craft_updateFilter {};
 	};
 	
 	class Config
@@ -172,6 +181,7 @@ class Life_Client_Core
 		class weaponShopCfg {};
 		class vehicleWeightCfg {};
 		class houseConfig {};
+		class craftCfg {};
 		
 		//Clothing Store Configs
 		class clothing_cop {};
@@ -262,6 +272,7 @@ class Life_Client_Core
 		class globalSoundClient {};
 		class handleItemPicture {};
  		class handleItemTooltip {};
+		class handleVehicleDamage {};
 		class emptyFuel {};
 	};
 	
@@ -309,6 +320,7 @@ class Life_Client_Core
 		class vehicleWeight {};
 		class deviceMine {};
 		class addVehicle2Chain {};
+		class onVehicleKilled {};
 	};
 	
 	class Cop
@@ -424,38 +436,39 @@ class Life_Client_Core
 	class Market
 	{
 		file = "core\market";
-		class openMarketView;
-        class refreshMarketView;
-        class marketShortView;
-        class marketGetBuyPrice;
-        class marketGetSellPrice;
-        class marketGetRow;
-        class marketGetPriceRow;
-        class marketSetPriceRow;
-        class marketBuy;
-        class marketSell;
+		class openMarketView {}
+        class refreshMarketView {};
+        class marketShortView {};
+        class marketGetBuyPrice {};
+        class marketGetSellPrice {};
+        class marketGetRow {};
+        class marketGetPriceRow {};
+        class marketSetPriceRow {};
+        class marketBuy {};
+        class marketSell {};
+		class marketChange {};
 	};
 	
 	class Permsys
 	{
 		file = "core\permsys";		
-		class permLevel;
-		class permLevelName;
-		class permSetLevel;
-		class permRule;
-		class permMarkers;
-		class permRuleG;		
-		class permconfiguration;	
-		class perms;		
-		class permManager;
-		class permManager_update;		
-		class permManager_requestData;
-		class permManager_gotData;
-		class permManager_updateData;
-		class permManager_uiMode;
-		class permManager_refreshList;	
-		class permManager_set;		
-		class dynPermUpdate;
-		class dynPermCheckout;
+		class permLevel {};
+		class permLevelName {};
+		class permSetLevel {};
+		class permRule {};
+		class permMarkers {};
+		class permRuleG {};		
+		class permconfiguration {};	
+		class perms {};		
+		class permManager {};
+		class permManager_update {};		
+		class permManager_requestData {};
+		class permManager_gotData {};
+		class permManager_updateData {};
+		class permManager_uiMode {};
+		class permManager_refreshList {};	
+		class permManager_set {};		
+		class dynPermUpdate {};
+		class dynPermCheckout {};
 	};
 };

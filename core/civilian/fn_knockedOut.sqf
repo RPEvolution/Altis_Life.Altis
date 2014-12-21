@@ -22,3 +22,5 @@ player playMoveNow "amovppnemstpsraswrfldnon";
 detach player;
 deleteVehicle _obj;
 player setVariable["robbed",FALSE,TRUE];
+
+_vehicle say3D "Punch";

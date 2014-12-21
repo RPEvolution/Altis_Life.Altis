@@ -106,9 +106,21 @@ switch (_code) do
 	case 19:
 	{
 		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [civilian,independent]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
+		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
 		{
-			[] call life_fnc_restrainAction;
+			if([false,"handcuffs",1] call life_fnc_handleInv) then {
+				[] call life_fnc_restrainAction;
+			} else {
+				hint "Du hast keine Handschellen dabei!";
+			};
+		};
+		if(_shift && playerSide in [civilian, independent] && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
+		{
+			if([false,"zipties",1] call life_fnc_handleInv) then {
+				[] call life_fnc_restrainAction;
+			} else {
+				hint "Du hast keine Kabelbinder dabei!";
+			};
 		};
 	};
 	
@@ -116,6 +128,15 @@ switch (_code) do
 	case 34:
 	{
 		if(_shift) then {_handled = true;};
+		
+		if(_shift && isNull cursorTarget) then {
+			if (player getVariable ["surrender", false]) then {
+				player setVariable ["surrender", false, true];
+			} else {
+				[] spawn life_fnc_surrender;
+			};
+		};
+		
 		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && isPlayer cursorTarget && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1) then
 		{
 			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !life_istazed) then

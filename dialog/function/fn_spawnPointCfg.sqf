@@ -22,9 +22,7 @@ switch (_side) do
 				["cop_spawn_1","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
 				["cop_spawn_2","Sofia","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"],
 				["cop_spawn_3","Athira","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"]
-			];	
-			
-			life_spawn_base = false;
+			];
 		} else {
 			
 			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
@@ -46,8 +44,6 @@ switch (_side) do
 				case ((["smugler"] call life_fnc_permLevel) > 1): {_return set[count _return,["civ_smugler_spawn","Schmuggler","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];};
 				case ((["security"] call life_fnc_permLevel) > 1): {_return set[count _return,["civ_sec_spawn","Security","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];};
 			};
-			
-			life_spawn_base = false;
 		} else {
 			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 		};
@@ -72,8 +68,6 @@ switch (_side) do
 				["medic_spawn_2","Athira Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
 				["medic_spawn_3","Pygros Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
 			];
-			
-			life_spawn_base = false;
 		} else {
 			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 		};

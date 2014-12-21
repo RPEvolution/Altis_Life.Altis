@@ -5,7 +5,7 @@
 	Description:
 	Main functionality for toolkits, to be revised in later version.
 */
-private["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName"];
+private["_veh","_upp","_ui","_progress","_pgText","_cP","_displayName","_layer"];
 _veh = cursorTarget;
 life_interrupted = false;
 if(isNull _veh) exitwith {};
@@ -18,7 +18,11 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		_upp = format[localize "STR_NOTF_Repairing",_displayName];
 		//Setup our progress bar.
 		disableSerialization;
-		5 cutRsc ["life_progress","PLAIN"];
+		player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
+		waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
+		
+		_layer = "life_progress" call BIS_fnc_rscLayer;
+		_layer cutRsc["life_progress","PLAIN"];
 		_ui = uiNameSpace getVariable "life_progress";
 		_progress = _ui displayCtrl 38201;
 		_pgText = _ui displayCtrl 38202;
@@ -26,12 +30,24 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		_progress progressSetPosition 0.01;
 		_cP = 0.01;
 		
+		player addEventHandler ["AnimStateChanged", {
+			if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
+				player playActionNow "stop";
+				[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+				player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
+				waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
+			};
+		}];
+		
 		while{true} do
-		{
+		{	
+			/*
 			if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
 				[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 				player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 			};
+			*/
+			
 			sleep 0.27;
 			_cP = _cP + 0.01;
 			_progress progressSetPosition _cP;
@@ -42,13 +58,26 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 			if(life_interrupted) exitWith {};
 		};
 		
+		player removeEventHandler ["AnimStateChanged", 0];
 		life_action_inUse = false;
-		5 cutText ["","PLAIN"];
+		_layer cutText ["","PLAIN"];
 		player playActionNow "stop";
 		if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 		if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_RepairingInVehicle","PLAIN"];};
 		player removeItem "ToolKit";
 		_veh setDamage 0;
 		titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];
+		
+		if((["adac"] call life_fnc_permLevel) > 1) then
+		{
+			switch (true) do
+			{
+				case (_vehicle isKindOf "Car"): {_price = (call life_impound_car);};
+				case (_vehicle isKindOf "Ship"): {_price = (call life_impound_boat);};
+				case (_vehicle isKindOf "Air"): {_price = (call life_impound_air);};
+			};
+			
+			life_atmcash = life_atmcash + _price;
+		};
 	};
 };

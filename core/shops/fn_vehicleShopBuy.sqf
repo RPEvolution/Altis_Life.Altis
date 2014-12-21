@@ -5,7 +5,7 @@
 	Description:
 	Does something with vehicle purchasing.
 */
-private["_mode","_spawnPoints","_className","_basePrice","_colorIndex","_spawnPoint","_vehicle"];
+private["_mode","_spawnPoints","_className","_basePrice","_colorIndex","_spawnPoint","_vehicle","_vehicleExperience"];
 _mode = _this select 0;
 if((lbCurSel 2302) == -1) exitWith {hint localize "STR_Shop_Veh_DidntPick"};
 _className = lbData[2302,(lbCurSel 2302)];
@@ -13,9 +13,11 @@ _vIndex = lbValue[2302,(lbCurSel 2302)];
 _vehicleList = [life_veh_shop select 0] call life_fnc_vehicleListCfg; _basePrice = (_vehicleList select _vIndex) select 1;
  if(_mode) then {_basePrice = round(_basePrice * 10)};
 _colorIndex = lbValue[2304,(lbCurSel 2304)];
+_vehicleExperience = [_className] call life_fnc_vehicleExperenceCfg;
 
 //Series of checks (YAY!)
 if(_basePrice < 0) exitWith {}; //Bad price entry
+if(life_experience <= _vehicleExperience) exitWith {hint "Du hast nicht genug Erfahrung für dieses Fahrzeug."};
 if(life_atmcash < _basePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_basePrice - life_atmcash] call life_fnc_numberText];};
 if(!([_className] call life_fnc_vehShopLicenses) && _className != "I_MRAP_03_hmg_F") exitWith {hint localize "STR_Shop_Veh_NoLicense"};
 
@@ -93,6 +95,19 @@ switch(playerSide) do {
 };
 
 _vehicle allowDamage true;
+_vehicle addEventHandler ["handleDamage",{_this call life_fnc_handleVehicleDamage;}];
+//_vehicle addEventHandler["Killed", {_this spawn TON_fnc_vehicleDead}];
+//_vehicle addEventHandler ["Killed", {_this call life_fnc_onVehicleKilled;}];
+_vehicle addEventHandler ["Killed", {
+	_vehicle = _this select 0;
+	hint "Killed";
+	_vehicle setDammage 0.9;
+	_vehicle setHit["wheel_1_1_steering", 1]; 
+	_vehicle setHit["wheel_1_2_steering", 1]; 
+	_vehicle setHit["wheel_2_1_steering", 1];
+	_vehicle setHit["wheel_2_2_steering", 1]; 
+	_vehicle setHit["karoserie", 1];}
+];
 
 life_vehicles set[count life_vehicles,_vehicle]; //Add err to the chain.
 if(_mode) then {

@@ -19,6 +19,7 @@ if(_vehicle isKindOf "House_F") then {
 	ctrlSetText[3501,format[(localize "STR_MISC_HouseStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 } else {
 	ctrlSetText[3501,format[(localize "STR_MISC_VehStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
+	_vehicle say3D "Trunk_Open";
 };
 
 if(_vehicle isKindOf "House_F") then {
@@ -45,3 +46,5 @@ _vehicle spawn
 		[[_this],"TON_fnc_updateHouseTrunk",false,false] spawn life_fnc_MP;
 	};
 };
+
+_vehicle say3D "Trunk_Close";

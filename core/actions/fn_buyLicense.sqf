@@ -5,11 +5,16 @@
 	Description:
 	Called when purchasing a license. May need to be revised.
 */
-private["_type"];
+private["_type", "_experience"];
 _type = _this select 3;
 
 _price = [_type] call life_fnc_licensePrice;
 _license = [_type,0] call life_fnc_licenseType;
+_experience = [_license] call life_fnc_licenseExperience;
+
+if(life_experience <= _experience) exitWith {
+	hint "Du hast zu wenig Erfahrung um diese Lizenz zu erwerben."
+};
 
 if(life_cash < _price) exitWith {hint format[localize "STR_NOTF_NE_1",[_price] call life_fnc_numberText,_license select 1];};
 

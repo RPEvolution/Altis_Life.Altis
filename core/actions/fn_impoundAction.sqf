@@ -20,7 +20,8 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") |
 	_upp = localize "STR_NOTF_Impounding";
 	//Setup our progress bar.
 	disableSerialization;
-	5 cutRsc ["life_progress","PLAIN"];
+	_layer = "life_progress" call BIS_fnc_rscLayer;
+	_layer cutRsc["life_progress","PLAIN"];
 	_ui = uiNameSpace getVariable "life_progress";
 	_progress = _ui displayCtrl 38201;
 	_pgText = _ui displayCtrl 38202;
@@ -37,7 +38,7 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") |
 		if(player distance _vehicle > 10) exitWith {};
 		if(!alive player) exitWith {};
 	};
-	5 cutText ["","PLAIN"];
+	_layer cutText ["","PLAIN"];
 	
 	if(player distance _vehicle > 10) exitWith {hint localize "STR_NOTF_ImpoundingCancelled"; life_action_inUse = false;};
 	if(!alive player) exitWith {life_action_inUse = false;};

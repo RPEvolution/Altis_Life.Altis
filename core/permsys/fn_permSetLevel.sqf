@@ -180,4 +180,4 @@ if(_adminmode) then
 };
 
 //Sync
- [1,false] call life_fnc_sessionHandle;
+[4] call SOCK_fnc_updatePartial;

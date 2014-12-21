@@ -12,6 +12,7 @@
 #define Btn4 37453
 #define Btn5 37454
 #define Btn6 37455
+#define Btn7 37456
 #define Title 37401
 private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6"];
 if(!dialog) then {
@@ -29,6 +30,7 @@ _Btn3 = _display displayCtrl Btn3;
 _Btn4 = _display displayCtrl Btn4;
 _Btn5 = _display displayCtrl Btn5;
 _Btn6 = _display displayCtrl Btn6;
+_Btn7 = _display displayCtrl Btn7;
 life_vInact_curTarget = _curTarget;
 
 //Set Repair Action
@@ -36,6 +38,15 @@ _Btn1 ctrlSetText localize "STR_vInAct_Repair";
 _Btn1 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_repairTruck;";
 
 if("ToolKit" in (items player) && (damage _curTarget < 1)) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEnable false;};
+
+
+_Btn7 ctrlSetText localize "STR_vInAct_Fill";
+_Btn7 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_fillAction;";
+if(count (nearestObjects [player, ["Land_fs_feed_F"], 25]) > 0) then {
+	_Btn7 ctrlEnable true;
+} else {
+	_Btn7 ctrlEnable false;
+};
 
 if(playerSide == west) then {
 	_Btn2 ctrlSetText localize "STR_vInAct_Registration";

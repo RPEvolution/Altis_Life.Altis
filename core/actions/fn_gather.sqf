@@ -5,7 +5,7 @@
 	Description:
 	Main functionality for gathering.
 */
-private["_gather","_itemWeight","_diff","_itemName","_val","_resourceZones","_zone"];
+private["_gather","_itemWeight","_diff","_itemName","_val","_resourceZones","_zone","_skill","_level"];
 _resourceZones = ["apple_1","apple_2","apple_3","apple_4","apple_5","peaches_1","peaches_2","peaches_3","peaches_4","peaches_5","heroin_1","cocaine_1","weed_1"];
 _zone = "";
 
@@ -23,11 +23,11 @@ if(_zone == "") exitWith {
 
 //Get the resource that will be gathered from the zone name...
 switch(true) do {
-	case (_zone in ["apple_1","apple_2","apple_3","apple_4","apple_5"]): {_gather = "apple"; _val = 3;};
-	case (_zone in ["peaches_1","peaches_2","peaches_3","peaches_4","peaches_5"]): {_gather = "peach"; _val = 3;};
-	case (_zone in ["heroin_1"]): {_gather = "heroinu"; _val = 1;};
-	case (_zone in ["cocaine_1"]): {_gather = "cocaine"; _val = 1;};
-	case (_zone in ["weed_1"]): {_gather = "cannabis"; _val = 1;};
+	case (_zone in ["apple_1","apple_2","apple_3","apple_4","apple_5"]): {_gather = "apple"; _val = 3; _skill = "gatherapples"};
+	case (_zone in ["peaches_1","peaches_2","peaches_3","peaches_4","peaches_5"]): {_gather = "peach"; _val = 3; _skill = "gatherpeaches"};
+	case (_zone in ["heroin_1"]): {_gather = "heroinu"; _val = 1; _skill = "gatherheroin"};
+	case (_zone in ["cocaine_1"]): {_gather = "cocaine"; _val = 1; _skill = "gathercocain"};
+	case (_zone in ["weed_1"]): {_gather = "cannabis"; _val = 1; _skill = "gatherweed"};
 	default {""};
 };
 //gather check??

@@ -5,17 +5,9 @@
 	Description:
 	Read the file name... Explains it.
 */
-if(life_session_completed) exitWith {}; //Why did this get executed when the client already initialized? Fucking arma...
+if(life_session_completed) exitWith {}; //Why did this get executed when the player already initialized? Fucking arma...
 cutText[localize "STR_Session_QueryFail","BLACK FADED"];
 0 cutFadeOut 9999999;
 life_spawn_base = true;
 
-life_player_position = ["16499.2","12793.8","0.00130272"];
-
-for "_i" from 0 to (count life_player_position)-1 do
-{
-	life_player_position set[_i, call compile format["%1", life_player_position select _i]];
-};	
-life_player_position = createMarker ["last_position", life_player_position];
-
-[[getPlayerUID player,profileName,life_cash,life_atmcash,player],"DB_fnc_insertRequest",false,false] spawn life_fnc_MP;
+[[getPlayerUID player,profileName,playerSide,life_cash,life_atmcash,player],"DB_fnc_insertPlayer",false,false] spawn life_fnc_MP;

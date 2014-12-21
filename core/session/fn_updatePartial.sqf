@@ -39,7 +39,7 @@ switch(_mode) do {
 	};
 	
 	case 4: {
-		//Not yet implemented
+		packet set[2,life_player_perms];
 	};
 	
 	case 5: {

@@ -3696,7 +3696,6 @@ class Mission
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					init="[0,0,0] nearestObject 918490 hideObject true;";
 				};
 			};
 		};

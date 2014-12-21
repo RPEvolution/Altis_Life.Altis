@@ -5,7 +5,7 @@
 	Description:
 	Blah blah.
 */
-private["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_titleText","_ui","_flagTexture"];
+private["_group","_hideout","_action","_cpRate","_cP","_progressBar","_title","_titleText","_ui","_flagTexture","_layer"];
 _hideout = (nearestObjects[getPosATL player,["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"],25]) select 0;
 _group = _hideout getVariable ["gangOwner",grpNull];
 
@@ -32,7 +32,8 @@ life_action_inUse = true;
 //Setup the progress bar
 disableSerialization;
 _title = localize "STR_GNOTF_Capturing";
-5 cutRsc ["life_progress","PLAIN"];
+_layer = "life_progress" call BIS_fnc_rscLayer;
+_layer cutRsc["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
@@ -48,7 +49,7 @@ while {true} do
 	};
 	sleep 0.26;
 	if(isNull _ui) then {
-		5 cutRsc ["life_progress","PLAIN"];
+		_layer cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";
 		_progressBar = _ui displayCtrl 38201;
 		_titleText = _ui displayCtrl 38202;
@@ -63,7 +64,7 @@ while {true} do
 };
 
 //Kill the UI display and check for various states
-5 cutText ["","PLAIN"];
+_layer cutText ["","PLAIN"];
 player playActionNow "stop";
 if(!alive player OR life_istazed) exitWith {life_action_inUse = false;_hideout setVariable["inCapture",false,true];};
 if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;_hideout setVariable["inCapture",false,true];};

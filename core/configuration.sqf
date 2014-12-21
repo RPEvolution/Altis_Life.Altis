@@ -30,6 +30,7 @@ life_interrupted = false;
 life_respawned = false;
 life_removeWanted = false;
 life_smartphoneTarget = ObjNull;
+life_is_god = false;
 
 //Persistent Saving
 __CONST__(life_save_civ,TRUE); //Save weapons for civs?
@@ -76,6 +77,7 @@ life_thirst = 100;
 life_hunger = 100;
 __CONST__(life_paycheck_period,5); //Five minutes
 life_cash = 0;
+life_experience = 0;
 __CONST__(life_impound_car,150);
 __CONST__(life_impound_boat,150);
 __CONST__(life_impound_air,250);
@@ -83,7 +85,6 @@ life_istazed = false;
 
 life_my_gang = ObjNull;
 life_player_position = ObjNull;
-life_payer_positions = ObjNull;
 life_player_stats = ObjNull;
 
 life_vehicles = [];
@@ -162,7 +163,9 @@ life_inv_items =
 	"life_inv_boltcutter",
 	"life_inv_defusekit",
 	"life_inv_storagesmall",
-	"life_inv_storagebig"
+	"life_inv_storagebig",
+	"life_inv_handcuffs",
+	"life_inv_zipties"
 ];
 
 //Setup variable inv vars.

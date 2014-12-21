@@ -33,3 +33,4 @@
 #include "perm_dlg_new.hpp"
 #include "wanted_Add.hpp"
 #include "jail_time.hpp"
+#include "craft.hpp"

@@ -30,6 +30,7 @@ _Btn4 = _display displayCtrl Btn4;
 _Btn5 = _display displayCtrl Btn5;
 _Btn6 = _display displayCtrl Btn6;
 _Btn7 = _display displayCtrl Btn7;
+_Btn8 = _display displayCtrl Btn8;
 _Btn1 ctrlShow false;
 _Btn2 ctrlShow false;
 _Btn3 ctrlShow false;
@@ -37,6 +38,7 @@ _Btn4 ctrlShow false;
 _Btn5 ctrlShow false;
 _Btn6 ctrlShow false;
 _Btn7 ctrlShow false;
+_Btn8 ctrlShow false;
 
 life_pInact_curTarget = _curTarget;
 if(_curTarget isKindOf "House_F" && playerSide == west) exitWith {
@@ -130,5 +132,9 @@ if(!(_curTarget in life_vehicles) OR isNil {_curTarget getVariable "house_owner"
 		};
 		_Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_lightHouseAction; closeDialog 0;";
 		_Btn3 ctrlShow true;
+		
+		_Btn8 ctrlSetText localize "STR_pInAct_Craft";
+		_Btn8 buttonSetAction "createDialog ""Life_craft"";";
+		_Btn8 ctrlShow true;
 	};
 };

@@ -24,7 +24,11 @@ life_action_inUse = true; //Lock out other actions
 
 //Setup the progress bar
 disableSerialization;
-5 cutRsc ["life_progress","PLAIN"];
+player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
+waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
+
+_layer = "life_progress" call BIS_fnc_rscLayer;
+_layer cutRsc["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
@@ -32,17 +36,28 @@ _titleText ctrlSetText format["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
+player addEventHandler ["AnimChanged", {
+	hint format["%1", animationState player];
+	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
+		hint "Animation changed.";
+		player playActionNow "stop";
+		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
+		waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
+	};
+}];
+
 while {true} do
 {
-	hint format["%1", animationState player];
-	
+	/*
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
 		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 	};
+	*/
 	sleep 0.26;
 	if(isNull _ui) then {
-		5 cutRsc ["life_progress","PLAIN"];
+		_layer cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";
 		_progressBar = _ui displayCtrl 38201;
 		_titleText = _ui displayCtrl 38202;
@@ -57,8 +72,10 @@ while {true} do
 	if(player distance _curTarget > _distance) exitWith {_badDistance = true;};
 };
 
+player removeEventHandler ["AnimChanged", 0];
+
 //Kill the UI display and check for various states
-5 cutText ["","PLAIN"];
+_layer cutText ["","PLAIN"];
 player playActionNow "stop";
 if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
 if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};

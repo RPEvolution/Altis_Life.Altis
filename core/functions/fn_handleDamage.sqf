@@ -19,6 +19,7 @@ if(!isNil "TON_Debug") then {
 };
 */
 
+if(life_is_god) exitWith {_damage = 0; _damage;};
 
 //Handle the tazer first (Top-Priority).
 if(!isNull _source) then {
