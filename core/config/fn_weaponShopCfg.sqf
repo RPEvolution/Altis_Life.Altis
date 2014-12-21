@@ -388,12 +388,36 @@ switch(_shop) do
 		};
 	};
 	
+	case "garage_gas":
+	{
+		switch (true) do
+		{
+			case (playerSide != civilian): {"Du bist kein Zivilist!"};
+			case ((["adac"] call life_fnc_permLevel) < 2): {"Du bist kein Mitglied des ADAC!"};
+			default
+			{
+				["Werkbank",
+					[
+						["30Rnd_9x21_Mag",nil,100],
+						["6Rnd_GreenSignal_F",nil,30],
+						["ToolKit",nil,20],
+						["FirstAidKit",nil,10],
+						["Chemlight_red",nil,5],
+						["Chemlight_yellow",nil,5],
+						["Chemlight_green",nil,5],
+						["Chemlight_blue",nil,5]
+					]
+				];
+			};
+		};
+	};
+	
 	case "sec":
 	{
 		switch (true) do
 		{
 			case (playerSide != civilian): {"Du bist kein Zivilist!"};
-			case ((["sec"] call life_fnc_permLevel) < 2): {"Du bist kein Mitglied der Security!"};
+			case ((["sec"] call life_fnc_permLevel) < 2): {"Du bist kein Mitglied der Söldner!"};
 			default
 			{
 				["Happy Triggers Spielzeugladen",

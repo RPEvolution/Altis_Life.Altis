@@ -320,7 +320,7 @@ life_weapon_shop_array =
 	["ItemWatch",75],
 	["ItemCompass",25],
 	["ItemGPS",75],
-	["ToolKit",35],
+	["ToolKit",20],
 	["FirstAidKit",8],
 	["NVGoggles",300],
 	["NVGoggles_INDEP",300],
