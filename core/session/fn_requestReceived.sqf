@@ -28,7 +28,7 @@ if((getPlayerUID player) != _this select 0) exitWith {[] call SOCK_fnc_dataQuery
 // Parse basic player information.
 life_cash = parseNumber (_this select 2);
 life_atmcash = parseNumber (_this select 3);
-__CONST__(life_adminlevel,parseNumber(_this select 14));
+__CONST__(life_adminlevel,parseNumber(_this select 12));
 life_experience = parseNumber (_this select 4);
 life_is_arrested = _this select 5;
 
@@ -43,7 +43,7 @@ life_gear = _this select 7;
 [] call life_fnc_loadGear;
 
 // Queries the PERMS
-life_player_perms = _this select 15;				
+life_player_perms = _this select 13;				
 life_player_perms = call compile format["%1", life_player_perms];
 
 // Queries the Last Position of PlayerSide
@@ -79,13 +79,13 @@ switch(playerSide) do {
 		__CONST__(life_copLevel, 0);
 		__CONST__(life_medicLevel, 0);
 		
-		life_houses = _this select 12;
+		life_houses = _this select 14;
 		{
 			_house = nearestBuilding (call compile format["%1", _x select 0]);
 			life_vehicles set[count life_vehicles,_house];
 		} foreach life_houses;
 		
-		life_gangData = _this select 13;
+		life_gangData = _this select 15;
 		if(count life_gangData != 0) then {
 			[] spawn life_fnc_initGang;
 		};
