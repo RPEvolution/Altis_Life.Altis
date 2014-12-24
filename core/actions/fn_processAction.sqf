@@ -83,7 +83,7 @@ if(_hasLicense) then
 }
 	else
 {
-	if(life_cash < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(life_cash < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; _layer cutText ["","PLAIN"]; life_is_processing = false;};
 	
 	while{true} do
 	{

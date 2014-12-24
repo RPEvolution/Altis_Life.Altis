@@ -8,11 +8,8 @@
 private["_unit"];
 _unit = cursorTarget;
 if(isNull _unit) exitWith {}; //Not valid
-if(!life_knockout) exitWith {};
-if(!life_istazed) exitWith {};
-if(!(_unit getVariable "surrender")) exitWith {};
 if((_unit getVariable "restrained")) exitWith {};
-//if(side _unit == west) exitWith {};
+if(!life_knockout || !life_istazed || !(_unit getVariable "surrender")) exitWith {};
 if(player == _unit) exitWith {};
 if(!isPlayer _unit) exitWith {};
 //Broadcast!

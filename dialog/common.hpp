@@ -174,7 +174,7 @@ class Life_RscTitle : Life_RscText {
 	colorText[] = {0.95, 0.95, 0.95, 1};
 };
 
-class life_RscPicture {
+class Life_RscPicture {
 	shadow = 0;
 	type = 0;
 	style = 48;

@@ -20,13 +20,21 @@ if(!_isVehicle && !isPlayer _curTarget) exitWith {};
 if(!_isVehicle && !(_curTarget getVariable["restrained",false])) exitWith {};
 
 _title = format[localize "STR_ISTR_Lock_Process",if(!_isVehicle) then {"Handcuffs"} else {getText(configFile >> "CfgVehicles" >> (typeOf _curTarget) >> "displayName")}];
+
+player addEventHandler ["AnimDone", {
+	_unit = _this select 0;
+	_anim = _this select 1; 
+	if(_anim == "AinvPknlMstpSnonWnonDnon_medic_1") then {
+		_unit switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
+		_unit playMove "AinvPknlMstpSnonWnonDnon_medic_1";
+	};
+}];
+
 life_action_inUse = true; //Lock out other actions
+player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
 
 //Setup the progress bar
 disableSerialization;
-player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
-waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
-
 _layer = "life_progress" call BIS_fnc_rscLayer;
 _layer cutRsc["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
@@ -36,25 +44,8 @@ _titleText ctrlSetText format["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
-player addEventHandler ["AnimChanged", {
-	hint format["%1", animationState player];
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		hint "Animation changed.";
-		player playActionNow "stop";
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-		waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
-	};
-}];
-
 while {true} do
 {
-	/*
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-	};
-	*/
 	sleep 0.26;
 	if(isNull _ui) then {
 		_layer cutRsc ["life_progress","PLAIN"];
@@ -72,10 +63,9 @@ while {true} do
 	if(player distance _curTarget > _distance) exitWith {_badDistance = true;};
 };
 
-player removeEventHandler ["AnimChanged", 0];
-
 //Kill the UI display and check for various states
 _layer cutText ["","PLAIN"];
+player removeEventHandler ["AnimDone", 0];
 player playActionNow "stop";
 if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
 if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};

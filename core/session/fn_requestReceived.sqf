@@ -54,7 +54,7 @@ for "_i" from 0 to (count life_player_position)-1 do
 {
 	life_player_position set[_i, call compile format["%1", life_player_position select _i]];
 };	
-life_player_position = createMarker ["last_position", life_player_position];
+life_player_position = createMarkerLocal ["last_position", life_player_position];
 
 // Get the Stats of PlayerSide
 life_player_stats = _this select 9;

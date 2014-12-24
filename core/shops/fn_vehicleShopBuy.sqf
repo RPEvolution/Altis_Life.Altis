@@ -13,11 +13,11 @@ _vIndex = lbValue[2302,(lbCurSel 2302)];
 _vehicleList = [life_veh_shop select 0] call life_fnc_vehicleListCfg; _basePrice = (_vehicleList select _vIndex) select 1;
  if(_mode) then {_basePrice = round(_basePrice * 10)};
 _colorIndex = lbValue[2304,(lbCurSel 2304)];
-_vehicleExperience = [_className] call life_fnc_vehicleExperenceCfg;
+//_vehicleExperience = [_className] call life_fnc_vehicleExperenceCfg;
 
 //Series of checks (YAY!)
 if(_basePrice < 0) exitWith {}; //Bad price entry
-if(life_experience <= _vehicleExperience) exitWith {hint "Du hast nicht genug Erfahrung für dieses Fahrzeug."};
+//if(life_experience <= _vehicleExperience) exitWith {hint "Du hast nicht genug Erfahrung für dieses Fahrzeug.";};
 if(life_atmcash < _basePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_basePrice - life_atmcash] call life_fnc_numberText];};
 if(!([_className] call life_fnc_vehShopLicenses) && _className != "I_MRAP_03_hmg_F") exitWith {hint localize "STR_Shop_Veh_NoLicense"};
 

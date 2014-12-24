@@ -11,18 +11,24 @@ _control = _this select 0;
 _selection = _this select 1;
 life_clothing_filter = _selection;
 
-if(_selection == 4) then
-{
-	life_shop_cam camSetTarget (player modelToWorld [0,-.15,1.3]);
-	life_shop_cam camSetPos (player modelToWorld [1,-4,2]);
-	life_shop_cam camCommit 1;
-}
-	else
-{
-	life_shop_cam camSetTarget (player modelToWorld [0,0,1]);
-	life_shop_cam camSetPos (player modelToWorld [1,4,2]);
-	life_shop_cam camCommit 1;
+switch (true) do {
+	case (_selection == 1 || _selection == 2): {
+		life_shop_cam camSetTarget (player modelToWorld [0.5,0,1.7]);
+		life_shop_cam camSetPos (player modelToWorld [0,2,1]);
+		life_shop_cam camCommit 1;
+	};
+	case (_selection == 4): {
+		life_shop_cam camSetTarget (player modelToWorld [1,-.15,1.3]);
+		life_shop_cam camSetPos (player modelToWorld [1,-4,2]);
+		life_shop_cam camCommit 1;
+	};
+	default {
+		life_shop_cam camSetTarget (player modelToWorld [1,0,1]);
+		life_shop_cam camSetPos (player modelToWorld [1,4,2]);
+		life_shop_cam camCommit 1;
+	};
 };
+
 
 if(isNull (findDisplay 3100)) exitWith {};
 _list = (findDisplay 3100) displayCtrl 3101;

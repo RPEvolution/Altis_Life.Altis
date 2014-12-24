@@ -10,7 +10,18 @@ if(isNull _vault) exitWith {};
 if(typeOf _vault != "Land_CargoBox_V1_F") exitWith {};
 if(!(_vault getVariable["chargeplaced",false])) exitWith {hint localize "STR_ISTR_Defuse_Nothing"};
 
+player addEventHandler ["AnimDone", {
+	_unit = _this select 0;
+	_anim = _this select 1; 
+	if(_anim == "AinvPknlMstpSnonWnonDnon_medic_1") then {
+		_unit switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
+		_unit playMove "AinvPknlMstpSnonWnonDnon_medic_1";
+	};
+}];
+
 life_action_inUse = true;
+player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
+
 //Setup the progress bar
 disableSerialization;
 _title = localize "STR_ISTR_Defuse_Process";
@@ -25,10 +36,6 @@ _cP = 0.01;
 
 while {true} do
 {
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-	};
 	sleep 0.26;
 	if(isNull _ui) then {
 		_layer cutRsc ["life_progress","PLAIN"];
@@ -45,6 +52,7 @@ while {true} do
 
 //Kill the UI display and check for various states
 _layer cutText ["","PLAIN"];
+player removeEventHandler ["AnimDone", 0];
 player playActionNow "stop";
 if(!alive player) exitWith {life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};

@@ -6,11 +6,14 @@
 	Used in the clothing store to show a 'preview' of the piece of clothing.
 */
 disableSerialization;
-private["_control","_selection","_data","_price","_total","_totalPrice"];
+private["_control","_selection","_data","_price","_total","_totalPrice","_picture","_pictureTag","_name","_nameTag","_item"];
 _control = (_this select 0) select 0;
 _selection = (_this select 0) select 1;
 _price = (findDisplay 3100) displayCtrl 3102;
 _total = (findDisplay 3100) displayCtrl 3106;
+_nameTag = (findDisplay 3100) displayCtrl 3107;
+_pictureTag = (findDisplay 3100) displayCtrl 3108;
+
 if(_selection == -1) exitWith {hint localize "STR_Shop_NoSelection";};
 if(isNull _control) exitWith {hint localize "STR_Shop_NoDisplay"};
 if(life_cMenu_lock) exitWith {};
@@ -20,8 +23,14 @@ life_clothing_purchase set[life_clothing_filter,(_control lbValue _selection)];
 
 _data = _control lbData _selection;
 
+_picture = getText(configFile >> "cfgWeapons" >> _data >> "picture");
+_name = getText(configFile >> "cfgWeapons" >> _data >> "displayName");
+
 [_data,true,nil,nil,nil,nil,nil,true] call life_fnc_handleItem;
 life_cMenu_lock = false;
+
+_pictureTag ctrlSetText _picture;
+_nameTag ctrlSetStructuredText parseText format["<t align='center'><t size='1.5'>%1</t></t>",_name];
 _price ctrlSetStructuredText parseText format [(localize "STR_GNOTF_Price")+ " <t color='#8cff9b'>$%1</t>",[(_control lbValue _selection)] call life_fnc_numberText];
 
 _totalPrice = 0;

@@ -30,13 +30,21 @@ for "_i" from 1 to _doors do {
 };
 if(_door == 0) exitWith {hint localize "STR_Cop_NotaDoor"}; //Not near a door to be broken into.
 if((_building getVariable[format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
+
+player addEventHandler ["AnimDone", {
+	_unit = _this select 0;
+	_anim = _this select 1; 
+	if(_anim == "AinvPknlMstpSnonWnonDnon_medic_1") then {
+		_unit switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
+		_unit playMove "AinvPknlMstpSnonWnonDnon_medic_1";
+	};
+}];
+
 life_action_inUse = true;
+player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
 
 //Setup the progress bar
 disableSerialization;
-player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
-
 _title = localize "STR_ISTR_Bolt_Process";
 _layer = "life_progress" call BIS_fnc_rscLayer;
 _layer cutRsc["life_progress","PLAIN"];
@@ -47,17 +55,6 @@ _titleText ctrlSetText format["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 _cP = 0.01;
 
-hint format ["%1", animationState player];
-player addEventHandler ["AnimStateChanged", {
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		hint "Animation changed.";
-		player playActionNow "stop";
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-		waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
-	};
-}];
-
 switch (typeOf _building) do {
 	case "Land_Dome_Big_F": {_cpRate = 0.003;};
 	case "Land_Research_house_V1_F": {_cpRate = 0.0015;};
@@ -66,14 +63,6 @@ switch (typeOf _building) do {
 
 while {true} do
 {
-	/*
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-		waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
-	};
-	*/
-	
 	sleep 0.26;
 	if(isNull _ui) then {
 		_layer cutRsc ["life_progress","PLAIN"];
@@ -89,10 +78,9 @@ while {true} do
 	if(life_interrupted) exitWith {};
 };
 
-player removeEventHandler ["AnimStateChanged", 0];
-
 //Kill the UI display and check for various states
 _layer cutText ["","PLAIN"];
+player removeEventHandler ["AnimDone", 0];
 player playActionNow "stop";
 if(!alive player OR life_istazed) exitWith {life_action_inUse = false;};
 if((player getVariable["restrained",false])) exitWith {life_action_inUse = false;};

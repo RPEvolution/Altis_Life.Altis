@@ -30,6 +30,4 @@ private ["_object"];
 _object = [0,0,0] nearestObject 918490;
 _object hideObjectGlobal true;
 
-[] execVM "initFuelstations.sqf";
-
 [8,true,true,12] execFSM "core\fsm\timeModule.fsm";

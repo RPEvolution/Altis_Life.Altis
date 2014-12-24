@@ -59,5 +59,7 @@ switch(_item) do
 	case "life_inv_defusekit": {"textures\icons\defusekit.paa"};
 	case "life_inv_storagesmall": {"textures\icons\storagesmall.paa"};
 	case "life_inv_storagebig": {"textures\icons\storagebig.paa"};
+	case "life_inv_handcuffs": {"textures\icons\handcuffs.paa"};
+	case "life_inv_zipties": {"textures\icons\zipties.paa"};
 	default {"textures\icons\house.paa"};
 };

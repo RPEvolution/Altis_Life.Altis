@@ -13,14 +13,23 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 {
 	if("ToolKit" in (items player)) then
 	{
-		life_action_inUse = true;
 		_displayName = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
 		_upp = format[localize "STR_NOTF_Repairing",_displayName];
-		//Setup our progress bar.
-		disableSerialization;
-		player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
-		waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
 		
+		player addEventHandler ["AnimDone", {
+			_unit = _this select 0;
+			_anim = _this select 1; 
+			if(_anim == "AinvPknlMstpSnonWnonDnon_medic_1") then {
+				_unit switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
+				_unit playMove "AinvPknlMstpSnonWnonDnon_medic_1";
+			};
+		}];
+		
+		life_action_inUse = true;
+		player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
+		
+		//Setup our progress bar.
+		disableSerialization;		
 		_layer = "life_progress" call BIS_fnc_rscLayer;
 		_layer cutRsc["life_progress","PLAIN"];
 		_ui = uiNameSpace getVariable "life_progress";
@@ -30,24 +39,8 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		_progress progressSetPosition 0.01;
 		_cP = 0.01;
 		
-		player addEventHandler ["AnimStateChanged", {
-			if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-				player playActionNow "stop";
-				[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-				player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-				waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
-			};
-		}];
-		
 		while{true} do
-		{	
-			/*
-			if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-				[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-				player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-			};
-			*/
-			
+		{			
 			sleep 0.27;
 			_cP = _cP + 0.01;
 			_progress progressSetPosition _cP;
@@ -58,10 +51,10 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 			if(life_interrupted) exitWith {};
 		};
 		
-		player removeEventHandler ["AnimStateChanged", 0];
+		player removeEventHandler ["AnimDone", 0];
+		player playActionNow "stop";
 		life_action_inUse = false;
 		_layer cutText ["","PLAIN"];
-		player playActionNow "stop";
 		if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
 		if(player != vehicle player) exitWith {titleText[localize "STR_NOTF_RepairingInVehicle","PLAIN"];};
 		player removeItem "ToolKit";

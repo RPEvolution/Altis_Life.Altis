@@ -4,7 +4,7 @@
 	Description:
 	Allows cops to 'kick' in the door?
 */
-private["_house","_door","_title","_titleText","_progressBar","_cpRate","_cP","_uid"];
+private["_house","_door","_title","_titleText","_progressBar","_cpRate","_cP","_uid","_layer"];
 _house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _house OR !(_house isKindOf "House_F")) exitWith {};
 if(isNil {(_house getVariable "house_owner")}) exitWith {hint localize "STR_House_Raid_NoOwner"};
@@ -16,12 +16,23 @@ _door = [_house] call life_fnc_nearestDoor;
 if(_door == 0) exitWith {hint localize "STR_Cop_NotaDoor"};
 if((_house getVariable[format["bis_disabled_Door_%1",_door],0]) == 0) exitWith {hint localize "STR_House_Raid_DoorUnlocked"};
 
+player addEventHandler ["AnimDone", {
+	_unit = _this select 0;
+	_anim = _this select 1; 
+	if(_anim == "AinvPknlMstpSnonWnonDnon_medic_1") then {
+		_unit switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
+		_unit playMove "AinvPknlMstpSnonWnonDnon_medic_1";
+	};
+}];
+
 life_action_inUse = true;
+player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
 
 //Setup the progress bar
-disableSerialization;
+disableSerialization;		
 _title = localize "STR_House_Raid_Progress";
-5 cutRsc ["life_progress","PLAIN"];
+_layer = "life_progress" call BIS_fnc_rscLayer;
+_layer cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
 _progressBar = _ui displayCtrl 38201;
 _titleText = _ui displayCtrl 38202;
@@ -34,13 +45,9 @@ _cpRate = 0.0092;
 
 while {true} do
 {
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-	};
 	sleep 0.26;
 	if(isNull _ui) then {
-		5 cutRsc ["life_progress","PLAIN"];
+		_layer cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";
 	};
 	_cP = _cP + _cpRate;
@@ -51,7 +58,8 @@ while {true} do
 };
 
 //Kill the UI display and check for various states
-5 cutText ["","PLAIN"];
+_layer cutText ["","PLAIN"];
+player removeEventHandler ["AnimDone", 0];
 player playActionNow "stop";
 if(!alive player) exitWith {life_action_inUse = false;};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"]; life_action_inUse = false;};
