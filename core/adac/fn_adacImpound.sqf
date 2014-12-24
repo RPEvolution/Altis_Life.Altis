@@ -11,7 +11,7 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") |
 	_vehicleData = _vehicle getVariable["vehicle_info_owners",[]];
 	if(count _vehicleData == 0) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
 	_vehicleName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
-	[[[0,format["%1, dein %2 wird gerade vom ADAC abgeschleppt.",(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,format["%1, dein %2 wird gerade vom ADAC abgeschleppt.",(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	life_action_inUse = true;
 	
 	_upp = localize "STR_NOTF_Impounding";
