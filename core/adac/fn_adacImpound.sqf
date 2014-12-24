@@ -4,43 +4,21 @@
 */
 private["_vehicle","_type","_time","_price","_vehicleData","_upp","_ui","_progress","_pgText","_cP","_vehownerid","_costful_impound"];
 _vehicle = cursorTarget;
-
-/*if(((["adac"] call life_fnc_permLevel) < 2) or (__GETC__(life_adminlevel) < 0)) exitWith
-{
-	hint "Du bist kein ADAC-Mitglied!";
-};*/
-
-//ADD ##16
-_vehicleData = _vehicle getVariable["vehicle_info_owners",[]];
-if(count _vehicleData == 0) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
-
+if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") || (_vehicle isKindOf "B_Slingload_01_Cargo_F") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship"))) exitWith {};
 if(player distance cursorTarget > 10) exitWith {};
-// ##16 ^v swapped
-if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "B_Slingload_01_Cargo_F") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship"))) exitWith {};
-
-/*if(!([false,"uitem_adac_tow",1] call life_fnc_handleInv)) exitWith
+if((_vehicle isKindOf "Car") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") || (_vehicle isKindOf "B_Slingload_01_Cargo_F") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship")) then
 {
-	hint "Du hast kein Abschleppseil!";
-};*/
-
-if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "B_Slingload_01_Cargo_F") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") || (_vehicle isKindOf "Ship")) then
-{
-	//DEL ##16
-	//_vehicleData = _vehicle getVariable["vehicle_info_owners",[]];
-	//if(count _vehicleData == 0) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
+	_vehicleData = _vehicle getVariable["vehicle_info_owners",[]];
+	if(count _vehicleData == 0) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
 	_vehicleName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
-	
-	//if(!_costful_impound) then
-	//{
-		[[0,format["%1, dein %2 wird gerade vom ADAC abgeschleppt.",(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
-	//};
-	
+	[[[0,format["%1, dein %2 wird gerade vom ADAC abgeschleppt.",(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	life_action_inUse = true;
 	
-	_upp = "Abschleppen ...";
+	_upp = localize "STR_NOTF_Impounding";
 	//Setup our progress bar.
 	disableSerialization;
-	5 cutRsc ["life_progress","PLAIN"];
+	_layer = "life_progress" call BIS_fnc_rscLayer;
+	_layer cutRsc["life_progress","PLAIN"];
 	_ui = uiNameSpace getVariable "life_progress";
 	_progress = _ui displayCtrl 38201;
 	_pgText = _ui displayCtrl 38202;
@@ -57,35 +35,42 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 		if(player distance _vehicle > 10) exitWith {};
 		if(!alive player) exitWith {};
 	};
-	5 cutText ["","PLAIN"];
+	_layer cutText ["","PLAIN"];
 	
-	if(player distance _vehicle > 10) exitWith {hint "Abschleppen abgebrochen."; life_action_inUse = false;};
+	if(player distance _vehicle > 10) exitWith {hint localize "STR_NOTF_ImpoundingCancelled"; life_action_inUse = false;};
 	if(!alive player) exitWith {life_action_inUse = false;};
 	//_time = _vehicle getVariable "time";
-	//if(isNil {_time}) exitWith {deleteVehicle _vehicle; hint "This vehicle was hacked in"};
+	if(isNil {_time}) exitWith {deleteVehicle _vehicle; hint "Achtung! Freilaufender Admin"};
 	//if((time - _time)  < 120) exitWith {hint "This is a freshly spawned vehicle, you have no right impounding it."};
 	if((count crew _vehicle) == 0) then
 	{
-		if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "B_Slingload_01_Cargo_F") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") || (_vehicle isKindOf "Ship"))) exitWith {life_action_inUse = false;};
+		if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") || (_vehicle isKindOf "B_Slingload_01_Cargo_F") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship"))) exitWith {life_action_inUse = false;};
 		_type = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
 		switch (true) do
 		{
-			case (_vehicle isKindOf "Car"): {_price = life_impound_car;};
-			case (_vehicle isKindOf "B_Slingload_01_Cargo_F"): {_price = life_impound_car;};
-			case (_vehicle isKindOf "B_Slingload_01_Medevac_F"): {_price = life_impound_car;};
-			case (_vehicle isKindOf "Ship"): {_price = life_impound_boat;};
-			case (_vehicle isKindOf "Air"): {_price = life_impound_air;};
+			case (_vehicle isKindOf "Car"): {_price = (call life_impound_car);};
+			case (_vehicle isKindOf "Ship"): {_price = (call life_impound_boat);};
+			case (_vehicle isKindOf "Air"): {_price = (call life_impound_air);};
+			case (_vehicle isKindOf "B_Slingload_01_Medevac_F"): {_price = (call life_impound_car);};
+			case (_vehicle isKindOf "B_Slingload_01_Cargo_F"): {_price = (call life_impound_car);};
 		};
 		
 		life_impound_inuse = true;
 		[[_vehicle,true,player],"TON_fnc_vehicleStore",false,false] spawn life_fnc_MP;
-		waitUntil {!life_impound_inuse};		
 		
-		hint "Fahrzeug abgeschleppt.";
+		//delete ropes on impound
+		_ropes = (_vehicle getvariable ["zlt_ropes", []]);
+		{deletevehicle _x} foreach _ropes;
+		_vehicle setvariable ["zlt_ropes", [], true];
+
+		waitUntil {!life_impound_inuse};
+		hint format[localize "STR_NOTF_Impounded",_type,_price];
+		[[0,format[localize "STR_NOTF_HasImpounded",profileName,(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+		life_atmcash = life_atmcash + _price;
 	}
 		else
 	{
-		hint "Abschleppen abgebrochen.";
+		hint localize "STR_NOTF_ImpoundingCancelled";
 	};
 };
 life_action_inUse = false;
