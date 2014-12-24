@@ -30,7 +30,7 @@ life_interrupted = false;
 life_respawned = false;
 life_removeWanted = false;
 life_smartphoneTarget = ObjNull;
-life_is_god = false;
+life_action_gathering = false;
 
 //Persistent Saving
 __CONST__(life_save_civ,TRUE); //Save weapons for civs?
@@ -77,7 +77,6 @@ life_thirst = 100;
 life_hunger = 100;
 __CONST__(life_paycheck_period,5); //Five minutes
 life_cash = 0;
-life_experience = 0;
 __CONST__(life_impound_car,150);
 __CONST__(life_impound_boat,150);
 __CONST__(life_impound_air,250);
@@ -85,6 +84,7 @@ life_istazed = false;
 
 life_my_gang = ObjNull;
 life_player_position = ObjNull;
+life_payer_positions = ObjNull;
 life_player_stats = ObjNull;
 
 life_vehicles = [];
@@ -93,18 +93,18 @@ switch (playerSide) do
 {
 	case west: 
 	{
-		life_atmcash = 5000; //Starting Bank Money
-		life_paycheck = 100000; //Paycheck Amount
+		life_atmcash = 10000; //Starting Bank Money
+		life_paycheck = 200; //Paycheck Amount
 	};
 	case civilian: 
 	{
 		life_atmcash = 5000; //Starting Bank Money
-		life_paycheck = 100000; //Paycheck Amount
+		life_paycheck = 75; //Paycheck Amount
 	};
 	
 	case independent: {
-		life_atmcash = 5000;
-		life_paycheck = 100000;
+		life_atmcash = 10000;
+		life_paycheck = 200;
 	};
 };
 
@@ -163,9 +163,7 @@ life_inv_items =
 	"life_inv_boltcutter",
 	"life_inv_defusekit",
 	"life_inv_storagesmall",
-	"life_inv_storagebig",
-	"life_inv_handcuffs",
-	"life_inv_zipties"
+	"life_inv_storagebig"
 ];
 
 //Setup variable inv vars.
@@ -234,6 +232,12 @@ life_illegalweapons =
 	"20Rnd_762x51_Mag",
 	"30Rnd_65x39_caseless_mag",
 	"HandGrenade_Stone",
+	"SmokeShellOrange",
+	"SmokeShellBlue",
+	"SmokeShell",
+	"SmokeShellRed",
+	"SmokeShellPurple",
+	"B_IR_Grenade",
 	"30Rnd_45ACP_Mag_SMG_01"
 ];
 
@@ -276,6 +280,8 @@ sell_array =
 	["salt_r",1650],
 	["glass",1450],
 	["fuelF",35],
+	["handcuffs",10],
+	["zipties",5],
 	["spikeStrip",200],
 	["cement",1950],
 	["goldbar",30000]
@@ -286,6 +292,8 @@ buy_array =
 [
 	["apple",4],
 	["rabbit",8],
+	["handcuffs",10],
+	["zipties",5],
 	["salema",10],
 	["ornate",8],
 	["mackerel",200],
@@ -391,7 +399,14 @@ life_weapon_shop_array =
 	["9Rnd_45ACP_Mag",50],
 	["11Rnd_45ACP_Mag",75],
 	["6Rnd_45ACP_Cylinder",50],
-	["30Rnd_9x21_Mag",30]
+	["30Rnd_9x21_Mag",30],
+	["B_IR_Grenade",10],
+	["SmokeShellOrange",50],
+	["SmokeShellBlue",50],
+	["SmokeShell",50],
+	["SmokeShellRed",50],
+	["SmokeShellGreen",50],
+	["SmokeShellPurple",50]
 ];
 __CONST__(life_weapon_shop_array,life_weapon_shop_array);
 
