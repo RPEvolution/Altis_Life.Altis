@@ -36,7 +36,9 @@ switch(_shop) do
 						["ItemGPS",nil,100],
 						["B_UavTerminal",nil,100],							
 						["Chemlight_red",nil,5],
-						["HandGrenade_Stone","Flashbang",100],					
+						["HandGrenade_Stone","Flashbang",100],
+						["SmokeShellBlue",nil,100],
+						["B_IR_Grenade",nil,10],
 						["NVGoggles_OPFOR",nil,400]		
 					]
 				];
@@ -62,6 +64,7 @@ switch(_shop) do
 						["30Rnd_9x21_Mag",nil,100],
 						["hgun_Pistol_Signal_F",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
+						["SmokeShellOrange",nil,100],
 						["optic_Yorris",nil,50],
 						["optic_MRD",nil,50],
 						["Chemlight_red",nil,5]
@@ -157,8 +160,12 @@ switch(_shop) do
 						["ItemWatch",nil,100],
 						["ItemCompass",nil,25],
 						["ItemGPS",nil,100],
-						["ToolKit",nil,50],
+						["ToolKit",nil,1000],
 						["FirstAidKit",nil,10],
+						["SmokeShellPurple",nil,100],
+						["SmokeShellYellow",nil,100],
+						["SmokeShellRed",nil,100],
+						["SmokeShell",nil,100],
 						["NVGoggles",nil,400],
 						["NVGoggles_INDEP",nil,400],
 						["NVGoggles_OPFOR",nil,400]
@@ -178,6 +185,16 @@ switch(_shop) do
 			{
 				["Mohammed's Jihadis Waffen",
 					[
+						["hgun_Rook40_F",nil,500],
+						["16Rnd_9x21_Mag",nil,50],
+						["hgun_ACPC2_F",nil,750],
+						["9Rnd_45ACP_Mag",nil,50],
+						["hgun_Pistol_heavy_01_F",nil,850],
+						["11Rnd_45ACP_Mag",nil,75],
+						["hgun_Pistol_heavy_02_F",nil,1000],
+						["6Rnd_45ACP_Cylinder",nil,50],
+						["hgun_PDW2000_F",nil,2000],
+						["30Rnd_9x21_Mag",nil,100],
 						["SMG_01_F",nil,2200],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["arifle_Mk20C_plain_F",nil,2500],
@@ -228,18 +245,35 @@ switch(_shop) do
 			{
 				["Ed's Waffensammlung",
 					[
+						["hgun_Rook40_F",nil,250],
+						["16Rnd_9x21_Mag",nil,25],
+						["hgun_ACPC2_F",nil,375],
+						["9Rnd_45ACP_Mag",nil,25],
+						["hgun_Pistol_heavy_01_F",nil,425],
+						["11Rnd_45ACP_Mag",nil,38],
+						["hgun_Pistol_heavy_02_F",nil,500],
+						["6Rnd_45ACP_Cylinder",nil,25],
+						["hgun_PDW2000_F",nil,1000],
+						["30Rnd_9x21_Mag",nil,50],
 						["SMG_01_F",nil,1100],
+						["30Rnd_45ACP_Mag_SMG_01",nil,75],
 						["arifle_Mk20C_plain_F",nil,1250],
 						["arifle_Mk20C_F",nil,1250],
 						["arifle_Mk20_plain_F",nil,1250],
 						["arifle_Mk20_F",nil,1250],
+						["30Rnd_556x45_Stanag",nil,90],
 						["arifle_TRG20_F",nil,1400],
 						["arifle_TRG21_F",nil,1400],
+						["30Rnd_556x45_Stanag",nil,90],
 						["arifle_Katiba_C_F",nil,1500],
 						["arifle_Katiba_F",nil,1500],
+						["30Rnd_65x39_caseless_green",nil,100],
 						["srifle_DMR_01_F",nil,2500],
+						["10Rnd_762x51_Mag",nil,250],
 						["srifle_EBR_F",nil,2500],
+						["20Rnd_762x51_Mag",nil,500],
 						["arifle_SDAR_F",nil,1200],
+						["20Rnd_556x45_UW_mag",nil,65],
 						["muzzle_snds_L",nil,50],
 						["muzzle_snds_acp",nil,50],
 						["muzzle_snds_B",nil,50],
@@ -252,12 +286,10 @@ switch(_shop) do
 						["optic_MRCO",nil,350],
 						["optic_DMS",nil,900],
 						["optic_LRPS",nil,1000],
-						["30Rnd_45ACP_Mag_SMG_01",nil,75],
-						["30Rnd_556x45_Stanag",nil,90],
-						["30Rnd_65x39_caseless_green",nil,100],
-						["10Rnd_762x51_Mag",nil,250],
-						["20Rnd_762x51_Mag",nil,500],
-						["20Rnd_556x45_UW_mag",nil,65]
+						["SmokeShellPurple",nil,50],
+						["SmokeShellYellow",nil,50],
+						["SmokeShellRed",nil,50],
+						["SmokeShell",nil,50]
 					]
 				];
 			};
@@ -274,11 +306,21 @@ switch(_shop) do
 				["ItemWatch",nil,75],
 				["ItemCompass",nil,25],
 				["ItemGPS",nil,75],
-				["ToolKit",nil,35],
+				["ToolKit",nil,750],
 				["FirstAidKit",nil,8],
 				["NVGoggles",nil,300],
 				["NVGoggles_INDEP",nil,300],
 				["NVGoggles_OPFOR",nil,300],
+				["hgun_Rook40_F",nil,375],
+				["16Rnd_9x21_Mag",nil,38],
+				["hgun_ACPC2_F",nil,560],
+				["9Rnd_45ACP_Mag",nil,38],
+				["hgun_Pistol_heavy_01_F",nil,640],
+				["11Rnd_45ACP_Mag",nil,64],
+				["hgun_Pistol_heavy_02_F",nil,750],
+				["6Rnd_45ACP_Cylinder",nil,38],
+				["hgun_PDW2000_F",nil,1500],
+				["30Rnd_9x21_Mag",nil,100],
 				["SMG_01_F",nil,1650],
 				["30Rnd_45ACP_Mag_SMG_01",nil,110],
 				["arifle_Mk20C_plain_F",nil,1875],
@@ -314,7 +356,11 @@ switch(_shop) do
 				["optic_Hamr",nil,450],
 				["optic_MRCO",nil,525],
 				["optic_DMS",nil,1300],
-				["optic_LRPS",nil,1500]
+				["optic_LRPS",nil,1500],
+				["SmokeShellPurple",nil,75],
+				["SmokeShellYellow",nil,75],
+				["SmokeShellRed",nil,75],
+				["SmokeShell",nil,75]
 			]
 		];
 	};
@@ -369,13 +415,14 @@ switch(_shop) do
 						["6Rnd_GreenSignal_F",nil,30],
 						["optic_Yorris",nil,50],
 						["optic_MRD",nil,50],
+						["SmokeShellOrange",nil,100],
 						["Rangefinder",nil,100],
 						["Binocular",nil,20],
 						["ItemMap",nil,1],
 						["ItemWatch",nil,100],
 						["ItemCompass",nil,25],
 						["ItemGPS",nil,100],
-						["ToolKit",nil,50],
+						["ToolKit",nil,20],
 						["FirstAidKit",nil,10],
 						["NVGoggles",nil,400],
 						["Chemlight_red",nil,5],
@@ -400,6 +447,7 @@ switch(_shop) do
 					[
 						["30Rnd_9x21_Mag",nil,100],
 						["6Rnd_GreenSignal_F",nil,30],
+						["SmokeShellOrange",nil,100],
 						["ToolKit",nil,20],
 						["FirstAidKit",nil,10],
 						["Chemlight_red",nil,5],
@@ -428,7 +476,7 @@ switch(_shop) do
 						["ItemWatch",nil,100],
 						["ItemCompass",nil,25],
 						["ItemGPS",nil,100],
-						["ToolKit",nil,50],
+						["ToolKit",nil,500],
 						["FirstAidKit",nil,10],
 						["NVGoggles",nil,400],
 						["hgun_P07_snds_F","Taser",500],
@@ -445,7 +493,8 @@ switch(_shop) do
 						["Chemlight_red",nil,5],
 						["Chemlight_yellow",nil,5],
 						["Chemlight_green",nil,5],
-						["Chemlight_blue",nil,5]
+						["Chemlight_blue",nil,5],
+						["SmokeShellGreen",nil,100]
 					]
 				];
 			};
@@ -495,7 +544,7 @@ switch(_shop) do
 				["ItemWatch",nil,100],
 				["ItemCompass",nil,25],
 				["ItemGPS",nil,100],
-				["ToolKit",nil,50],
+				["ToolKit",nil,1000],
 				["FirstAidKit",nil,10],
 				["NVGoggles",nil,400],
 				["NVGoggles_INDEP",nil,400],
