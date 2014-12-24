@@ -84,7 +84,7 @@ switch(true) do
 
 if(!_valid) exitWith
 {
-	[[0,format[">PERM< Konnte Perm für Spieler %1 der Gruppe '%2' nicht auf %3 setzen!", name player, _perm_name, _level]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,format[">PERM< Konnte Perm fÃ¼r Spieler %1 der Gruppe '%2' nicht auf %3 setzen!", name player, _perm_name, _level]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 };
 
 
@@ -122,7 +122,7 @@ foreach _perm_perm;
 
 if(!_valid) exitWith
 {
-	[[0,format[">PERM< Spieler %1 hat keine Erlaubnis für '%2'!", name player, _perm_name]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,format[">PERM< Spieler %1 hat keine Erlaubnis fÃ¼r '%2'!", name player, _perm_name]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 };
 
 /*
@@ -146,7 +146,7 @@ if(!_done) then
 	life_player_perms set [count life_player_perms, [_permid, _level]];
 };
 
-//[[0,format[">PERM< Spieler %1 hat nun Level %2 für die Gruppe'%3'.", name player, _level, _perm_name]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+//[[0,format[">PERM< Spieler %1 hat nun Level %2 fÃ¼r die Gruppe'%3'.", name player, _level, _perm_name]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 
 
 switch(true) do 
@@ -164,7 +164,7 @@ switch(true) do
 	};
 	case (_level > _oldlevel):
 	{
-		_message = format["<img size='10' color='#FFFFFF' image='%1'/><br/><br/><t size='2.5'>%2</t><br/><t size='1.5'>Level %3</t><br/><t size='1'>Du hast einen höheren Rang bekommen!</t>", _perm_logo,_perm_name, _level];
+		_message = format["<img size='10' color='#FFFFFF' image='%1'/><br/><br/><t size='2.5'>%2</t><br/><t size='1.5'>Level %3</t><br/><t size='1'>Du hast einen hÃ¶heren Rang bekommen!</t>", _perm_logo,_perm_name, _level];
 		hint parseText _message;
 	};
 	case (_level < _oldlevel):
@@ -174,10 +174,12 @@ switch(true) do
 	};
 };
 
+/*
 if(_adminmode) then
 {
 	[[0,format["!!!ADMIN: >PERM< %2 von %1 wurde auf %3 gesetzt!", name player, _perm_name, _level]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 };
+*/
 
 //Sync
 [4] call SOCK_fnc_updatePartial;
