@@ -2054,10 +2054,12 @@
  		<Key ID="STR_NOTF_Gather_Success">
 			<Original>You have gathered %2 %1(s)</Original>
 			<English>You have gathered %2 %1(s)</English>
+			<German>Du hast %2 %1(s) gesammelt</German>
 		</Key>
 		<Key ID="STR_NOTF_GatherVeh">
 			<Original>You can't gather from inside a car!</Original>
 			<English>You can't gather from inside a car!</English>
+			<German>Du kannst nicht aus einem Auto sammeln!</German>
 		</Key>
 		<Key ID="STR_NOTF_NoLootingPerson">
 			<Original>You are not allowed to loot dead bodies</Original>
@@ -3030,7 +3032,7 @@
 		<Key ID="STR_Item_Cannabis">
 			<Original>Cannabis</Original>
 			<English>Cannabis</English>
-			<German>Kannabis</German>
+			<German>Hanf</German>
 			<French>Cannabis</French>
 			<Italian>Cannabis</Italian>
 			<Portuguese>Maconha não Processada</Portuguese>
