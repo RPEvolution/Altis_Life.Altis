@@ -40,7 +40,7 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "B_Slingload_01_Medevac_F") |
 	if(player distance _vehicle > 10) exitWith {hint localize "STR_NOTF_ImpoundingCancelled"; life_action_inUse = false;};
 	if(!alive player) exitWith {life_action_inUse = false;};
 	//_time = _vehicle getVariable "time";
-	if(isNil {_time}) exitWith {deleteVehicle _vehicle; hint "Achtung! Freilaufender Admin"};
+	//if(isNil {_time}) exitWith {deleteVehicle _vehicle; hint "Achtung! Freilaufender Admin"};
 	//if((time - _time)  < 120) exitWith {hint "This is a freshly spawned vehicle, you have no right impounding it."};
 	if((count crew _vehicle) == 0) then
 	{
