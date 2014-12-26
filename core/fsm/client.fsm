@@ -83,8 +83,8 @@ class FSM
        "{" \n
        "	if(player distance (getMarkerPos ""fed_reserve"") < 120 && playerSide == west) then" \n
        "	{" \n
-       "		systemChat format[localize ""STR_FSM_ReceivedPay"",[(call life_paycheck) + 1500] call life_fnc_numberText];" \n
-       "		life_atmcash = life_atmcash + (call life_paycheck) + 1500;" \n
+       "		systemChat format[localize ""STR_FSM_ReceivedPay"",[(call life_paycheck) + 500] call life_fnc_numberText];" \n
+       "		life_atmcash = life_atmcash + (call life_paycheck) + 500;" \n
        "	};" \n
        "	if(license_civ_citizen OR playerSide in [west,independent]) then" \n
        "	{" \n

@@ -163,7 +163,9 @@ life_inv_items =
 	"life_inv_boltcutter",
 	"life_inv_defusekit",
 	"life_inv_storagesmall",
-	"life_inv_storagebig"
+	"life_inv_storagebig",
+	"life_inv_handcuffs",
+	"life_inv_zipties"
 ];
 
 //Setup variable inv vars.
@@ -193,6 +195,7 @@ life_licenses =
 	["license_civ_salt","civ"],
 	["license_civ_cement","civ"],
 	["license_med_air","med"],
+	["license_adac_air","med"],
 	["license_civ_citizen","civ"],
 	["license_civ_home","civ"]
 ];
@@ -412,20 +415,20 @@ __CONST__(life_weapon_shop_array,life_weapon_shop_array);
 
 life_garage_prices =
 [
-	["C_Kart_01_Blu_F",150],
-	["C_Kart_01_Fuel_F",150],
-	["C_Kart_01_Red_F",150],
-	["C_Kart_01_Vrana_F",150],
-	["B_Quadbike_01_F",120],
-	["C_Hatchback_01_F",600],
-	["B_G_Offroad_01_F",1050],
+	["C_Kart_01_Blu_F",50],
+	["C_Kart_01_Fuel_F",50],
+	["C_Kart_01_Red_F",50],
+	["C_Kart_01_Vrana_F",50],
+	["B_Quadbike_01_F",50],
+	["C_Hatchback_01_F",100],
+	["B_G_Offroad_01_F",100],
 	["B_G_Offroad_01_repair_F",90],
 	["B_G_Offroad_01_armed_F",375000],
-	["C_SUV_01_F",1500],
-	["C_Van_01_transport_F",1350],
-	["C_Van_01_box_F",1500],
-	["C_Hatchback_01_sport_F",750],
-	["C_Heli_Light_01_civil_F",24750],
+	["C_SUV_01_F",100],
+	["C_Van_01_transport_F",100],
+	["C_Van_01_box_F",150],
+	["C_Hatchback_01_sport_F",150],
+	["C_Heli_Light_01_civil_F",4750],
 	["O_Heli_Transport_04_repair_F",300],
 	["O_Heli_Transport_04_medevac_F",300],
 	["O_Heli_Transport_04_F",30000],

@@ -94,16 +94,18 @@ switch(playerSide) do {
 		
 		// Adds more Paycheck for PERMS
 		switch (true) do {
-			case ((["adac"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
 			case ((["security"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
 			case ((["smugler"] call life_fnc_permLevel) > 2): {life_paycheck = life_paycheck + 50;};
 		};
 	};
 	
 	case independent: {	
-		_perm_level = ["medic"] call life_fnc_permLevel;
-	
+		_perm_level = ["medic"] call life_fnc_permLevel;	
 		__CONST__(life_medicLevel, _perm_level);
+		
+		_perm_level = ["adac"] call life_fnc_permLevel;
+		__CONST__(life_adacLevel, _perm_level);
+		
 		__CONST__(life_copLevel,0);
 	};
 };

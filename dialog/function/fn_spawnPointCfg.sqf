@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_spawnPointCfg.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -16,23 +17,22 @@ switch (_side) do
 {
 	case west:
 	{
-		if(life_spawn_base) then {
+		if(life_spawn_base) then {	
 		
 			_return = [
 				["cop_spawn_1","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
 				["cop_spawn_2","Sofia","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"],
 				["cop_spawn_3","Athira","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"]
 			];
-		} else {
-			
-			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+		} else {	
+			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];	
 		};
 	};
 	
 	case civilian:
 	{
 		if(life_spawn_base) then {
-			
+		
 			if(license_civ_rebel) then { 			
 				_return = [["reb_spawn","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 			} else {			
@@ -63,11 +63,15 @@ switch (_side) do
 		
 		if(life_spawn_base) then {
 		
-			_return = [
-				["medic_spawn_1","Kavala Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-				["medic_spawn_2","Athira Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-				["medic_spawn_3","Pygros Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
-			];
+			if((__GETC__(life_medicLevel)) > 1) then {
+				_return = [
+					["medic_spawn_1","Kavala Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+					["medic_spawn_2","Athira Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+					["medic_spawn_3","Pygros Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
+				];
+			} else {
+				_return = [["civ_adac_spawn","ADAC","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+			};
 		} else {
 			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 		};

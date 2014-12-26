@@ -11,6 +11,7 @@ _who = [_this,1,"",[""]] call BIS_fnc_param;
 if(isNull _target) exitWith {};
 if(_target != player) exitWith {};
 if(_who == "") exitWith {};
+if(life_is_god) exitWith {};
 
 titleText[format[localize "STR_Civ_KnockedOut",_who],"PLAIN"];
 player playMoveNow "Incapacitated";

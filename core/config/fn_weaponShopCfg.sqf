@@ -50,7 +50,8 @@ switch(_shop) do
 	{
 		switch (true) do 
 		{
-			case (playerSide != independent): {"Du bist kein Arzt"};
+			case (playerSide != independent): {"Du bist kein Mitglied des EMS!"};
+			case ((__GETC__(life_medicLevel)) < 1): {"Du bist kein Mitglied der Medic!"};
 			default {
 				["Altis Johanniter Ausrüstung",
 					[
@@ -79,7 +80,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Du bist kein Polizist!"};
-			case (playerSide == west && __GETC__(life_coplevel) < 2):
+			case ((__GETC__(life_coplevel)) < 2):
 			{
 				["Altis Polizei Rekrutenwaffen",
 					[
@@ -92,7 +93,7 @@ switch(_shop) do
 					]
 				];
 			};
-			case (playerSide == west && __GETC__(life_coplevel) > 2 && __GETC__(life_coplevel) < 5):
+			case ((__GETC__(life_coplevel)) > 2 && (__GETC__(life_coplevel)) < 5):
 			{
 				["Altis Polizei Polizistenwaffen",
 					[
@@ -403,8 +404,8 @@ switch(_shop) do
 	{
 		switch (true) do
 		{
-			case (playerSide != civilian): {"Du bist kein Zivilist!"};
-			case ((["adac"] call life_fnc_permLevel) < 2): {"Du bist kein Mitglied des ADAC!"};
+			case (playerSide != independent): {"Du bist kein Mitglied des EMS!"};
+			case ((__GETC__(life_adacLevel)) < 1): {"Du bist kein Mitglied des ADAC!"};
 			default
 			{
 				["Big Earl's Egosteigerer",
@@ -439,8 +440,8 @@ switch(_shop) do
 	{
 		switch (true) do
 		{
-			case (playerSide != civilian): {"Du bist kein Zivilist!"};
-			case ((["adac"] call life_fnc_permLevel) < 2): {"Du bist kein Mitglied des ADAC!"};
+			case (playerSide != independent): {"Du bist kein Mitglied des EMS!"};
+			case ((__GETC__(life_adacLevel)) < 1): {"Du bist kein Mitglied des ADAC!"};
 			default
 			{
 				["Werkbank",

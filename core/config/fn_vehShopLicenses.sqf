@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_vehShopLicenses.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -28,8 +29,8 @@ switch (life_veh_shop select 0) do
 	case "civ_truck":	{_ret = license_civ_truck;};
 	case "reb_car": {_ret = license_civ_rebel;};
 	case "cop_car": {_ret = true;};
-	case "garage_car": {_ret = (["adac"] call life_fnc_permLevel ) >= 2;};
-	case "garage_air": {_ret = (["adac"] call life_fnc_permLevel ) >= 2;};
+	case "garage_car": {_ret = (__GETC__(life_adacLevel)) > 1;};
+	case "garage_air": {_ret = (__GETC__(life_adacLevel)) > 1;};
 	case "sec_car": {_ret = (["sec"] call life_fnc_permLevel ) >= 2;};
 	case "sec_air": {_ret = (["sec"] call life_fnc_permLevel ) >= 2;};
 	case "don_car": {_ret = (["don"] call life_fnc_permLevel ) >= 1;};

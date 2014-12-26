@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_medicLoadout.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -9,9 +10,12 @@ private["_handle"];
 _handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
-player addUniform "U_C_Scientist";
-player addItem "FirstAidKit";
-player addItem "FirstAidKit";
+if((__GETC__(life_medicLevel)) > 0) then {
+	player forceAddUniform "U_C_Scientist";
+} else {
+	player forceAddUniform "U_Competitor";
+};
+
 player addItem "ItemMap";
 player assignItem "ItemMap";
 player addItem "ItemCompass";

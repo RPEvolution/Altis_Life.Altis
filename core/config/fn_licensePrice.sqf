@@ -34,6 +34,7 @@ switch (_type) do
 	case "copper": {5000};
 	case "cement": {5000};
 	case "mair": {15000};
-	case "home": {2000};
-	case "citizen": {100};
+	case "gair": {15000};
+	case "home": {20000};
+	case "citizen": {0};
 };

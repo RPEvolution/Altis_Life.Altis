@@ -7,8 +7,18 @@
     Description:
     Saves the players gear for syncing to the database for persistence..
 */
-private["_return","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled"];
+private["_return","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled","_life_items"];
 _return = [];
+_life_items = [];
+
+for "_i" from 0 to (count life_inv_items) -1 do
+{
+	_x = [];
+	_item = life_inv_items select _i;
+	_x set [0, life_inv_items select _i];
+	_x set [1, call compile format["%1", life_inv_items select _i]];
+	_life_items set[_i, _x];
+};
 
 _return set[count _return,uniform player];
 _return set[count _return,vest player];
@@ -146,32 +156,7 @@ if(count (handGunItems player) > 0) then
             _yItems = _yItems + [_name];
         };
     };
-} forEach [
-    ["life_inv_apple", life_inv_apple],
-    ["life_inv_rabbit", life_inv_rabbit],
-    ["life_inv_salema", life_inv_salema],
-    ["life_inv_ornate", life_inv_ornate],
-    ["life_inv_mackerel", life_inv_mackerel],
-    ["life_inv_tuna", life_inv_tuna],
-    ["life_inv_mullet", life_inv_mullet],
-    ["life_inv_catshark", life_inv_catshark],
-    ["life_inv_fishingpoles", life_inv_fishingpoles],
-    ["life_inv_water", life_inv_water],
-    ["life_inv_donuts", life_inv_donuts],
-    ["life_inv_turtlesoup", life_inv_turtlesoup],
-    ["life_inv_coffee", life_inv_coffee],
-    ["life_inv_fuelF", life_inv_fuelF],
-    ["life_inv_fuelE", life_inv_fuelE],
-    ["life_inv_pickaxe", life_inv_pickaxe],
-    ["life_inv_tbacon", life_inv_tbacon],
-    ["life_inv_lockpick", life_inv_lockpick],
-    ["life_inv_redgull", life_inv_redgull],
-    ["life_inv_peach", life_inv_peach],
-    ["life_inv_spikeStrip", life_inv_spikeStrip],
-    ["life_inv_defusekit", life_inv_defusekit],
-    ["life_inv_storagesmall", life_inv_storagesmall],
-    ["life_inv_storagebig", life_inv_storagebig]
-];
+} forEach _life_items;
 
 _return set[count _return,_uItems];
 _return set[count _return,_uMags];

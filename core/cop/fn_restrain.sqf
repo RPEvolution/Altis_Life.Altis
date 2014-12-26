@@ -9,6 +9,7 @@ private["_cop","_player"];
 _cop = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 _player = player;
 if(isNull _cop) exitWith {};
+if(life_is_god) exitWith {};
 
 //Monitor excessive restrainment
 [] spawn

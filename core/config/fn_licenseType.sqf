@@ -39,6 +39,7 @@ switch (_mode) do
 			case "copper": {_var = "license_civ_copper"};
 			case "cement": {_var = "license_civ_cement"};
 			case "mair": {_var = "license_med_air"};
+			case "gair": {_var = "license_adac_air"};
 			case "home": {_var = "license_civ_home"};
 			case "citizen": {_var = "license_civ_citizen"};
 			default {_var = ""};
@@ -72,6 +73,7 @@ switch (_mode) do
 			case "license_civ_copper": {_var = "copper"};
 			case "license_civ_cement": {_var = "cement"};
 			case "license_med_air": {_var = "mair"};
+			case "license_adac_air": {_var = "gair"};
 			case "license_civ_home": {_var = "home"};
 			case "license_civ_citizen": {_var = "citizen"};
 			default {_var = ""};
