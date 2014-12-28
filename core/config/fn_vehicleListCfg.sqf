@@ -193,6 +193,15 @@ switch (_shop) do
 		};
 	};
 	
+	case "reb_ship":
+	{
+		_return =
+		[
+			["C_Rubberboat",225],
+			["C_Boat_Civil_01_F",900]
+		];
+	};
+	
 	case "cop_car":
 	{
 		_return set[count _return,
