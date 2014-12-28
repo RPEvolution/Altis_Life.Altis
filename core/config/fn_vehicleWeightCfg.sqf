@@ -30,10 +30,10 @@ switch (_className) do
 	case "B_Truck_01_transport_F": {325};
 	case "B_Truck_01_medical_F": {40};
 	case "B_Truck_01_Repair_F": {40};
-	case "B_MRAP_01_F": {65};
-	case "O_MRAP_02_F": {60};
-	case "I_MRAP_03_F": {58};
-	case "I_MRAP_03_hmg_F": {58};
+	case "B_MRAP_01_F": {85};
+	case "O_MRAP_02_F": {85};
+	case "I_MRAP_03_F": {85};
+	case "I_MRAP_03_hmg_F": {85};
 	case "B_Heli_Light_01_F": {90};
 	case "C_Heli_Light_01_civil_F": {90};
 	case "I_Heli_light_03_unarmed_F": {90};
