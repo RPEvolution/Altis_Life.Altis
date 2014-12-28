@@ -15,6 +15,7 @@ if(_shooter isKindOf "Man" && alive player) then
 	if(!life_istazed) then
 	{
 		life_istazed = true;
+		player setVariable["Tazed", true, true];
 		_curWep = currentWeapon player;
 		_curMags = magazines player;
 		_attach = if(primaryWeapon player != "") then {primaryWeaponItems _unit} else {[]};
@@ -54,4 +55,5 @@ if(_shooter isKindOf "Man" && alive player) then
 {
 	_unit allowDamage true;
 	life_iztazed = false;
+	player setVariable["Tazed", false, true];
 };

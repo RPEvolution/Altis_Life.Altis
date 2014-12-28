@@ -38,6 +38,7 @@
 		sleep 300;
 		[] call _fnc_water;
 		sleep 300;
+		[] call _fnc_water;
 		[] call _fnc_food;
 	};
 };

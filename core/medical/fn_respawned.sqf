@@ -19,6 +19,8 @@ life_spawn_base = true;
 life_corpse setVariable["Revive",nil,TRUE];
 life_corpse setVariable["name",nil,TRUE];
 life_corpse setVariable["Reviving",nil,TRUE];
+player setVariable["RequestingCops", false, true];
+player setVariable["RequestingEMS", false, true];
 player setVariable["Revive",nil,TRUE];
 player setVariable["name",nil,TRUE];
 player setVariable["Reviving",nil,TRUE];

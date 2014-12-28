@@ -19,11 +19,19 @@ _targetName = _target getVariable["name","Unknown"];
 _title = format[localize "STR_Medic_Progress",_targetName];
 life_action_inUse = true; //Lockout the controls.
 
+player addEventHandler ["AnimDone", {
+	_unit = _this select 0;
+	_anim = _this select 1; 
+	if(_anim == "AinvPknlMstpSnonWnonDnon_medic_1") then {
+		_unit switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
+		_unit playMove "AinvPknlMstpSnonWnonDnon_medic_1";
+	};
+}];
+
 _target setVariable["Reviving",player,TRUE];
 //Setup our progress bar
 disableSerialization;
 player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
-waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
 
 _layer cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable ["life_progress",displayNull];
@@ -32,15 +40,6 @@ _titleText = _ui displayCtrl 38202;
 _titleText ctrlSetText format["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 _cP = 0.01;
-
-player addEventHandler ["AnimStateChanged", {
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		player playActionNow "stop";
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-		waitUntil{animationState player == "AinvPknlMstpSnonWnonDnon_medic_1"};
-	};
-}];
 
 //Lets reuse the same thing!
 while {true} do
@@ -66,6 +65,7 @@ while {true} do
 
 //Kill the UI display and check for various states
 _layer cutText ["","PLAIN"];
+player removeEventHandler ["AnimDone", 0];
 player playActionNow "stop";
 if(_target getVariable ["Reviving",ObjNull] != player) exitWith {hint localize "STR_Medic_AlreadyReviving"};
 _target setVariable["Reviving",NIL,TRUE];

@@ -22,11 +22,12 @@ if(isNull _curTarget) exitWith {
 	} else {
 		if( (missionNamespace getVariable "life_inv_pickaxe") >= 1) then
 		{
-			life_action_inUse = true;
+			if(life_action_gathering) exitWith {};
+			life_action_gathering = true;
 			private["_handle"];
 			_handle = [true] spawn life_fnc_pickaxeUse;
 			waitUntil {scriptDone _handle};
-			life_action_inUse = false;
+			life_action_gathering = false;
 		};
 		
 		_handle = [] spawn life_fnc_gather;

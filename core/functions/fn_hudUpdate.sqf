@@ -15,14 +15,14 @@ _water = _ui displayCtrl 23510;
 _health = _ui displayCtrl 23515;
 
 //Update food
-_food ctrlSetPosition [safeZoneX+safeZoneW-0.090,safeZoneY+safeZoneH-0.548];
+_food ctrlSetPosition [0.922917 * safezoneW + safezoneX,0.864 * safezoneH + safezoneY];
 _food ctrlSetText format["%1", life_hunger];
 _food ctrlCommit 0;
 //Update Water
-_water ctrlSetPosition [safeZoneX+safeZoneW-0.090,safeZoneY+safeZoneH-0.502];
+_water ctrlSetPosition [0.892333 * safezoneW + safezoneX,0.864 * safezoneH + safezoneY];
 _water ctrlSetText format["%1", life_thirst];
 _water ctrlCommit 0;
 //Update Health
-_health ctrlSetPosition [safeZoneX+safeZoneW-0.090,safeZoneY+safeZoneH-0.456];
+_health ctrlSetPosition [0.862333 * safezoneW + safezoneX,0.864 * safezoneH + safezoneY];
 _health ctrlSetText format["%1", round((1 - (damage player)) * 100)];
 _health ctrlCommit 0;

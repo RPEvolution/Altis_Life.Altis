@@ -8,13 +8,14 @@
 disableSerialization;
 private["_search","_ui","_progress","_cP","_pgText","_title"];
 if(life_action_inUse) exitWith {hint localize "STR_NOTF_Action"};
-_search = nearestObjects[getPos air_sp, ["Air"],5];
+_search = nearestObjects[getPos air_sp, ["Air"],_layer];
 if(count _search == 0) exitWith {hint localize "STR_Service_Chopper_NoAir"};
 if(life_atmcash < 1000) exitWith {hint localize "STR_Serive_Chopper_NotEnough"};
 life_atmcash = life_atmcash - 1000;
 life_action_inUse = true;
 _title = localize "STR_Service_Chopper_Servicing";
-5 cutRsc ["life_progress","PLAIN"];
+_layer = "life_progress" call BIS_fnc_rscLayer;
+_layer cutRsc ["life_progress","PLAIN"];
 _ui = uiNameSpace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
@@ -42,6 +43,6 @@ if(!local (_search select 0)) then
 };
 (_search select 0) setDamage 0;
 
-5 cutText ["","PLAIN"];
+_layer cutText ["","PLAIN"];
 titleText [localize "STR_Service_Chopper_Done","PLAIN"];
 life_action_inUse = false;

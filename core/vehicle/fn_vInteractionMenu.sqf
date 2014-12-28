@@ -14,7 +14,7 @@
 #define Btn6 37455
 #define Btn7 37456
 #define Title 37401
-private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6"];
+private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7"];
 if(!dialog) then {
 	createDialog "vInteraction_Menu";
 };
@@ -67,7 +67,7 @@ if(playerSide == west) then {
 		_Btn6 buttonSetAction "[] spawn life_fnc_pushObject; closeDialog 0;";
 		if(_curTarget isKindOf "Ship" && {local _curTarget} && {count crew _curTarget == 0}) then { _Btn6 ctrlEnable true;} else {_Btn6 ctrlEnable false};
 	} else {
-		if(typeOf (_curTarget) in ["C_Kart_01_Blu_F","C_Kart_01_Red_F","C_Kart_01_Fuel_F","C_Kart_01_Vrana_F","O_Heli_Transport_04_bench_f"]) then {
+		if(typeOf (_curTarget) in ["C_Kart_01_Blu_F","C_Kart_01_Red_F","C_Kart_01_Fuel_F","C_Kart_01_Vrana_F","O_Heli_Transport_04_bench_f","O_Heli_Transport_04_F","B_Heli_Transport_03_unarmed_F"]) then {
 			_Btn6 ctrlSetText localize "STR_vInAct_GetInKart";
 			_Btn6 buttonSetAction "player moveInDriver life_vInact_curTarget; closeDialog 0;";
 			if(count crew _curTarget == 0 && {canMove _curTarget} && {locked _curTarget == 0}) then {_Btn6 ctrlEnable true;} else {_Btn6 ctrlEnable false};

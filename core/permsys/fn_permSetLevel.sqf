@@ -180,6 +180,10 @@ if(_adminmode) then
 	[[0,format["!!!ADMIN: >PERM< %2 von %1 wurde auf %3 gesetzt!", name player, _perm_name, _level]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 };
 */
+// Updating the Rank Symbol of Cops
+if(playerSide == west) then {
+	player setVariable["rank",["cop"] call life_fnc_permLevel,true];
+};
 
 //Sync
 [4] call SOCK_fnc_updatePartial;

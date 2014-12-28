@@ -8,12 +8,15 @@
 private["_unit"];
 _unit = cursorTarget;
 if(isNull _unit) exitWith {}; //Not valid
-if((_unit getVariable "restrained")) exitWith {};
-if(!life_knockout || !life_istazed || !(_unit getVariable "surrender")) exitWith {};
+if((_unit getVariable "Restrained")) exitWith {};
+if(!(_unit getVariable "Surrendered") && !(_unit getVariable "KnockedOut") && !(_unit getVariable "Tazed")) exitWith {}; // Ehm what kind of restraining is this...? ;)
 if(player == _unit) exitWith {};
 if(!isPlayer _unit) exitWith {};
-//Broadcast!
 
+if(playerSide == west && !([false,"handcuffs",1] call life_fnc_handleInv)) exitWith {hint "Du hast keine Handschellen dabei"};
+if(playerSide in[civilian, independent] && !([false,"zipties",1] call life_fnc_handleInv)) exitWith {hint "Du hast keine Kabelbinder dabei"};
+
+//Broadcast!	
 _unit say3D "handcuffs";
 
 _unit setVariable["restrained",true,true];

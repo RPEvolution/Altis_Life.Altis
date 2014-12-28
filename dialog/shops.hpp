@@ -58,7 +58,10 @@ class life_weapon_shop
 			w = 0.46; 
 			h = 0.1;
 		};
-		
+	};
+	
+	class controls
+	{
 		class FilterList : Life_RscCombo
 		{
 			idc = 38402;
@@ -69,10 +72,7 @@ class life_weapon_shop
 			w = 0.3; 
 			h = 0.05;
 		};
-	};
-	
-	class controls
-	{
+		
 		class itemList : Life_RscListBox
 		{
 			idc = 38403;

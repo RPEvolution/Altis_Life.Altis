@@ -61,13 +61,15 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		_veh setDamage 0;
 		titleText[localize "STR_NOTF_RepairedVehicle","PLAIN"];
 		
-		if((["adac"] call life_fnc_permLevel) > 1) then
+		if((["adac"] call life_fnc_permLevel) > 0) then
 		{
+			_price = 0;
+			
 			switch (true) do
 			{
-				case (_vehicle isKindOf "Car"): {_price = (call life_impound_car);};
-				case (_vehicle isKindOf "Ship"): {_price = (call life_impound_boat);};
-				case (_vehicle isKindOf "Air"): {_price = (call life_impound_air);};
+				case (_veh isKindOf "Car"): {_price = (call life_impound_car);};
+				case (_veh isKindOf "Ship"): {_price = (call life_impound_boat);};
+				case (_veh isKindOf "Air"): {_price = (call life_impound_air);};
 			};
 			
 			life_atmcash = life_atmcash + _price;

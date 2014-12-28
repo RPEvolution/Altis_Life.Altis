@@ -30,7 +30,8 @@ switch(_shop) do
 				["Altis Polizei Ausrüstung",
 					[
 						["ToolKit",nil,50],
-						["FirstAidKit",nil,10],		
+						["FirstAidKit",nil,10],
+						["Medikit",nil, 300],
 						["Rangefinder",nil,100],
 						["MineDetector",nil,100],
 						["ItemGPS",nil,100],
@@ -51,7 +52,7 @@ switch(_shop) do
 		switch (true) do 
 		{
 			case (playerSide != independent): {"Du bist kein Mitglied des EMS!"};
-			case ((__GETC__(life_medicLevel)) < 1): {"Du bist kein Mitglied der Medic!"};
+			case ((["medic"] call life_fnc_permLevel) < 1): {"Du bist kein Mitglied der Medic!"};
 			default {
 				["Altis Johanniter Ausrüstung",
 					[
@@ -80,7 +81,7 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"Du bist kein Polizist!"};
-			case ((__GETC__(life_coplevel)) < 2):
+			case ((["cop"] call life_fnc_permLevel) < 2):
 			{
 				["Altis Polizei Rekrutenwaffen",
 					[
@@ -93,7 +94,7 @@ switch(_shop) do
 					]
 				];
 			};
-			case ((__GETC__(life_coplevel)) > 2 && (__GETC__(life_coplevel)) < 5):
+			case ((["cop"] call life_fnc_permLevel) > 2 && (["cop"] call life_fnc_permLevel)  < 5):
 			{
 				["Altis Polizei Polizistenwaffen",
 					[
@@ -405,7 +406,7 @@ switch(_shop) do
 		switch (true) do
 		{
 			case (playerSide != independent): {"Du bist kein Mitglied des EMS!"};
-			case ((__GETC__(life_adacLevel)) < 1): {"Du bist kein Mitglied des ADAC!"};
+			case ((["adac"] call life_fnc_permLevel) < 1): {"Du bist kein Mitglied des ADAC!"};
 			default
 			{
 				["Big Earl's Egosteigerer",
@@ -441,7 +442,7 @@ switch(_shop) do
 		switch (true) do
 		{
 			case (playerSide != independent): {"Du bist kein Mitglied des EMS!"};
-			case ((__GETC__(life_adacLevel)) < 1): {"Du bist kein Mitglied des ADAC!"};
+			case ((["adac"] call life_fnc_permLevel) < 1): {"Du bist kein Mitglied des ADAC!"};
 			default
 			{
 				["Werkbank",

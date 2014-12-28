@@ -11,41 +11,42 @@
 */
 private["_side","_return"];
 _side = [_this,0,civilian,[civilian]] call BIS_fnc_param;
+_return = [];
 
 //Spawn Marker, Spawn Name, PathToImage
 switch (_side) do
 {
 	case west:
 	{
-		if(life_spawn_base) then {	
-		
+		if(life_spawn_base) then {			
 			_return = [
 				["cop_spawn_1","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
 				["cop_spawn_2","Sofia","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"],
 				["cop_spawn_3","Athira","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"]
 			];
-		} else {	
-			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];	
+		} else {
+			_return = [
+				["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+				["cop_spawn_1","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
+			];
 		};
 	};
 	
 	case civilian:
 	{
-		if(life_spawn_base) then {
-		
-			if(license_civ_rebel) then { 			
-				_return = [["reb_spawn","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
-			} else {			
-				_return = [["civ_spawn","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
-			};
-			
-			switch (true) do {
-				case ((["adac"] call life_fnc_permLevel) > 1): {_return set[count _return,["civ_adac_spawn","ADAC","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];};
-				case ((["smugler"] call life_fnc_permLevel) > 1): {_return set[count _return,["civ_smugler_spawn","Schmuggler","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];};
-				case ((["security"] call life_fnc_permLevel) > 1): {_return set[count _return,["civ_sec_spawn","Security","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];};
-			};
-		} else {
+		if(!life_spawn_base) then {
 			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+		};
+		
+		if(license_civ_rebel) then { 			
+			_return set[count _return,["reb_spawn","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+		} else {			
+			_return set[count _return,["civ_spawn","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+		};
+			
+		switch (true) do {
+			case ((["smugler"] call life_fnc_permLevel) > 1): {_return set[count _return,["civ_smugler_spawn","Schmuggler","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];};
+			case ((["security"] call life_fnc_permLevel) > 1): {_return set[count _return,["civ_sec_spawn","Security","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];};
 		};
 		
 		if(count life_houses > 0) then {
@@ -61,19 +62,29 @@ switch (_side) do
 	
 	case independent: {
 		
-		if(life_spawn_base) then {
-		
-			if((__GETC__(life_medicLevel)) > 1) then {
+		if((["medic"] call life_fnc_permLevel) > 0) then {
+			if(life_spawn_base) then {
 				_return = [
-					["medic_spawn_1","Kavala Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-					["medic_spawn_2","Athira Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-					["medic_spawn_3","Pygros Krankenhaus","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
+					["medic_spawn_1","Pyrgos","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+					["medic_spawn_2","Athira","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+					["medic_spawn_3","Kavala","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+					["medic_spawn_4","Sofia","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
 				];
 			} else {
-				_return = [["civ_adac_spawn","ADAC","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+				_return = [
+					["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+					["medic_spawn_1","Pygros","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
+				];
 			};
 		} else {
-			_return = [["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+			if(life_spawn_base) then {
+				_return = [["adac_spawn_1","Flughafen","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+			} else {
+				_return = [
+					["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+					["adac_spawn_1","Flughafen","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
+				];
+			};
 		};
 	};
 };

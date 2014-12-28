@@ -10,15 +10,15 @@ _shop = _this select 0;
 
 switch (_shop) do
 {
-	case "market": {["Supermarkt",["water","rabbit","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","boltcutter","storagesmall","storagebig"]]};
+	case "market": {["Supermarkt",["water","rabbit","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","zipties","boltcutter","storagesmall","storagebig"]]};
 	case "rebel": {["Rebellen Markt",["water","rabbit","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","boltcutter","blastingcharge","zipties"]]};
-	case "gang": {["Gang Markt", ["water","rabbit","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","blastingcharge","boltcutter"]]};
-	case "medic": {["Snack Automat", ["water","rabbit","apple","redgull","tbacon","fuelF","peach"]]};		
-	case "adac": {["Kantine", ["water","rabbit","apple","redgull","tbacon","lockpick","fuelF","peach"]]};	
+	case "gang": {["Gang Markt", ["water","rabbit","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","blastingcharge","boltcutter","zipties"]]};
+	case "medic": {["Snack Automat", ["water","rabbit","apple","redgull","tbacon","fuelF","peach","zipties"]]};		
+	case "adac": {["Kantine", ["water","rabbit","apple","redgull","tbacon","lockpick","fuelF","peach","zipties"]]};	
 	case "sec": {["Snack Automat", ["water","rabbit","apple","redgull","tbacon","fuelF","peach"]]};	
 	case "gas": {["Tankstelle", ["water","rabbit","apple","redgull","tbacon","peach","fuelF"]]};	
 	case "jail": {["Snack Automat", ["water","rabbit","apple","redgull","tbacon","peach"]]};	
-	case "smugler": {["Kiosk", ["water","rabbit","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","blastingcharge","boltcutter"]]};	
+	case "smugler": {["Kiosk", ["water","rabbit","apple","redgull","tbacon","lockpick","pickaxe","fuelF","peach","blastingcharge","boltcutter","zipties"]]};	
 	case "wongs": {["Wong's China Imbiss",["turtlesoup","turtle"]]};
 	case "coffee": {["Stratis Coffee Club",["coffee","donuts"]]};
 	case "heroin": {["Drogendealer",["cocainep","heroinp","marijuana"]]};

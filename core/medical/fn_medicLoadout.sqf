@@ -10,7 +10,7 @@ private["_handle"];
 _handle = [] spawn life_fnc_stripDownPlayer;
 waitUntil {scriptDone _handle};
 
-if((__GETC__(life_medicLevel)) > 0) then {
+if((["medic"] call life_fnc_permLevel) > 0) then {
 	player forceAddUniform "U_C_Scientist";
 } else {
 	player forceAddUniform "U_Competitor";

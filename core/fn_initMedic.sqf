@@ -16,7 +16,7 @@ if(life_blacklisted) exitWith
 	sleep 30;
 };
 
-if((__GETC__(life_medicLevel)) < 1 && (__GETC__(life_adacLevel)) < 1) exitWith {
+if((["medic"] call life_fnc_permLevel) < 1 && (["adac"] call life_fnc_permLevel) < 1) exitWith {
 	["Notwhitelisted",FALSE,TRUE] call BIS_fnc_endMission;
 	sleep 35;
 };

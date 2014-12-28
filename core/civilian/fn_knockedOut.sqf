@@ -22,6 +22,7 @@ sleep 15;
 player playMoveNow "amovppnemstpsraswrfldnon";
 detach player;
 deleteVehicle _obj;
-player setVariable["robbed",FALSE,TRUE];
+player setVariable["robbed", false, true];
+player setVariable["KnockedOut", true, true];
 
 _vehicle say3D "Punch";

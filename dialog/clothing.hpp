@@ -34,6 +34,16 @@ class Life_Clothing {
 			w = 0.46; 
 			h = 0.1;
 		};
+		
+		class itemPicture: Life_RscPicture
+		{
+			idc = 3108;
+			text = "#(argb,8,8,3)color(1,1,1,0)";
+			x = 0.36;
+			y = 0.35;
+			w = 0.4;
+			h = 0.4;
+		};
 	};
 	
 	class controls 
@@ -70,7 +80,7 @@ class Life_Clothing {
 			
 			x = 0.325; 
 			y = 0.8;
-			w = 0.46; 
+			w = 0.2; 
 			h = 0.1;
 		};
 		
@@ -80,10 +90,10 @@ class Life_Clothing {
 			text = "";
 			sizeEx = 0.035;
 			
-			x = 0.05 + (1 / 250 / (safezoneW / safezoneH));
-			y = 0.35 - (1 / 25);
+			x = 0.6;
+			y = 0.8;
 			w = 0.2;
-			h = 0.13;
+			h = 0.1;
 		};
 		
 		class FilterList : Life_RscCombo
@@ -95,16 +105,6 @@ class Life_Clothing {
 			y = 0.26;
 			w = 0.3; 
 			h = 0.05;
-		};
-		
-		class itemPicture: Life_RscPicture
-		{
-			idc = 3108;
-			text = "#(argb,8,8,3)color(1,1,1,0)";
-			x = 0.36;
-			y = 0.35;
-			w = 0.4;
-			h = 0.4;
 		};
 		
 		class CloseButtonKey : Life_RscButtonMenu 

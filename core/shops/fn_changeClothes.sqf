@@ -31,7 +31,7 @@ life_cMenu_lock = false;
 
 _pictureTag ctrlSetText _picture;
 _nameTag ctrlSetStructuredText parseText format["<t align='center'><t size='1.5'>%1</t></t>",_name];
-_price ctrlSetStructuredText parseText format [(localize "STR_GNOTF_Price")+ " <t color='#8cff9b'>$%1</t>",[(_control lbValue _selection)] call life_fnc_numberText];
+_price ctrlSetStructuredText parseText format [(localize "STR_GNOTF_Price")+ " <t color='#8cff9b'>%1 €</t>",[(_control lbValue _selection)] call life_fnc_numberText];
 
 _totalPrice = 0;
 {
@@ -41,4 +41,4 @@ _totalPrice = 0;
 	};
 } foreach life_clothing_purchase;
 
-_total ctrlSetStructuredText parseText format [(localize "STR_Shop_Total")+ " <t color='#8cff9b'>$%1</t>",[_totalPrice] call life_fnc_numberText];
+_total ctrlSetStructuredText parseText format [(localize "STR_Shop_Total")+ " <t color='#8cff9b'>%1 €</t>",[_totalPrice] call life_fnc_numberText];

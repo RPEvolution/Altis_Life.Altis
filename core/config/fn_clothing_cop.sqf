@@ -36,15 +36,15 @@ switch (_filter) do
 			["H_Watchcap_blk",nil,15]
 		];
 
-		if(__GETC__(life_coplevel) > 1) then
+		if((["cop"] call life_fnc_permLevel) < 2) then
 		{
 			_ret set[count _ret,["H_Beret_blk",nil,25]];
 		};
-		if(__GETC__(life_coplevel) > 2) then
+		if((["cop"] call life_fnc_permLevel) > 2) then
 		{
 			_ret set[count _ret,["H_Beret_02",nil,25]];
 		};
-		if(__GETC__(life_coplevel) > 3) then
+		if((["cop"] call life_fnc_permLevel) > 3) then
 		{
 			_ret set[count _ret,["H_Beret_Colonel",nil,25]];
 		};
@@ -94,7 +94,7 @@ switch (_filter) do
 			["B_FieldPack_blk",nil,100]
 		];
 		
-		if(__GETC__(life_coplevel) > 1) then
+		if((["cop"] call life_fnc_permLevel) > 1) then
 		{
 			_ret set[count _ret,["B_UAV_01_backpack_F",nil,1000]];
 		};

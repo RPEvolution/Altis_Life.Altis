@@ -47,6 +47,11 @@ switch(_type) do
 		if(_msg == "") exitWith {hint "You must enter a message to send!";ctrlShow[888895,true];};
 		[[ObjNull,_msg,player,1],"TON_fnc_handleMessages",false] spawn life_fnc_MP;
 		_to = "The Police";
+		player setVariable["RequestingCops", true, true];
+		[] spawn {
+			sleep 600;
+			player setVariable["RequestingCops", false, true];
+		};
 		hint format["You sent %1 a message: %2",_to,_msg];
 		ctrlShow[888895,true];
 		closeDialog 887890;
@@ -69,6 +74,11 @@ switch(_type) do
 		ctrlShow[888899,false];
 		if(_msg == "") exitWith {hint "You must enter a message to send!";ctrlShow[888899,true];};
 		[[ObjNull,_msg,player,3],"TON_fnc_handleMessages",false] spawn life_fnc_MP;
+		player setVariable["RequestingEMS", true, true];
+		[] spawn {
+			sleep 600;
+			player setVariable["RequestingEMS", false, true];
+		};
 		hint format["You have sent a message to all EMS Units.",_msg];
 		ctrlShow[888899,true];
 		closeDialog 887890;

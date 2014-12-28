@@ -59,25 +59,18 @@ life_player_position = createMarkerLocal ["last_position", life_player_position]
 // Get the Stats of PlayerSide
 life_player_stats = _this select 9;
 life_player_stats = call compile format["%1", life_player_stats];
-life_hunger = life_player_stats select 0;
-life_thirst = life_player_stats select 1;
 
+life_hunger = parseNumber(life_player_stats select 0);
+life_thirst = parseNumber(life_player_stats select 1);
 _damage = parseNumber(life_player_stats select 2);
 player setDamage _damage;
 
 //Parse side specific information.
 switch(playerSide) do {
 
-	case west: {
-		_perm_level = ["cop"] call life_fnc_permLevel;
-	
-		__CONST__(life_copLevel, _perm_level);
-		__CONST__(life_medicLevel,0);
-	};
+	case west: {};
 	
 	case civilian: {
-		__CONST__(life_copLevel, 0);
-		__CONST__(life_medicLevel, 0);
 		
 		life_houses = _this select 14;
 		{
@@ -99,22 +92,11 @@ switch(playerSide) do {
 		};
 	};
 	
-	case independent: {	
-		_perm_level = ["medic"] call life_fnc_permLevel;	
-		__CONST__(life_medicLevel, _perm_level);
-		
-		_perm_level = ["adac"] call life_fnc_permLevel;
-		__CONST__(life_adacLevel, _perm_level);
-		
-		__CONST__(life_copLevel,0);
-	};
+	case independent: {};
 };
 
-// Checking Player for Donator Level
-_perm_level = ["don"] call life_fnc_permLevel;
-__CONST__(life_donator, _perm_level);
-
-switch(__GETC__(life_donator)) do
+// Append extra Paycheck for Donators
+switch(["don"] call life_fnc_permLevel) do 
 {
 	case 1: {life_paycheck = life_paycheck + 50;};
 	case 2: {life_paycheck = life_paycheck + 75;};

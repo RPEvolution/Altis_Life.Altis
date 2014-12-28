@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_keyHandler.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -66,9 +67,9 @@ switch (_code) do
 	{
 		switch (playerSide) do 
 		{
-			case west: {if(!visibleMap) then {[] spawn life_fnc_copMarkers;}};
-			case independent: {if(!visibleMap) then {[] spawn life_fnc_medicMarkers;}};
-			case civilian: {if(!visibleMap) then {[] spawn life_fnc_groupMarkers;[] spawn life_fnc_permMarkers;}};
+			case west: {if(!visibleMap) then {[] spawn life_fnc_copMarkers;};};
+			case independent: {if(!visibleMap) then {[] spawn life_fnc_medicMarkers;};};
+			case civilian: {if(!visibleMap) then {[] spawn life_fnc_groupMarkers;};};
 		};
 	};
 	
@@ -106,21 +107,9 @@ switch (_code) do
 	case 19:
 	{
 		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
+		if(_shift && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "Restrained") && speed cursorTarget < 1) then
 		{
-			if([false,"handcuffs",1] call life_fnc_handleInv) then {
-				[] call life_fnc_restrainAction;
-			} else {
-				hint "Du hast keine Handschellen dabei!";
-			};
-		};
-		if(_shift && playerSide in [civilian, independent] && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
-		{
-			if([false,"zipties",1] call life_fnc_handleInv) then {
-				[] call life_fnc_restrainAction;
-			} else {
-				hint "Du hast keine Kabelbinder dabei!";
-			};
+			[] call life_fnc_restrainAction;
 		};
 	};
 	
@@ -130,8 +119,8 @@ switch (_code) do
 		if(_shift) then {_handled = true;};
 		
 		if(_shift && isNull cursorTarget) then {
-			if (player getVariable ["surrender", false]) then {
-				player setVariable ["surrender", false, true];
+			if (player getVariable ["Surrendered", false]) then {
+				player setVariable ["Surrendered", false, true];
 			} else {
 				[] spawn life_fnc_surrender;
 			};
@@ -174,13 +163,13 @@ switch (_code) do
 	case 38: 
 	{
 		//If cop run checks for turning lights on.
-		if(_shift && (playerSide in [west,independent] OR (["adac"] call life_fnc_permLevel) > 0)) then {
+		if(_shift && (playerSide in [west,independent])) then {
 			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","I_MRAP_03_F","C_SUV_01_F","B_G_Offroad_01_repair_F"]) then {
 				if(!isNil {vehicle player getVariable "lights"}) then {
 					if(playerSide == west) then {
 						[vehicle player] call life_fnc_sirenLights;
 					};
-					if(playerSide == independent ) then {
+					if(playerSide == independent && vehicle player in ["C_Offroad_01_F"]) then {
 						[vehicle player] call life_fnc_medicSirenLights;
 					} else {
 						[vehicle player] call life_fnc_adacSirenLights;
