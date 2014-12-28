@@ -80,17 +80,13 @@ switch(playerSide) do {
 		[_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
 	};
 	
-	case civilian: {
-		/*if((life_veh_shop select 2) == "civ" && {_className == "B_Heli_Light_01_F"}) then {
-			[_vehicle,"civ_littlebird",true] spawn life_fnc_vehicleAnimate;
-		};*/
-		if((life_veh_shop select 2) == "civ" && {_className == "B_G_Offroad_01_repair_F"}) then {
+	case independent: {
+		if(_className == "C_Offroad_01_F") then {
+			[_vehicle,"med_offroad",true] spawn life_fnc_vehicleAnimate;
+		};
+		if(_className == "B_G_Offroad_01_repair_F") then {
 			[_vehicle,"repair_offroad",true] spawn life_fnc_vehicleAnimate;
 		};
-	};
-	
-	case independent: {
-		[_vehicle,"med_offroad",true] spawn life_fnc_vehicleAnimate;
 	};
 };
 

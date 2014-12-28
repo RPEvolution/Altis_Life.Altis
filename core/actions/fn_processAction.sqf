@@ -16,13 +16,13 @@ _itemInfo = switch (_type) do
 {
 	case "oil": {["oilu","oilp",70,(localize "STR_Process_Oil")];};
 	case "diamond": {["diamond","diamondc",50,(localize "STR_Process_Diamond")];};
-	case "heroin": {["heroinu","heroinp",125,(localize "STR_Process_Heroin")];};
+	case "heroin": {["heroinu","heroinp",250,(localize "STR_Process_Heroin")];};
 	case "copper": {["copperore","copper_r",45,(localize "STR_Process_Copper")];};
 	case "iron": {["ironore","iron_r",60,(localize "STR_Process_Iron")];};
 	case "sand": {["sand","glass",30,(localize "STR_Process_Sand")];};
 	case "salt": {["salt","salt_r",30,(localize "STR_Process_Salt")];};
-	case "cocaine": {["cocaine","cocainep",150,(localize "STR_Process_Cocaine")];};
-	case "marijuana": {["cannabis","marijuana",75,(localize "STR_Process_Marijuana")];};
+	case "cocaine": {["cocaine","cocainep",290,(localize "STR_Process_Cocaine")];};
+	case "marijuana": {["cannabis","marijuana",180,(localize "STR_Process_Marijuana")];};
 	case "cement": {["rock","cement",50,(localize "STR_Process_Cement")];};
 	default {[];};
 };

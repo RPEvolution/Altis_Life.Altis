@@ -67,15 +67,15 @@ while{ (alive _vehicle)} do
 	{  
 		_leftRed = false;  
 		_lightright setLightBrightness 0.0;  
-		sleep 0.05;
-		_lightleft setLightBrightness 6;  
+		sleep 0.2;
+		_lightleft setLightBrightness 3;  
 	}  
 		else  
 	{  
 		_leftRed = true;  
 		_lightleft setLightBrightness 0.0;  
-		sleep 0.05;
-		_lightright setLightBrightness 6;  
+		sleep 0.2;
+		_lightright setLightBrightness 3;  
 	};  
 	sleep (_this select 1);  
 };  

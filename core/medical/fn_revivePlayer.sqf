@@ -33,6 +33,7 @@ _target setVariable["Reviving",player,TRUE];
 disableSerialization;
 player playMove "AinvPknlMstpSnonWnonDnon_medic_1";
 
+_layer = "life_progress" call BIS_fnc_rscLayer;
 _layer cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable ["life_progress",displayNull];
 _progressBar = _ui displayCtrl 38201;

@@ -13,13 +13,24 @@ if(!(_vehicle isKindOF "LandVehicle") && !(_vehicle isKindOf "Air") && !(_vehicl
 if(player distance _vehicle > 7.5) exitWith {hint localize "STR_ISTR_Jerry_NotNear"};
 
 if(!([false,"fuelF",1] call life_fnc_handleInv)) exitWith {};
+
 life_action_inUse = true;
 _displayName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
+
+player addEventHandler ["AnimDone", {
+	_unit = _this select 0;
+	_anim = _this select 1; 
+	if(_anim == "AinvPknlMstpSnonWnonDnon_medic_1") then {
+		_unit switchMove "AinvPknlMstpSnonWnonDnon_medic_1";
+		_unit playMove "AinvPknlMstpSnonWnonDnon_medic_1";
+	};
+}];
 
 _upp = format[localize "STR_ISTR_Jerry_Process",_displayName];
 //Setup our progress bar.
 disableSerialization;
-5 cutRsc ["life_progress","PLAIN"];
+_layer = "life_progress" call BIS_fnc_rscLayer;
+_layer cutRsc ["life_progress","PLAIN"];
 _ui = uiNameSpace getVariable "life_progress";
 _progress = _ui displayCtrl 38201;
 _pgText = _ui displayCtrl 38202;
@@ -35,7 +46,7 @@ while{true} do
 	};
 	sleep 0.2;
 	if(isNull _ui) then {
-		5 cutRsc ["life_progress","PLAIN"];
+		_layer cutRsc ["life_progress","PLAIN"];
 		_ui = uiNamespace getVariable "life_progress";
 		_progressBar = _ui displayCtrl 38201;
 		_titleText = _ui displayCtrl 38202;
@@ -48,7 +59,8 @@ while{true} do
 	if(life_interrupted) exitWith {};
 };
 life_action_inUse = false;
-5 cutText ["","PLAIN"];
+_layer cutText ["","PLAIN"];
+player removeEventHandler ["AnimDone", 0];
 player playActionNow "stop";
 if(!alive player) exitWith {};
 if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"];};

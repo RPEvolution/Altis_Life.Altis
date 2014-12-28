@@ -210,10 +210,10 @@ switch (_shop) do
 		["C_Hatchback_01_sport_F",450]];
 		_return set[count _return,
 		["C_SUV_01_F",300]];
-		if(__GETC__(life_coplevel) > 2) then
+		if((["cop"] call life_fnc_permLevel) > 4) then
 		{
 			_return set[count _return,
-			["I_MRAP_03_F",2250]];
+			["I_MRAP_03_F",2250]];m
 		};
 	};
 	
@@ -233,7 +233,7 @@ switch (_shop) do
 	{
 		_return set[count _return,
 		["B_Heli_Light_01_F",300]];
-		if(__GETC__(life_coplevel) > 2) then
+		if((["cop"] call life_fnc_permLevel) > 4) then
 		{
 			_return set[count _return,
 			["I_Heli_light_03_unarmed_F",450]];
@@ -246,7 +246,7 @@ switch (_shop) do
 	{
 		_return set[count _return,
 		["B_Heli_Light_01_F",300]];
-		if(__GETC__(life_coplevel) > 2) then
+		if((["cop"] call life_fnc_permLevel) > 4) then
 		{
 			_return set[count _return,
 			["I_Heli_light_03_unarmed_F",450]];

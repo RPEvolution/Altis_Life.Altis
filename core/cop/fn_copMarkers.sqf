@@ -15,6 +15,15 @@ sleep 0.5;
 if(visibleMap) then {
 	{if(side _x == west && alive _x && _x != player) then {_cops set[count _cops,_x];}} foreach playableUnits; //Fetch list of cops / blufor
 	
+	// Fetch list of dead units
+	{
+		_name = _x getVariable "name";
+		_down = _x getVariable ["Revive",false];
+		if(!isNil "_name" && !_down) then {
+			_units set[count _units,_x];
+		};
+	} foreach allDeadMen;
+	
 	// Fetch list of Requests
 	{
 		_request = _x getVariable ["RequestingCops", false];

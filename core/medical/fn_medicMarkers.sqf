@@ -15,7 +15,6 @@ sleep 0.25;
 if(visibleMap) then {
 	{if(side _x == independent && alive _x && _x != player) then {_medics set[count _medics,_x];}} foreach playableUnits; //Fetch list of medics
 	
-	/*
 	// Fetch list of dead units
 	{
 		_name = _x getVariable "name";
@@ -24,7 +23,6 @@ if(visibleMap) then {
 			_units set[count _units,_x];
 		};
 	} foreach allDeadMen;
-	*/
 	
 	// Fetch list of Requests
 	{
@@ -50,7 +48,7 @@ if(visibleMap) then {
 		_marker setMarkerColorLocal "ColorRed";
 		_marker setMarkerTypeLocal "mil_warning";
 		_marker setMarkerTextLocal format["%1",(_x getVariable["realname","Unknown Player"])];
-		_markers set[count _requestmarkers,_marker];
+		_requestmarkers set[count _requestmarkers,_marker];
 	} foreach _units;
 	
 	while {visibleMap} do

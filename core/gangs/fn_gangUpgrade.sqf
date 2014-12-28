@@ -6,8 +6,9 @@
 	Determinds the upgrade price and blah
 */
 private["_maxMembers","_slotUpgrade","_upgradePrice"];
-_maxMembers = grpPlayer getVariable ["gang_maxMembers",8];
-_slotUpgrade = _maxMembers + 4;
+_maxMembers = grpPlayer getVariable ["gang_maxMembers",5];
+_slotUpgrade = _maxMembers + 1;
+if(_slotUpgrade > (__GETC__(life_maxGangMember))) exitWith {hint "Deine Gang hat die maximale Anzahl an Mitgliedern erreicht."};
 _upgradePrice = round(_slotUpgrade * (__GETC__(life_gangUpgradeBase)) / (__GETC__(life_gangUpgradeMultipler)));
 
 _action = [
@@ -20,7 +21,7 @@ _action = [
 if(_action) then {
 	if(life_atmcash < _upgradePrice) exitWith {
 		hint parseText format[
-			(localize "STR_GNOTF_NotEoughMoney_2")+ "<br/><br/>" +(localize "STR_GNOTF_Current")+ " <t color='#8cff9b'>$%1</t><br/>" +(localize "STR_GNOTF_Lacking")+ " <t color='#FF0000'>$%2</t>",
+			(localize "STR_GNOTF_NotEoughMoney_2")+ "<br/><br/>" +(localize "STR_GNOTF_Current")+ " <t color='#8cff9b'>%1 €</t><br/>" +(localize "STR_GNOTF_Lacking")+ " <t color='#FF0000'>$%2</t>",
 			[life_atmcash] call life_fnc_numberText,
 			[_upgradePrice - life_atmcash] call life_fnc_numberText
 		];

@@ -5,7 +5,7 @@
 		if(life_hunger < 2) then {player setDamage 1; hint localize "STR_NOTF_EatMSG_Death";}
 		else
 		{
-		life_hunger = life_hunger - 10;
+		life_hunger = life_hunger - 5;
 		[] call life_fnc_hudUpdate;
 		if(life_hunger < 2) then {player setDamage 1; hint localize "STR_NOTF_EatMSG_Death";};
 		switch(life_hunger) do {
@@ -21,7 +21,7 @@
 		if(life_thirst < 2) then {player setDamage 1; hint localize "STR_NOTF_DrinkMSG_Death";}
 		else
 		{
-			life_thirst = life_thirst - 10;
+			life_thirst = life_thirst - 5;
 			[] call life_fnc_hudUpdate;
 			if(life_thirst < 2) then {player setDamage 1; hint localize "STR_NOTF_DrinkMSG_Death";};
 			switch(life_thirst) do 

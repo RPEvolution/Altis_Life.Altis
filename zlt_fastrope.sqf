@@ -158,7 +158,7 @@ zlt_fnc_fastropeUnit = {
 	_zdelta = 7 / 10  ;
 	
 	_zc = _zmax;
-	_unit action ["eject", _heli];
+	_unit action ["GetOut", _heli];
 	_unit switchmove "gunner_standup01";
 	
 	_unit setpos [(getpos _unit select 0), (getpos _unit select 1), 0 max ((getpos _unit select 2) - 3)];
