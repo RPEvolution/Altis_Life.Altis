@@ -82,6 +82,7 @@ switch (_filter) do
 		_ret =
 		[	
 			["V_TacVest_blk_POLICE",nil,400],
+			["V_PlateCarrier1_blk",nil,600],
 			["V_RebreatherIR",nil,625]
 		];
 	};
@@ -91,7 +92,9 @@ switch (_filter) do
 	{
 		_ret =
 		[
-			["B_FieldPack_blk",nil,100]
+			["B_AssaultPack_blk",nil,75],
+			["B_FieldPack_blk",nil,100],
+			["B_TacticalPack_blk",nil,125]
 		];
 		
 		if((["cop"] call life_fnc_permLevel) > 1) then
