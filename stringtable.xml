@@ -577,7 +577,7 @@
 		<Key ID="STR_GNOTF_CaptureSuccess">
 			<Original>%1 and his gang: %2 - have taken control of a local hideout!</Original>
 			<English>%1 and his gang: %2 - have taken control of a local hideout!</English>
-			<German>%1 und seine Gang: 2% - haben die Kontrolle über ein lokales Versteck übernommen!</German>
+			<German>%1 und seine Gang: %2 - haben die Kontrolle über ein lokales Versteck übernommen!</German>
 			<French>%1 et sa gang: %2 ont pris le controle de la cachette !</French>
 			<Italian>%1 e la sua Gang: % 2 - hanno preso il controllo di un Covo!</Italian>
 			<Portuguese>%1 e sua gangue: %2 - agora tem o controle de um esconderijo!</Portuguese>
@@ -5243,7 +5243,7 @@
 		<Key ID="STR_CRAFT_AR_Backpack">
 			<Original>You already have a backpack ! Put it on the ground before crafting a new.</Original>
  			<English>You already have a backpack ! Put it on the ground before crafting a new.</English>
- 			<German>Du hast bereit einen Rucksack ! Pack den alten erstmal weg.</German>
+ 			<German>Du hast bereits einen Rucksack ! Pack den alten erstmal weg.</German>
 			<French>Vous avez déjà un sac à dos ! Posez le votre avant d'en crafter un nouveau.</French>
 			<Italian>You already have a backpack ! Put it on the ground before crafting a new.</Italian>
 			<Portuguese>You already have a backpack ! Put it on the ground before crafting a new.</Portuguese>
@@ -5255,6 +5255,21 @@
 			<French>Vous avez déjà un uniforme ! Posez le votre avant d'en crafter un nouveau.</French>
 			<Italian>You already have an uniform ! Put it on the ground before crafting a new.</Italian>
 			<Portuguese>You already have an uniform ! Put it on the ground before crafting a new.</Portuguese>
+		</Key>
+		<Key ID="STR_CRAFT_AR_Vest">
+			<Original>You already have an vest ! Put it on the ground before crafting a new.</Original>
+ 			<English>You already have an vest ! Put it on the ground before crafting a new.</English>
+ 			<German>Du hast bereits eine Weste! Pack die alte erstmal weg.</German>
+		</Key>
+		<Key ID="STR_CRAFT_AR_Headgear">
+			<Original>You already have an headgear ! Put it on the ground before crafting a new.</Original>
+ 			<English>You already have an headgear ! Put it on the ground before crafting a new.</English>
+ 			<German>Du hast bereits eine Kopfbedeckung! Pack die alte erstmal weg.</German>
+		</Key>
+		<Key ID="STR_CRAFT_AR_Goggles">
+			<Original>You already have an goggles ! Put it on the ground before crafting a new.</Original>
+ 			<English>You already have an goggles ! Put it on the ground before crafting a new.</English>
+ 			<German>Du hast bereits eine Brille! Pack die alte erstmal weg.</German>
 		</Key>
 	</Package>  
 </Project>
