@@ -9,6 +9,7 @@
 */
 life_query_time = time;
 life_action_delay = time;
+life_action_gathering = false;
 life_trunk_vehicle = Objnull;
 life_session_completed = false;
 life_garage_store = false;
@@ -24,7 +25,7 @@ life_bail_paid = false;
 life_impound_inuse = false;
 life_action_inUse = false;
 life_spikestrip = ObjNull;
-life_respawn_timer = 0; //Scaled in minutes
+life_respawn_timer = 3; //Scaled in minutes
 life_knockout = false;
 life_interrupted = false;
 life_respawned = false;
@@ -38,7 +39,7 @@ __CONST__(life_save_yinv,TRUE); //Save Y-Inventory for players?
 
 //Revive constant variables.
 __CONST__(life_revive_cops,TRUE); //Set to false if you don't want cops to be able to revive downed players.
-__CONST__(life_revive_fee,250); //Fee for players to pay when revived.
+__CONST__(life_revive_fee,2500); //Fee for players to pay when revived.
 
 //House Limit
 __CONST__(life_houseLimit,5); //Maximum amount of houses a player can buy (TODO: Make Tiered licenses).
@@ -77,9 +78,9 @@ life_thirst = 100;
 life_hunger = 100;
 __CONST__(life_paycheck_period,5); //Five minutes
 life_cash = 0;
-__CONST__(life_impound_car,150);
-__CONST__(life_impound_boat,150);
-__CONST__(life_impound_air,250);
+__CONST__(life_impound_car,1500);
+__CONST__(life_impound_boat,1500);
+__CONST__(life_impound_air,2500);
 life_istazed = false;
 
 life_my_gang = ObjNull;
@@ -93,8 +94,8 @@ switch (playerSide) do
 {
 	case west: 
 	{
-		life_atmcash = 10000; //Starting Bank Money
-		life_paycheck = 200; //Paycheck Amount
+		life_atmcash = 20000; //Starting Bank Money
+		life_paycheck = 2000; //Paycheck Amount
 	};
 	case civilian: 
 	{
@@ -103,8 +104,8 @@ switch (playerSide) do
 	};
 	
 	case independent: {
-		life_atmcash = 10000;
-		life_paycheck = 200;
+		life_atmcash = 20000;
+		life_paycheck = 2000;
 	};
 };
 
