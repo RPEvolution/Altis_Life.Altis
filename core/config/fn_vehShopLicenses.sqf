@@ -28,6 +28,8 @@ switch (life_veh_shop select 0) do
 	case "cop_airhq": {_ret = license_cop_air;};
 	case "civ_truck":	{_ret = license_civ_truck;};
 	case "reb_car": {_ret = license_civ_rebel;};
+	case "reb_air": {_ret = license_civ_rebel;};
+	case "reb_ship": {_ret = license_civ_rebel;};
 	case "cop_car": {_ret = true;};
 	case "garage_car": {_ret = (__GETC__(life_adacLevel)) > 1;};
 	case "garage_air": {_ret = (__GETC__(life_adacLevel)) > 1;};
