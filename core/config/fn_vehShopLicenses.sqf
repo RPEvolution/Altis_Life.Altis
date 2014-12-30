@@ -29,6 +29,7 @@ switch (life_veh_shop select 0) do
 	case "civ_truck":	{_ret = license_civ_truck;};
 	case "reb_car": {_ret = license_civ_rebel;};
 	case "reb_air": {_ret = license_civ_rebel;};
+	case "reb_ship": {_ret = license_civ_rebel;};
 	case "cop_car": {_ret = true;};
 	case "garage_car": {_ret = (["adac"] call life_fnc_permLevel) > 1;};
 	case "garage_air": {_ret = (["adac"] call life_fnc_permLevel) > 1;};
