@@ -23,4 +23,5 @@ if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(life_garage_sell
 [[_vid,_pid,_price,player,life_garage_type],"TON_fnc_vehicleDelete",false,false] spawn life_fnc_MP;
 
 life_atmcash = life_atmcash + _price;
+[1] call SOCK_fnc_updatePartial;
 closeDialog 0;

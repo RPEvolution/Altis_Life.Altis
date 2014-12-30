@@ -67,3 +67,4 @@ if((uiNamespace getVariable["Weapon_Shop_Filter",0]) == 1) then
 	};
 };
 [] call life_fnc_saveGear;
+[0] call SOCK_fnc_updatePartial;

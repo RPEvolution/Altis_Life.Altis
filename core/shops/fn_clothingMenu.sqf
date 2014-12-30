@@ -16,7 +16,7 @@ if((_this select 3) in ["bruce","dive","reb","kart"] && playerSide != civilian) 
 if((_this select 3) in ["medic","adac"] && playerSide != independent) exitWith {hint "Du bist kein Mitglied des EMS!"; closeDialog 0;};
 if((_this select 3) in ["reb"] && !license_civ_rebel) exitWith {hint localize "STR_Shop_NotaReb"; closeDialog 0;};
 if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
-if((_this select 3) in ["medic"] && (__GETC__(life_medicLevel)) < 1) exitWith {hint "Du bist kein Mitglied der Medic!"; closeDialog 0;};
+if((_this select 3) in ["medic"] && (["medic"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Mitglied der Medic!"; closeDialog 0;};
 if((_this select 3) in ["dive"] && !license_civ_dive) exitWith { hint localize "STR_Shop_NotaDive"; closeDialog 0;};
 if((_this select 3) in ["sec"] && (["sec"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Mitglied der Söldner!"; closeDialog 0;};
 if((_this select 3) in ["smugler"] && (["smugler"] call life_fnc_permLevel) < 1) exitWith {hint "Du bist kein Mitglied der Waffenschieber!"; closeDialog 0;};

@@ -47,3 +47,5 @@ if(_action) then {
 		_house setVariable[format["bis_disabled_Door_%1",_i],1,true];
 	};
 };
+
+[1] call SOCK_fnc_updatePartial;

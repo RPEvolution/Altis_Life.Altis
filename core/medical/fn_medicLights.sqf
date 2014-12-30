@@ -35,7 +35,7 @@ _lightleft setLightUseFlare true;
 
 _lightright = "#lightpoint" createVehicle getpos _vehicle;   
 sleep 0.2;
-_lightright setLightColor _lightBlue; 
+_lightright setLightColor _lightRed; 
 _lightright setLightBrightness 0.2;  
 _lightright setLightAmbient [0.1,0.1,1]; 
 
@@ -65,14 +65,14 @@ while{ (alive _vehicle)} do
 	{  
 		_leftRed = false;  
 		_lightright setLightBrightness 0.0;  
-		sleep 0.05;
+		sleep 0.1;
 		_lightleft setLightBrightness 6;  
 	}  
 		else  
 	{  
 		_leftRed = true;  
 		_lightleft setLightBrightness 0.0;  
-		sleep 0.05;
+		sleep 0.1;
 		_lightright setLightBrightness 6;  
 	};  
 	sleep (_this select 1);  

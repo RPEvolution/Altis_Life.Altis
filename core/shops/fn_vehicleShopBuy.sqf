@@ -91,6 +91,7 @@ switch(playerSide) do {
 };
 
 _vehicle allowDamage true;
+
 _vehicle addEventHandler ["handleDamage",{_this call life_fnc_handleVehicleDamage;}];
 //_vehicle addEventHandler["Killed", {_this spawn TON_fnc_vehicleDead}];
 //_vehicle addEventHandler ["Killed", {_this call life_fnc_onVehicleKilled;}];
@@ -112,6 +113,6 @@ if(_mode) then {
 	};
 };
 
-[0] call SOCK_fnc_updatePartial;
+[6] call SOCK_fnc_updatePartial;
 closeDialog 0; //Exit the menu.
 true;

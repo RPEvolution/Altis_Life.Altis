@@ -66,4 +66,6 @@ if(!life_use_atm) then
 	_robber = true;
 };
 
+[0] call SOCK_fnc_updatePartial;
+
 [[player,_inv,_robber],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;

@@ -30,3 +30,5 @@ life_ticket_paid = true;
 closeDialog 0;
 [[1,format[localize "STR_Cop_Ticket_PaidNOTF_2",profileName]],"life_fnc_broadcast",life_ticket_cop,false] spawn life_fnc_MP;
 [[life_ticket_val,player,life_ticket_cop],"life_fnc_ticketPaid",life_ticket_cop,false] spawn life_fnc_MP;
+
+[6] call SOCK_fnc_updatePartial;

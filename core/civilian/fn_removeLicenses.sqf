@@ -52,3 +52,5 @@ switch (_state) do
 		};
 	};*/
 };
+
+[2] call SOCK_fnc_updatePartial;

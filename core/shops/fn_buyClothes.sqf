@@ -19,5 +19,7 @@ _price = 0;
 if(_price > life_cash) exitWith {titleText[localize "STR_Shop_NotEnoughClothes","PLAIN"];};
 life_cash = life_cash - _price;
 
+[0] call SOCK_fnc_updatePartial;
+
 life_clothesPurchased = true;
 closeDialog 0;
