@@ -167,7 +167,8 @@ life_inv_items =
 	"life_inv_storagesmall",
 	"life_inv_storagebig",
 	"life_inv_handcuffs",
-	"life_inv_zipties"
+	"life_inv_zipties",
+	"life_inv_blackmoney"
 ];
 
 //Setup variable inv vars.
