@@ -3029,6 +3029,14 @@
 		</Key>
 	</Package>
 	<Package name="Life_Items">
+		<Key ID="STR_Item_BlackMoney">
+			<Original>Blacmoney</Original>
+			<English>Blackmoney</English>
+			<German>Schwarzgeld</German>
+			<French>Cannabis</French>
+			<Italian>Cannabis</Italian>
+			<Portuguese>Maconha não Processada</Portuguese>
+		</Key>
 		<Key ID="STR_Item_Cannabis">
 			<Original>Cannabis</Original>
 			<English>Cannabis</English>
