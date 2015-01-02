@@ -67,6 +67,7 @@ switch (_mode) do
 			case "storagebig": {"life_inv_storagebig"};
 			case "handcuffs": {"life_inv_handcuffs"};
 			case "zipties": {"life_inv_zipties"};
+			case "blackmoney": {"life_inv_blackmoney"};
 		};
 	};
 	
@@ -125,6 +126,7 @@ switch (_mode) do
 			case "life_inv_storagebig": {"storagebig"};
 			case "life_inv_handcuffs": {"handcuffs"};
 			case "life_inv_zipties": {"zipties"};
+			case "life_inv_blackmoney": {"blackmoney"};
 		};
 	};
 };
