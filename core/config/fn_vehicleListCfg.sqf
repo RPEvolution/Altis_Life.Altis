@@ -22,6 +22,13 @@ switch (_shop) do
 		];
 	};
 	
+	case "quad_shop":
+	{
+		_return = [
+			["B_Quadbike_01_F",240]
+		];
+	};
+	
 	case "med_shop":
 	{
 		_return = [
