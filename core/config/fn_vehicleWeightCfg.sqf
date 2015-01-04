@@ -13,6 +13,7 @@ switch (_className) do
 	case "C_Offroad_01_F": {65};
 	case "B_G_Offroad_01_F": {65};
 	case "B_Quadbike_01_F": {25};
+	case "I_Quadbike_01_F": {25};
 	case "I_Truck_02_covered_F": {250};
 	case "I_Truck_02_transport_F": {200};
 	case "I_Truck_02_medical_F": {40};	
