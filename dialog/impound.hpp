@@ -79,7 +79,7 @@ class Life_impound_menu
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+		/*
 		class BuyCar : life_RscButtonMenu 
 		{
 			idc = -1;
@@ -90,6 +90,7 @@ class Life_impound_menu
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
+		*/
 	};
 	
 	class controls
