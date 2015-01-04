@@ -20,14 +20,14 @@ switch (_side) do
 	{
 		if(life_spawn_base) then {			
 			_return = [
-				["cop_spawn_1","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+				["cop_spawn_1","Polizei HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
 				["cop_spawn_2","Sofia","\a3\ui_f\data\map\MapControl\fuelstation_ca.paa"],
 				["cop_spawn_3","Athira","\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa"]
 			];
 		} else {
 			_return = [
 				["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-				["cop_spawn_1","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
+				["cop_spawn_1","Polizei HQ","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
 			];
 		};
 	};
@@ -41,7 +41,7 @@ switch (_side) do
 		if(license_civ_rebel) then { 			
 			_return set[count _return,["reb_spawn","Kavala","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 		} else {			
-			_return set[count _return,["civ_spawn","Pyrgos","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
+			_return set[count _return,["civ_spawn","Flughafen","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
 		};
 			
 		switch (true) do {
