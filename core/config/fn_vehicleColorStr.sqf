@@ -121,6 +121,22 @@ switch (_vehicle) do
 		};
 	};
 	
+	case "I_Quadbike_01_F" :
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Braun"};
+			case 1: {_color = "Digi Wüste"};
+			case 2: {_color = "Schwarz"};
+			case 3: {_color = "Blau"};
+			case 4: {_color = "Rot"};
+			case 5: {_color = "Weis"};
+			case 6: {_color = "Digi Grün"};
+			case 7: {_color = "Jäger Camo"};
+			case 8: {_color = "Rebellen Camo"};
+		};
+	};
+	
 	case "B_Heli_Light_01_F":
 	{
 		switch (_index) do
