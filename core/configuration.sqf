@@ -113,7 +113,7 @@ switch (playerSide) do
 /*
 	Master Array of items?
 */
-life_vShop_rentalOnly = ["I_MRAP_03_hmg_F","B_G_Offroad_01_armed_F","B_Slingload_01_Cargo_F"];
+life_vShop_rentalOnly = ["I_MRAP_03_hmg_F","B_G_Offroad_01_armed_F","B_Slingload_01_Cargo_F","I_Quadbike_01_F"];
 __CONST__(life_vShop_rentalOnly,life_vShop_rentalOnly); //These vehicles can never be bought and only 'rented'. Used as a balancer & money sink. If you want your server to be chaotic then fine.. Remove it..
 
 life_inv_items = 
@@ -167,8 +167,7 @@ life_inv_items =
 	"life_inv_storagesmall",
 	"life_inv_storagebig",
 	"life_inv_handcuffs",
-	"life_inv_zipties",
-	"life_inv_blackmoney"
+	"life_inv_zipties"
 ];
 
 //Setup variable inv vars.
@@ -423,6 +422,7 @@ life_garage_prices =
 	["C_Kart_01_Red_F",50],
 	["C_Kart_01_Vrana_F",50],
 	["B_Quadbike_01_F",50],
+	["I_Quadbike_01_F",50],
 	["C_Hatchback_01_F",100],
 	["B_G_Offroad_01_F",100],
 	["B_G_Offroad_01_repair_F",90],
@@ -471,6 +471,7 @@ life_garage_sell =
 	["C_Kart_01_Red_F",1000],
 	["C_Kart_01_Vrana_F",1000],
 	["B_Quadbike_01_F",800],
+	["I_Quadbike_01_F",800],
 	["C_Hatchback_01_F",4000],
 	["B_G_Offroad_01_F",600],
 	["B_G_Offroad_01_repair_F",600],
