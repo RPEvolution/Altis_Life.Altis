@@ -61,30 +61,21 @@ switch (_side) do
 	};
 	
 	case independent: {
-		
-		if((["medic"] call life_fnc_permLevel) > 0) then {
-			if(life_spawn_base) then {
-				_return = [
-					["medic_spawn_1","Pyrgos","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-					["medic_spawn_2","Athira","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-					["medic_spawn_3","Kavala","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
-					["medic_spawn_4","Sofia","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
-				];
-			} else {
-				_return = [
-					["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-					["medic_spawn_1","Pygros","\a3\ui_f\data\map\MapControl\hospital_ca.paa"]
-				];
-			};
+	
+		if(life_spawn_base) then {
+			_return = [
+				["medic_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+				["medic_spawn_2","Athira","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+				["medic_spawn_3","Pyrgos","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+				["medic_spawn_4","Sofia","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+				["adac_spawn_1","Flughafen","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
+			];
 		} else {
-			if(life_spawn_base) then {
-				_return = [["adac_spawn_1","Flughafen","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]];
-			} else {
-				_return = [
-					["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
-					["adac_spawn_1","Flughafen","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
-				];
-			};
+			_return = [
+				["last_position","Standort","\a3\ui_f\data\map\MapControl\watertower_ca.paa"],
+				["medic_spawn_1","Kavala","\a3\ui_f\data\map\MapControl\hospital_ca.paa"],
+				["adac_spawn_1","Flughafen","\a3\ui_f\data\map\MapControl\watertower_ca.paa"]
+			];
 		};
 	};
 };

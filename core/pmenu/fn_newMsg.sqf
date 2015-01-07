@@ -104,6 +104,24 @@ switch(_type) do
 			ctrlShow[888898,true];
 			ctrlShow[888896,false];
 		};
+		
+		if(playerSide == west) then
+		{
+			ctrlShow[888895, false];
+			ctrlShow[888901, true];
+		} else {
+			ctrlShow[888901, false];
+			ctrlShow[888895, true];	
+		};
+		
+		if(playerSide == independent) then
+		{
+			ctrlShow[888899, false];
+			ctrlShow[888900, true];
+		} else {
+			ctrlShow[888899, true];
+			ctrlShow[888900, false];	
+		};
 	};
 	//adminMsgAll
 	case 7:
@@ -112,6 +130,24 @@ switch(_type) do
 		if(_msg == "") exitWith {hint "You must enter a message to send!";};
 		[[ObjNull,_msg,player,5],"TON_fnc_handleMessages",false] spawn life_fnc_MP;
 		hint format["Admin Message Sent To All: %1",_msg];
+		closeDialog 887890;
+	};
+	//PoliceMsgAll
+	case 8:
+	{
+		if(playerSide != west) exitWith {hint "You are not a cop!";};
+		if(_msg == "") exitWith {hint "You must enter a message to send!";};
+		[[ObjNull,_msg,player,6],"TON_fnc_handleMessages",false] spawn life_fnc_MP;
+		hint format["Police Message Sent To All: %1",_msg];
+		closeDialog 887890;
+	};
+	//EMSMsgAll
+	case 9:
+	{
+		if(playerSide != independent) exitWith {hint "You are not a service member!";};
+		if(_msg == "") exitWith {hint "You must enter a message to send!";};
+		[[ObjNull,_msg,player,7],"TON_fnc_handleMessages",false] spawn life_fnc_MP;
+		hint format["EMS Message Sent To All: %1",_msg];
 		closeDialog 887890;
 	};
 };

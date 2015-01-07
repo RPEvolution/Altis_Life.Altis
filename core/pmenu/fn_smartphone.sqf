@@ -54,6 +54,12 @@ switch(_type) do
 		life_smartphoneTarget = call compile format["%1",_target];
 	};
 	
+	case 3:
+	{
+		lbClear _cMessageList;
+		[[player],"TON_fnc_cleanupMessages",false] spawn life_fnc_MP;
+	};
+	
 	case 4:
 	{
 		createDialog "Life_smartphone_schreiben";

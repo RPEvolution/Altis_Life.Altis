@@ -368,6 +368,22 @@
 			<Italian>Msg medici</Italian>
 			<Portuguese>Chamar SAMU</Portuguese>
 		</Key>
+		<Key ID="STR_CELL_EMSMsgAll">
+			<Original>EMS MSG ALL</Original>
+			<English>EMS MSG ALL</English>
+			<German>EMS Alle</German>
+			<French>Requête Medecin</French>
+			<Italian>Msg medici</Italian>
+			<Portuguese>Chamar SAMU</Portuguese>
+		</Key>
+		<Key ID="STR_CELL_CopMsgAll">
+			<Original>Cop MSG ALL</Original>
+			<English>Cop MSG ALL</English>
+			<German>Polizei Alle</German>
+			<French>Requête Medecin</French>
+			<Italian>Msg medici</Italian>
+			<Portuguese>Chamar SAMU</Portuguese>
+		</Key>
 	</Package>
 	<Package name="Chop_Shop">
 		<Key ID="STR_ChopShop_Title">
@@ -4479,47 +4495,31 @@
 		<Key ID="STR_vInAct_Title">
 			<Original>Vehicle Interaction Menu</Original>
 			<English>Vehicle Interaction Menu</English>
-			<German>Fahrzeuginteraktionsmenü</German>
+			<German>Fahrzeuginteraktion</German>
 			<French>Menu Interaction Véhicule</French>
 			<Italian>Menu d'interazione Veicolo</Italian>
 			<Portuguese>Menu de Interação do Veículo</Portuguese>
 		</Key>
 		<Key ID="STR_vInAct_Unflip">
-			<Original>Unflip Vehicle</Original>
-			<English>Unflip Vehicle</English>
-			<German>Fahrzeug umdrehen</German>
+			<Original>Unflip</Original>
+			<English>Unflip</English>
+			<German>Umdrehen</German>
 			<French>Retourner Véhicule</French>
 			<Italian>Raddrizza veicolo</Italian>
 			<Portuguese>Desvirar Veículo</Portuguese>
 		</Key>
-		<Key ID="STR_vInAct_GetInKart">
-			<Original>Get In Kart</Original>
-			<English>Get In Kart</English>
+		<Key ID="STR_vInAct_GetInVehicle">
+			<Original>Get In</Original>
+			<English>Get In</English>
 			<German>Einsteigen</German>
 			<French>Mettre dans le kart</French>
 			<Italian>Entra nel Kart</Italian>
 			<Portuguese>Entrar no Kart</Portuguese>
 		</Key>
-		<Key ID="STR_vInAct_GetInHeli">
-			<Original>Get In Helicopter</Original>
-			<English>Get In Helicopter</English>
-			<German>Einsteigen</German>
-			<French>Mettre dans le helicopter</French>
-			<Italian>Entra nel Helicopter</Italian>
-			<Portuguese>Entrar no Helicopter</Portuguese>
-		</Key>
-		<Key ID="STR_vInAct_PushBoat">
-			<Original>Push Boat</Original>
-			<English>Push Boat</English>
-			<German>Boot schieben</German>
-			<French>Pousser bateau</French>	
-			<Italian>Spingi Barca</Italian>			
-			<Portuguese>Empurar Barco</Portuguese>
-		</Key>
 		<Key ID="STR_vInAct_Repair">
-			<Original>Repair Vehicle</Original>
-			<English>Repair Vehicle</English>
-			<German>Fahrzeug reparieren</German>
+			<Original>Repair</Original>
+			<English>Repair</English>
+			<German>Reparieren</German>
 			<French>Réparer Véhicule</French>
 			<Italian>Ripara Veicolo</Italian>
 			<Portuguese>Concertar Veículo</Portuguese>
@@ -4533,17 +4533,17 @@
 			<Portuguese>Licenças</Portuguese>
 		</Key>
 		<Key ID="STR_vInAct_SearchVehicle">
-			<Original>Search Vehicle</Original>
-			<English>Search Vehicle</English>
+			<Original>Search</Original>
+			<English>Search</English>
 			<German>Durchsuchen</German>
 			<French>Fouiller Véhicule</French>
 			<Italian>Cerca Veicolo</Italian>
 			<Portuguese>Vasculhar Veículo</Portuguese>
 		</Key>
 		<Key ID="STR_vInAct_PullOut">
-			<Original>Pullout Players</Original>
-			<English>Pullout Players</English>
-			<German>Aus Fahrzeug ziehen</German>
+			<Original>Pullout</Original>
+			<English>Pullout</English>
+			<German>Herausziehen</German>
 			<French>Sortir Personnes</French>
 			<Italian>Estrai Giocatore</Italian>
 			<Portuguese>Retirar Jogadores</Portuguese>
@@ -4556,10 +4556,18 @@
 			<Italian>Sequestra Veicolo</Italian>
 			<Portuguese>Apreender Veículo</Portuguese>
 		</Key>
+		<Key ID="STR_vInAct_TowVehicle">
+			<Original>Tow Vehicle</Original>
+			<English>Tow Vehicle</English>
+			<German>Abschleppen</German>
+			<French>Mise en fourrière</French>
+			<Italian>Sequestra Veicolo</Italian>
+			<Portuguese>Apreender Veículo</Portuguese>
+		</Key>
 		<Key ID="STR_vInAct_DeviceMine">
-			<Original>Mine from device</Original>
-			<English>Mine from device</English>
-			<German>Vom Gerät abbauen</German>
+			<Original>Mine</Original>
+			<English>Mine</English>
+			<German>Abbauen</German>
 			<French>Dispositif de minage</French>
 			<Italian>Piazza mine dal veicolo</Italian>
 			<Portuguese>Minerar</Portuguese>
@@ -5154,6 +5162,9 @@
 		</Key>
 		<Key ID="STR_SMARTPHONE_NOTRUF">
 			<Original>Notruf</Original>
+		</Key>
+		<Key ID="STR_SMARTPHONE_DELETE">
+			<Original>Löschen</Original>
 		</Key>
 		<Key ID="STR_SMARTPHONE_Absenden">
 			<Original>Absenden</Original>

@@ -216,7 +216,6 @@ life_illegalweapons =
 	"hgun_P07_F",
 	"arifle_MXC_Black_F",
 	"arifle_MXM_Black_F",
-	"SMG_01_F",
 	"arifle_Mk20C_plain_F",
 	"arifle_Mk20C_F",
 	"arifle_Mk20_plain_F",

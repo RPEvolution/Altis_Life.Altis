@@ -13,6 +13,8 @@ life_versionInfo = "Altis Life RPG v3.1.4.7";
 [] execVM "KRON_Strings.sqf";
 [] execVM "zlt_fastrope.sqf";
 [] execVM "core\functions\D41_Wetter.sqf";
+[] execVM "AniRadar\scripts\aniradar_init.sqf";
+waituntil {!isNil "aniRadarInitialized"};
 
 if(isDedicated && isNil("life_market_prices")) then
 {

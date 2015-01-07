@@ -25,12 +25,14 @@ corpseRemovalMinTime = 999;
 corpseRemovalMaxTime = 9999;
 
 #include "dialog\MasterHandler.h"
+#include "AniRadar\gui\aniRadar.hpp"
 
 class RscTitles
 {
 	#include "dialog\ui.hpp"
 	#include "dialog\progress.hpp"
 	#include "dialog\hud_nameTags.h"
+	#include "AniRadar\gui\radar.hpp"
 };
 
 class CfgFunctions
@@ -124,6 +126,13 @@ class CfgSounds
 		sound[] = {"\sounds\punch.ogg", 1.0, 1};
 		titles[] = {0, " "};
 	};
+	
+	class radarPing {
+	
+		name = "aniRadar_ping";
+		sound[] = {"AniRadar\sounds\sonar_ping.ogg", 0.4, 1.4};
+		titles[] = {};
+	};
 };
 
 class CfgDebriefing
@@ -170,6 +179,15 @@ class CfgNotifications
 		priority = 7;
 	};
 	
+	class EMSMessage
+	{
+		title = "EMS Message";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		duration = 5;
+		priority = 7;
+	};
+	
 	class DeliveryAssigned
 	{
 		title = "Delivery Job Accepted";
@@ -209,6 +227,15 @@ class CfgNotifications
 	class PoliceDispatch
 	{
 		title = "911 Dispatch Center";
+		iconPicture = "textures\icons\messagepolice.paa";
+		description = "%1";
+		duration = 10;
+		priority = 6;
+	};
+	
+	class PoliceMessage
+	{
+		title = "Police Message";
 		iconPicture = "textures\icons\messagepolice.paa";
 		description = "%1";
 		duration = 10;
