@@ -48,6 +48,18 @@ if(_itemFilter == "uniform" && uniform player != "") exitWith{
 		hint localize "STR_CRAFT_AR_Uniform";
 };
 
+if(_itemFilter == "vest" && vest player != "") exitWith{
+		hint localize "STR_CRAFT_AR_vest";
+};
+
+if(_itemFilter == "Headgear" && Headgear player != "") exitWith{
+		hint localize "STR_CRAFT_AR_Headgear";
+};
+
+if(_itemFilter == "Goggles" && Goggles player != "") exitWith{
+		hint localize "STR_CRAFT_AR_Goggles";
+};
+
 if(_itemFilter == "item") then {
 	_weight = ([_item] call life_fnc_itemWeight);
 };
@@ -109,6 +121,33 @@ if(_itemFilter == "backpack") then{
 		player addBackpack _newItem;
 	}else{
 		hint localize "STR_CRAFT_AR_Backpack";
+		life_is_processing = false;
+	};
+};
+
+if(_itemFilter == "Headgear") then{
+	if(Headgear player == "") then{
+		player addHeadgear _newItem;
+	}else{
+		hint localize "STR_CRAFT_AR_Headgear";
+		life_is_processing = false;
+	};
+};
+
+if(_itemFilter == "Goggles") then{
+	if(Goggles player == "") then{
+		player addGoggles _newItem;
+	}else{
+		hint localize "STR_CRAFT_AR_Goggles";
+		life_is_processing = false;
+	};
+};
+
+if(_itemFilter == "vest") then{
+	if(vest player == "") then{
+		player addvest _newItem;
+	}else{
+		hint localize "STR_CRAFT_AR_vest";
 		life_is_processing = false;
 	};
 };
