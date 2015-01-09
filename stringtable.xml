@@ -5251,6 +5251,21 @@
 			<Italian>Backpacks</Italian>
 			<Portuguese>Backpacks</Portuguese>
 		</Key>
+		<Key ID="STR_CRAFT_FILTER_vest">
+			<Original>Vest</Original>
+ 			<English>Vest</English>
+ 			<German>Weste</German>
+		</Key>
+		<Key ID="STR_CRAFT_FILTER_Headgear">
+			<Original>Headgear</Original>
+ 			<English>Headgear</English>
+ 			<German>Kopfbedeckung</German>
+		</Key>
+		<Key ID="STR_CRAFT_FILTER_Goggles">
+			<Original>Goggles</Original>
+ 			<English>Goggles</English>
+ 			<German>Brille</German>
+		</Key>
 		<Key ID="STR_CRAFT_FILTER_Item">
 			<Original>Items</Original>
  			<English>Items</English>
