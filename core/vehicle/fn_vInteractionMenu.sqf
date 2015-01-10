@@ -14,7 +14,7 @@
 #define Btn6 37455
 #define Btn7 37456
 #define Title 37401
-private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_settingup"];
+private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7"];
 if(!dialog) then {
 	createDialog "vInteraction_Menu";
 };
@@ -34,14 +34,15 @@ _Btn7 = _display displayCtrl Btn7;
 life_vInact_curTarget = _curTarget;
 
 // In advance we make all Buttons invisible and later we make them visbile you know :)
+_Btn1 ctrlShow false;
+_Btn2 ctrlShow false;
+_Btn3 ctrlShow false;
 _Btn4 ctrlShow false;
 _Btn5 ctrlShow false;
 _Btn6 ctrlShow false;
 _Btn7 ctrlShow false;
 
-_settingup = true;
-
-while{_settingup} do
+while{!(ctrlShown _Btn1)} do
 {
 	switch(true) do
 	{
@@ -51,6 +52,20 @@ while{_settingup} do
 			_Btn4 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_searchVehAction;";
 			
 			_Btn4 ctrlShow true;
+		};
+		
+		// Civilians can automaticly mine with Tempest Device
+		case ((playerSide == civilian && typeOf _curTarget == "O_Truck_03_device_F") && !(ctrlShown _Btn4)) then {
+			_Btn4 ctrlSetText localize "STR_vInAct_DeviceMine";
+			_Btn4 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_deviceMine";
+			
+			_Btn4 ctrlShow true;
+			
+			if(!isNil {(_curTarget getVariable "mining")} OR !local _curTarget && {_curTarget in life_vehicles}) then {
+				_Btn4 ctrlEnable false;
+			} else {
+				_Btn4 ctrlEnable true;
+			};
 		};
 		
 		// Police can SearchVehicle, PullOut Players and ImpoundVehicles too
@@ -103,7 +118,9 @@ while{_settingup} do
 			
 			if(count crew _curTarget == 0 && {canMove _curTarget} && {locked _curTarget == 0}) then {_Btn3 ctrlEnable true;} else {_Btn3 ctrlEnable false};
 		
-			_settingup = false;
+			_Btn1 ctrlShow true;
+			_Btn2 ctrlShow true;
+			_Btn3 ctrlShow true;
 		};
 	};
 };

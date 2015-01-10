@@ -52,7 +52,7 @@ if(([true,_type,_amount] call life_fnc_handleInv)) then
 			{ 
 			[_type, _amount] spawn
 				{
-					sleep 120;
+					sleep 300;
 					[_this select 0,_this select 1] call life_fnc_marketBuy;
 				};				
 			};
@@ -67,7 +67,7 @@ if(([true,_type,_amount] call life_fnc_handleInv)) then
 		{ 
 			[_type, _amount] spawn
 			{
-				sleep 120;
+				sleep 300;
 				[_this select 0,_this select 1] call life_fnc_marketBuy;
 			};			
 		};

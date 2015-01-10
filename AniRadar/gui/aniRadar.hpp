@@ -3,10 +3,10 @@
 
 class RadarComponents: RscPicture
 {
-	x = ANIRADAR_X
-	y = ANIRADAR_Y
-	w = ANIRADAR_W
-	h = ANIRADAR_H
+	x = ANIRADAR_X;
+	y = ANIRADAR_Y;
+	w = ANIRADAR_W;
+	h = ANIRADAR_H;
 };
 
 class RadarIcon: RscPicture

@@ -37,6 +37,9 @@ while {player getVariable "restrained"} do
 {
 	if(vehicle player == player) then {
 		player playMove "AmovPercMstpSnonWnonDnon_Ease";
+		_state = vehicle player;
+		waitUntil{vehicle player != _state};
+		
 	};
 	
 	_state = vehicle player;
@@ -59,6 +62,11 @@ while {player getVariable "restrained"} do
 	{
 		//disableUserInput true;
 		if(driver (vehicle player) == player) then {player action["GetOut",vehicle player];};
+	};
+	
+	if(vehicle player != _state) then
+	{
+		player action ["getInCargo", _state];
 	};
 };
 

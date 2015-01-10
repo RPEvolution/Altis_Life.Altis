@@ -15,7 +15,7 @@
 #define Btn8 37457
 #define Title 37401
 
-private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8"];
+private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7"];
 if(!dialog) then {
 	createDialog "pInteraction_Menu";
 };
@@ -61,7 +61,6 @@ _Btn4 = _display displayCtrl Btn4;
 _Btn5 = _display displayCtrl Btn5;
 _Btn6 = _display displayCtrl Btn6;
 _Btn7 = _display displayCtrl Btn7;
-_Btn8 = _display displayCtrl Btn8;
 life_pInact_curTarget = _curTarget;
 
 //Set Unrestrain Button
@@ -100,4 +99,3 @@ if(!((player distance (getMarkerPos "police_hq") < 30) OR  (player distance (get
 {
 	_Btn6 ctrlEnable false;
 };
-		

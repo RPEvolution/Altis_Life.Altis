@@ -83,6 +83,7 @@ __CONST__(life_impound_car,1500);
 __CONST__(life_impound_boat,1500);
 __CONST__(life_impound_air,2500);
 life_istazed = false;
+life_is_god = false;
 
 life_my_gang = ObjNull;
 life_player_position = ObjNull;
@@ -167,7 +168,8 @@ life_inv_items =
 	"life_inv_storagesmall",
 	"life_inv_storagebig",
 	"life_inv_handcuffs",
-	"life_inv_zipties"
+	"life_inv_zipties",
+	"life_inv_blackmoney"
 ];
 
 //Setup variable inv vars.

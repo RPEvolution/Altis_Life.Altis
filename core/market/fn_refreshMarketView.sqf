@@ -27,45 +27,39 @@ if(_selectedindex == -1) then
 	{
 		_index = lbAdd [1500, [ [_x select 0, 0] call life_fnc_varHandle ] call life_fnc_varToStr ];
 		lbSetData [1500, _index, _x select 0];
-	}
-	foreach life_market_resources;
+	} foreach life_market_resources;
 }
 //Otherwise set data to selected entry
 else
 {
 	_shortname = lbData [1500, _selectedindex];
 	
-	ctrlSetText [1000, lbText [1500, _selectedindex] ]; //Set name
+	ctrlSetText [1000, lbText [1500, _selectedindex]]; //Set name
 	
 	{
 		if((_x select 0) == _shortname) exitWith
 		{
-			ctrlSetText [1001, format["$%1", [_x select 1] call life_fnc_numberText ] ];
+			ctrlSetText [1001, format["%1 €", [_x select 1] call life_fnc_numberText ]];
 			
 			//Trend Global
-			ctrlSetText [1004, format["$%1", [_x select 2] call life_fnc_numberText ] ];
+			ctrlSetText [1004, format["%1 €", [_x select 2] call life_fnc_numberText ]];
 			
 			if((_x select 2) >= 0) then
 			{
 				ctrlSetText [1200, "textures\icons\trendup.paa"];
-			}
-			else
-			{
+			} else {
 				ctrlSetText [1200, "textures\icons\trenddown.paa"];
 			};
 			
 			//Trend local
-			ctrlSetText [1005, format["$%1", [_x select 3] call life_fnc_numberText ] ];
+			ctrlSetText [1005, format["%1 €", [_x select 3] call life_fnc_numberText ]];
 			
-			if((_x select 3) >= 0) then
+			if((_x select 3) >= 0) then 
 			{
 				ctrlSetText [1201, "textures\icons\trendup.paa"];
-			}
-			else
-			{
+			} else {
 				ctrlSetText [1201, "textures\icons\trenddown.paa"];
 			};
 		};
-	}
-	foreach life_market_prices;
+	} foreach life_market_prices;
 };

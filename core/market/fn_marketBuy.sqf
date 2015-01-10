@@ -24,12 +24,9 @@ _modifier = (_amount * (_arr_resource select 5)); //calculate modifier
 _price = _price + _modifier;
 _globalprice = _globalprice + _modifier;
 
-//Check borders
-if(_price < 0) then {_price = 0;};
-
+//Check border
 _max = _arr_resource select 3;
-
-if( _price > _max)then {_price = _max;};
+if(_price > _max) then {_price = _max;};
 
 //insert into new array
 [_shortname, [_shortname,_price,_globalprice,_modifier], false ] call life_fnc_marketSetPriceRow; //dont broadcast!

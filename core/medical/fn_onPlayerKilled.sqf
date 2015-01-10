@@ -85,6 +85,7 @@ if(!isNull _killer && {_killer != _unit} && {side _killer != west} && {alive _ki
 //Killed by cop stuff...
 if(side _killer == west && playerSide != west) then {
 	life_copRecieve = _killer;
+	life_removeWanted = true;
 	//Did I rob the federal reserve?
 	if(!life_use_atm && {life_cash > 0}) then {
 		[format[localize "STR_Cop_RobberDead",[life_cash] call life_fnc_numberText],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
@@ -92,9 +93,11 @@ if(side _killer == west && playerSide != west) then {
 	};
 };
 
+/*
 if(!isNull _killer && {_killer != _unit}) then {
 	life_removeWanted = true;
 };
+*/
 
 _handle = [_unit] spawn life_fnc_dropItems;
 waitUntil {scriptDone _handle};

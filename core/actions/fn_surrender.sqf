@@ -17,3 +17,4 @@ while { player getVariable ["Surrendered", false] }  do {
 };
 
 player playMoveNow "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon"; //Animation out
+player setVariable ["Surrendered", false, true];
