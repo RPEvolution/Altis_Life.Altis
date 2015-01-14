@@ -2,14 +2,17 @@ waitUntil {!isNull player && player == player};
 if(player diarySubjectExists "rules")exitwith{};
 
 player createDiarySubject ["changelog","Change Log"];
-player createDiarySubject ["serverrules","General Rules"];
+player createDiarySubject ["rpe","Konzept"];
+player createDiarySubject ["serverrules","Allgemeine Regeln"];
 player createDiarySubject ["policerules","Police Procedures/Rules"];
-player createDiarySubject ["safezones","Safe Zones (No Killing)"];
-//player createDiarySubject ["civrules","Civilian Rules"];
-player createDiarySubject ["illegalitems","Illegal Activity"];
+player createDiarySubject ["safezones","Safe Zone"];
+//player createDiarySubject ["civrules","Zivile Gesetze"];
+player createDiarySubject ["perm","Fraktionen"];
+player createDiarySubject ["illegalitems","Illegal"];
 //player createDiarySubject ["gangrules","Gang Rules"];
 //player createDiarySubject ["terrorrules","Terrorism Rules"];
-player createDiarySubject ["controls","Controls"];
+player createDiarySubject ["controls","Steuerung"];
+player createDiarySubject ["help","Handbuch"];
 
 /*  Example
 	player createDiaryRecord ["", //Container
@@ -23,48 +26,125 @@ player createDiarySubject ["controls","Controls"];
 */
 	player createDiaryRecord["changelog",
 		[
-			"Official Change Log",
+			"Offizielles Change Log",
 				"
-					The official change log can be found on the BIS forums (search Altis Life RPG)
+				Die offizielle change log findet Ihr im<br/>
+				BIS Forum (Suchbegriff Altis Life RPG 3.1.4.7)<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord["changelog",
 		[
-			"Custom Change Log",
+			"Server Change Log",
 				"
-					This section is meant for people doing their own edits to the mission, DO NOT REMOVE THE ABOVE.
+				Derzeit befindet sich der Server noch in der Beta Version.<br/>
+				Von daher wird dieser Bereich noch nicht genutzt.<br/><br/>
 				"
 		]
 	];
-
-		player createDiaryRecord ["serverrules",
+	
+// Konzept
+	player createDiaryRecord["rpe",
 		[
-			"Exploits", 
+			"Allgemein",
 				"
-				These are considered exploits, and you will not be kicked, but banned.<br/><br/>
+				Willkommen bei RPEvolution,<br/><br/>
+					
+				das Spielprinzip von Altis Life wurde auf diesem Server<br/>
+				größtenteils überarbeitet.<br/>
+				Die folgenden Änderungen werden hier aufgezählt und<br/> 
+				erklärt.<br/>
+				Neue Spieler sollten sich das Konzept des Servers<br/>
+				durchlesen.<br/>
+				Für weitere Fragen können die Admins angesprochen<br/>
+				werden.<br/><br/><br/>
+					
+				- Paycheck kann nur durch Bügerukurnde erhalten werden.<br/>
+				Bei Kauf einer Rebellenlizenz, verliert die Bürgerurkunde<br/>
+				ihren Wert<br/><br/>
+				- Beim Fahrzeugkauf wird das Geld vom Konto direkt<br/> 
+				abgebucht.<br/><br/>
+				- Fahrzeug- und Waffenlizenzen werden nur über<br/> 
+				Gefängnisaufenthalt entfernt<br/><br/>
+				- Kavala ist Rebellengebiet, d.h. Morde innerhalb<br/> 
+				dieser Stadt werden nicht erfasst, Rebellengebiet!<br/>
+				- Zusätzliche Fraktionen wie Söldner, ADAC und<br/> 
+				Waffenschmuggler vorhanden. Bewerbungen an<br/>
+				entsprechende Vorgesetzte<br/><br/>
+				- Server speichert Fahndungsliste, Position des<br/> 
+				Spielers, sowie die Preise vom Markt<br/><br/>
+				- Mietpreise von Fahrzeugen sind interessanter<br/> 
+				gestaltet<br/><br/>
+				- Huron kann mit Containern zum farmen genutz<br/> 
+				werden<br/><br/>
+				- Mietpreise für Garagen und Häuser vorhanden<br/><br/>
+				- Crafting von Items<br/><br/>
+				- Fahrzeuge können nicht zur explosion gebracht<br/>
+				werden<br/><br/>
+				- EXP System<br/><br/>
+				- Preise fürs tanken von Fahrzeugen<br/><br/>
+				"
+		]
+	];
+	
+	
+	player createDiaryRecord ["serverrules",
+		[
+			"Exploit", 
+				"
+				Dies sind anerkannte Exploit, durch die du nicht vom<br/>
+				Server gekickt wirst, sondern direkt gebannt wirst und<br/>
+				gehst nicht über Los und kriegst kein Gehaltscheck<br/><br/><br/>
 
-				1. Getting out of jail via any method other than paying bail or escaping via helicopter.<br/>
-				2. Killing yourself to get out of roleplay. Getting out of being tazed, restrained, arrested, jail, etc. If the log shows you got arrested, then you died, you will be banned. Do not pay bail and kill yourself for an easy ride home. Walk you lazy turd.<br/>
-				3. Duping items and/or money. If someone sends you an unobtainable amount of money right at the start of the game, report to an admin IMMEDIATELY and transfer said money to an admin. Do this ASAP or an admin could ban you if they see that much on you without question.<br/>
-				4. Using clearly hacked items. If a hacker comes in and spawns unobtainable items, you could be banned for using said items. Report the items to the admins immediately and stay away from them.<br/>
-				5. Abusing bugs or game mechanics for gain. Is there a replicating gun somewhere? Report it and leave it alone. If an admin catches you abusing the glitch, ban.<br/><br/>
+				- Ausbrechen aus dem Knast durch eine andere Methode<br/>
+				als durch Bezahlung der Rechnung oder durch Flucht mit<br/>
+				einem Helikopter.<br/><br/>
+				- Selbstmord um das Roleplay zu verlassen. Verlassen des<br/>
+				Spiels bei getasert, gefesselt oder verhaftet Zustand.<br/>
+				Wird der Aufenthalt im Gefägnis registriert und es wird<br/>
+				Selbstmord begangen zum verlassen, wirst du gebannt.<br/><br/>
+				- Betrügen mit Gegenständen und / oder Geld. Falls<br/>
+				jemand eine übertriebene Summe Geld aufs Konto<br/>
+				überweist, dies sofort den Admins melden und diesen<br/>
+				Betrag sofort an die Admins senden. Falls ein<br/>
+				unrealistischer Wert vorhanden ist, können Fragen<br/>
+				entstehen.<br/><br/>
+				- Verwendung von klar gecheateten Objekten. Falls ein<br/>
+				Hacker oder Cheater Objekte erzeugen die nicht zum Spiel<br/>
+				gehören, sind diese nicht zu verwenden. Sofort die Admins<br/>
+				benachrichtigen über diesen Vorfall und von den Objekten<br/>
+				wegbleiben.<br/><br/>
+				- Ausnutzen von Fehlern oder Probleme der Spiele Engine<br/>
+				zu seinem Vorteil. Falls Waffen platziert wurden sind,<br/>
+				die nicht im Spiel vorhanden sind, liegen lassen. Wenn<br/>
+				ein Admin dies sieht, führt das zum Ban.<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord["safezones",
 		[
-			"Safe Zones",
+			"Safe Zone",
 				"
-					If bombing (bombing can be intentionally exploding a vehicle), robbing, or killing occurs around these or in these areas it is punishable by ban.<br/><br/>
+				Das gewollte explodieren von Fahrzeugen, ausrauben oder<br/>
+				töten von Personen um und auf diesem Gebiet können<br/>
+				zum Ban führen.<br/><br/>
+				D.h. das innerhalb eines Radius von 50m zum diesem<br/>
+				Gebiet gilt auch als Safe Zone<br/><br/><br/>
 					
-					Any vehicle spawn (shop or garage)<br/>
-					Any weapon shop<br/>
-					All Police HQs<br/>
-					Rebel Outposts<br/>
-					Donator Shops<br/><br/>
+				- Polizei HQ Pyrgos<br/><br/>
+				- Polizeistationen auf Altis<br/><br/>
+				- Händler bzw. Verarbeiter auf Altis<br/><br/>
+				- ADAC HQ Flughafen<br/><br/>
+				- Alle Krankenhäuser<br/><br/><br/>
+					
+				Falls durch Rollenspiel, sich das Ereignis in eine Safe Zone<br/>
+				verschiebt, wird die Regelung nur für die beteiligten<br/>
+				Personen aufgehoben Polizei darf innerhalb der Safe Zone<br/>
+				kein Rollenspiel starten, außer bei RDM, der oben<br/>
+				genannten Regel bzgl. Ereignisse oder in Polizei HQ,<br/>
+				sowie Polizeistationen<br/><br/>
 				"
 		]
 	];
@@ -72,86 +152,127 @@ player createDiarySubject ["controls","Controls"];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Bannable Offenses", 
+			"Banngründe", 
 				"
-				Consider this your one and only warning.<br/><br/>
+				Dies Regeln werden hier nur schriftlich dargestellt. Dies<br/>
+				ist somit die erste und letzte Verwarnung zu diesem<br/>
+				Thema<br/><br/><br/>
 				
-				1. Hacking<br/>
-				2. Cheating<br/>
-				3. Exploiting (See 'Exploits')<br/>
-				4. Being kicked 3 or more times.<br/><br/>
+				- Hacking<br/><br/>
+				- Cheating<br/><br/>
+				- Exploiting (siehe 'Exploit')<br/><br/>
+				- Mehr als 3x gekickt vom Admin.<br/><br/>
+				- ArmA 3 bei einem offenen Rollenspiel beenden.<br/>
+				Fahndungsliste wird gespeichert<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Cop Interaction", 
+			"Polizei Interaktion", 
 				"
-				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
+				Aufgeführte Punkte in dieser Liste können zum Kick und<br/>
+				/ oder zum Ban führen, basierend auf der Entscheidung<br/>
+				der Admins<br/><br/><br/>
 				
-				1. Civilians can be arrested for looking in cops' backpacks/vehicles. Constantly doing this will result in your removal from the server.<br/>
-				2. Civilians can be arrested for following cops in game in order to give away their position.<br/>
-				3. Civilians or Rebels who take up arms to kill cops in town or elsewhere for no RP reason will be considered RDMing. See RDMing section.<br/>
-				4. Following and or harassing cops for long periods of time will be considered griefing and/or spamming, and will result in your removal from the server.<br/>
-				5. Actively blocking cops from doing their duties can lead to your arrest. Constantly doing this will result in your removal from the server.<br/><br/>
+				- Füttert den Troll nicht, d.h. das Trollen von Polizisten<br/>
+				kann zum Kick bzw. Ban führen<br/><br/>
+				- Das ausspionieren von Polizisten übere ihre Aktionen und<br/>
+				Standorte können zum Aufenthalt im Gefängnis führen<br/><br/>
+				- Bewaffnete Zivilisten oder Rebellen die ohne Rollenspiel<br/>
+				Polizisten innerhalb von Städten oder sonst wo töten,<br/>
+				betreiben RDM<br/><br/>
+				- Aktiv die Polizei von ihrere Arbeit ab zuhalten, kann<br/>
+				zum Gefägnins aufenthalt führen<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Boats", 
+			"Boote", 
 				"
-				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
+				Aufgeführte Punkte in dieser Liste können zum Kick und<br/>
+				/ oder zum Ban führen, basierend auf der Entscheidung<br/>
+				der Admins<br/><br/><br/>
 				
-				1. Repeatedly pushing boats without permission.<br/>
-				2. Pushing a boat with the intention of hurting or killing someone. This is not RP, it is just a flaw in the mechanics.<br/>
-				3. Purposefully running over swimmers/divers.<br/><br/>
+				- Wiederholtes verschieben von Booten ohne eine<br/>
+				Erlaubnis vom Besitzer<br/><br/>
+				- Rammen bzw. verschieben von Boote um Personen<br/>
+				damit zu schaden oder zu töten<br/><br/>
+				- Vorsätzliches überfahren von Schwimmern und Taucher<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Aviation", 
+			"Flugzeuge", 
 				"
-				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
+				Aufgeführte Punkte in dieser Liste können zum Kick und<br/>
+				/ oder zum Ban führen, basierend auf der Entscheidung<br/>
+				der Admins<br/><br/><br/>
 				
-				1. Purposefully ramming a helicopter into anything. Other helicopters, vehicles, buildings.<br/>
-				2. Flying below 150m over the city constantly. Once is illegal, more than that you risk crashing into the city, thus against server rules.<br/>
-				3. Stealing helicopters without proper warning and significant time for the driver to lock the vehicle. If they land and run away without locking, fine, if they just get out and you get in before they get a chance to lock it, no no.<br/><br/>
+				- Vorsätzliches rammen mit Hubschraubern. Egal ob andere<br/>
+				Helikopter, Fahrzeuge oder Gebäude<br/><br/>
+				- Konstant unter 150m in Städten fliegen. Erstens ist es<br/>
+				illegal und zum zweiten um keine Gebäude zu rammen<br/><br/>
+				- Stehlen von Hubschrauber ohne Warnung an den<br/>
+				Besitzer, in der Zeit wo der Besitzer versucht sein<br/>
+				Hubschrauber abzuschließen.<br/><br/>
+				- Fahrzeuge oder Container abwerfen, um Spieler,<br/>
+				Fahrzeuge oder Gebäude zu schaden<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Vehicles", 
+			"Fahrzeuge", 
 				"
-				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
+				Aufgeführte Punkte in dieser Liste können zum Kick und<br/>
+				/ oder zum Ban führen, basierend auf der Entscheidung<br/>
+				der Admins<br/><br/><br/>
 				
-				1. Purposefully running people over (VRDM). There are accidents, and then there is going out of your way to run someone over.<br/>
-				2. Purposefully throwing yourself in front of vehicles in order to die/get hurt.<br/>
-				3. Ramming into other vehicles in order to cause an explosion.<br/>
-				4. Constantly trying to enter vehicles that do not belong to you in order to grief the vehicle owner, and not trying to RP.<br/>
-				5. Stealing a vehicle just to crash it or otherwise destroy it.<br/>
-				6. Purchasing multiple vehicles for the purpose of doing any of the above.<br/>
-				7. The only reason for shooting at a vehicle would be to disable it and/or fire warning shots in a role-play scenario.You are not to deliberately destroy enemies vehicles.<br/><br/>
+				- Vorsätzliches überfahren von Personen (VRDM). Wird als<br/>
+				Mord annerkannt und führt zur Strafverfolgung<br/><br/>
+				- Vorsätzlich vor Fahrzeuge laufen, um von dem Fahrzeug<br/>
+				verletzt oder getötet zu werden<br/><br/>
+				- Durch rammen von Fahzeugen versuchen eine Explosion<br/>
+				zu erzielen<br/><br/>
+				- Kontinuierliches versuchen das Fahrzeug von anderen<br/>
+				Leuten zu beklauen, ohne Rollenspiel Hintergrund<br/><br/>
+				- Fahrzeuge zu klauen, um diese zu zerstören oder um<br/>
+				Zerstörung zu erzielen<br/><br/>
+				- Kaufen einer Mehrzahl von Fahrzeuge, um die Spawner<br/>
+				zu besetzen bzw. eine Explosion erzeugen zu wollen<br/><br/>
+				- Fahrzeug Beschuss dient nur zum stoppen von<br/>
+				Fahrzeugen, nicht zum zerstören des Fahrzeugs<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Communication Rules", 
+			"Komunikations Regeln", 
 				"
-				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
+				Aufgeführte Punkte in dieser Liste können zum Kick und<br/>
+				/ oder zum Ban führen, basierend auf der Entscheidung<br/>
+				der Admins<br/><br/><br/>
 				
-				1. Side Chat may not be used to play music or otherwise micspam.<br/>
-				2. Spamming any chat channel will result in your removal.<br/>
-				4. Teamspeak channels are split up into areas for a reason. Cops must be in the cop channels at all times.<br/>
-				5. Civilians cannot be in any cop channels on teamspeak in order to gather information on their location or movements. Civs caught doing this will be removed the channel. Repeat offenders can be kicked or banned from both the game and teamspeak.<br/><br/>
+				- Side Chat dient nicht zum Spamen mit Musik oder<br/>
+				andere Gespräche. Das reden im Side Chat ist untersagt.<br/>
+				Channels im Auge behalten<br/><br/>
+				- Gespräche im Side Chat gelten nicht als Rollenspiel.<br/>
+				Der Side Chat dient zu Informationszwecke oder zu<br/>
+				allgemeinen Belustigung<br/><br/>
+				- Allgemeines Spamen in den vorhandenen Chats, kann zu<br/>
+				konsequenzen führen.<br/><br/>
+				- Die Channels im TS sind für die entsprechnenden<br/>
+				Fraktionen einzuhalten.<br/><br/>
+				- Der Channel Public | kann von jeder Fraktion benutzt<br/>
+				werden. Betreten auf eigener Gefahr<br/><br/>
 				"
 		]
 	];
@@ -160,32 +281,57 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Random Deathmatching (RDM)", 
 				"
-				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
+				Aufgeführte Punkte in dieser Liste können zum Kick und<br/>
+				/ oder zum Ban führen, basierend auf der Entscheidung<br/>
+				der Admins<br/><br/><br/>
 				
-				1. Killing anyone without a roleplay cause.<br/>
-				2. Declaring a rebellion is not a cause to kill anyone, even cops.<br/>
-				3. Cops and civilians/rebels can only commence in a shootout if there are reasons relating to a crime.<br/>
-				4. If you are killed in the crossfire of a fight, it is not RDM.<br/>
-				5. Killing someone in an attempt to protect yourself or others is not RDMing.<br/>
-				6. Shooting a player without giving reasonable time to follow demands is considered RDM.<br/><br/>
+				- Morden die nicht auf Rollenspiel basierend sind<br/><br/>
+				- Sich als Rebelle zu deklarieren, zählt nicht um ohne<br/>
+				Grund Leute zu töten. Auch keine Polizisten<br/><br/>
+				- Entsteht eine Schießerei zwischen Polizisten und<br/>
+				Zivilisten, das auf einem Rollenspiel basierend ist,<br/>
+				ist dies kein RDM.<br/><br/>
+				- Wirst der Spieler als außenstehnde Person bei einem<br/>
+				Feuergefecht getötet, ist es kein RDM. Falscher Ort zur<br/>
+				falschen Zeit<br/><br/>
+				- Personen zu töten um sich und andere zu schützen ist<br/> 
+				kein RDM. Schutz heißt Verteidigung und nicht angreifen<br/><br/>
+				- Auf Personen zu schießen, ohne Ihnen Zeit zu geben,<br/>
+				sich auf das enstehende Rollenspiel zu beteiligen, ist<br/>
+				RDM. Ruhig Blut<br/><br/><br/>
 				
-				These are all judged by admins on a case by case basis.<br/><br/>
+				Diese Fälle werden von den Admins von Fall zu Fall<br/>
+				kontrolliert und dem entsprechend ein Urteil gefällt.<br/><br/>
 				"
 		]
 	];
 	player createDiaryRecord ["serverrules",
 		[
-			"New Life Rule", 
+			"New Life Regel", 
 				"
-				The New Life Rule applies to police and civilians.<br/><br/>
+				Die New Life regel gilt für alle Personen auf dem Server,<br/>
+				keine Ausnahme.<br/><br/><br/>
 				
-				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
+				Da dies ein Rollenspiel, sollte man sein Leben und in Ehre<br/>
+				halten. Auch das deiner Mitmenschen<br/><br/><br/>
+				
+				Aufgeführte Punkte in dieser Liste können zum kick und<br/>
+				/ oder zum Ban führen, basierend auf der entscheidung<br/>
+				der Admins<br/><br/><br/>
 
-				1. If you are killed you must wait 15 minutes before returning to the scene of your death.<br/>
-				2. If you die during roleplay your past crimes are forgotten, but you also cannot seek revenge.<br/>
-				3. If you are RDM'd, it is not a new life.<br/>
-				4. If you manually respawn, it is not a new life.<br/>
-				5. If you purposefully kill yourself to avoid roleplay, it is not a new life.<br/><br/>
+				- Ist man gestorben, darf die Stelle des Todes innerhalb<br/>
+				der nächsten 10 Minuten nach dem Respawn nicht betreten<br/>
+				werden<br/><br/>
+				- Stirbt man bei einem Rollenspiel, ist die Rache an dem<br/>
+				Mörder verboten, nicht aber für Mitglieder der eigenen<br/>
+				Gruppe<br/><br/>
+				- Ist man durch ein RDM gestorben, gilt die New Life<br/>
+				Regel<br/><br/>
+				- Spawnt man sich manuel neu auf dem Server, gilt dies<br/>
+				nicht als New Life Regel<br/><br/>
+				- Für vorsätzlicher Selbstmord um das Rollenspiel zu<br/>
+				entkommen, gilt keine New Life Regel. Falls diese<br/>
+				Situation regelmäßig ensteht, kann es zum Ban führen<br/><br/>
 				"
 		]
 	];
@@ -194,10 +340,18 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Don't Be A Dick!", 
 				"
-				If an admin has to tell you that you are being a dick, you are doing dickish things.<br/>
+				Original Zitat<br/><br/>
+				If an admin has to tell you that you are being a dick, you<br/>
+				are doing dickish things.<br/>
 				Causing others grief, disrupting roleplay, the list goes on.<br/>
 				Just don't be a dick okay?<br/>
-				This rule may be invoked at an admin's discretion.<br/><br/>
+				This rule may be invoked at an admin's discretion.<br/><br/><br/>
+				
+				Wenn ein Admin zum Spieler sagt, das seine Handlungen<br/>
+				nicht korrekt sind, überdenkt das Spielverhalten<br/>
+				Es ist und bleibt ein Spiel, das Spielern spass bringen<br/>
+				soll und nicht Stress oder ähnliches wegen trollen<br/>
+				und co<br/><br/>
 				"
 		]
 	];
@@ -377,8 +531,7 @@ player createDiarySubject ["controls","Controls"];
 				2. Rook<br/>
 				3. ACP-C2<br/>
 				4. Zubr<br/>
-				5. 4-five<br/>
-				6. PDW2000<br/><br/>
+				5. 4-five<br/><br/>
 
 				Any other weapon (Including Silenced P07 [Considered a Police Weapon]) is illegal.<br/><br/>
 
@@ -468,63 +621,181 @@ player createDiarySubject ["controls","Controls"];
 		]
 	];
 	
+// Permsystem	
+	player createDiaryRecord ["perm",
+		[
+			"Fraktionen",
+				"
+				Auf den folgenden Server sind zusätzliche Fraktionen<br/>
+				vorhanden<br/><br/><br/>
+				
+				- ADAC<br/><br/>
+				- Sanitäter<br/><br/>
+				- Söldner<br/><br/>
+				- Waffenschmuggler<br/><br/><br/>
+				
+				Konzepte von neuen Gruppen, können bei den Admins<br/>
+				angesprochen werden<br/><br/>
+				"
+		]
+	];
 	
+	player createDiaryRecord ["perm",
+		[
+			"ADAC",
+				"
+				Aufgeführte Punkte in dieser Liste können zum Kick und <br/>
+				/ oder zum Ban führen, basierend auf der Entscheidung<br/>
+				der Admins<br/><br/><br/>
+
+				- ADAC Mitglieder gehören zu sozialen Berufen, d.h. diese<br/>
+				Mitglieder sollten mit entsprechenden Respekt behandelt<br/>
+				werden<br/><br/>
+				- ADAC Mitglieder dürfen nicht von Rebellen oder<br/>
+				Zivilisten angegriffen werden<br/><br/>
+				- ADAC Mitglieder werden keine Preise an den Spieler<br/>
+				ausrichten<br/><br/>
+				- ADAC Mitglieder dürfen keine illegalen Geschäfften<br/>
+				nachgehen<br/><br/>
+				- ADAC Mitglieder dürfen sich nur im Notfall verteidigen<br/>
+				(Taser)<br/><br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord ["perm",
+		[
+			"Sanitäter",
+				"
+				Aufgeführte Punkte in dieser Liste können zum Kick und<br/>
+				/ oder zum Ban führen, basierend auf der Entscheidung<br/>
+				der Admins<br/><br/><br/>
+
+				- Sanitäter gehören zu sozialen Berufen, d.h. diese<br/>
+				Mitglieder sollten mit entsprechenden Respekt behandelt<br/>
+				werden<br/><br/>
+				- Sanitäter dürfen nicht von Rebellen oder Zivilisten<br/>
+				angegriffen werden<br/><br/>
+				- Sanitäter werden keine Preise an den Spieler ausrichten<br/><br/>
+				- Sanitäter dürfen keine illegalen Geschäfften nachgehen<br/><br/>
+				- Sanitäter dürfen sich nur im Notfall verteidigen (Taser)<br/><br/>
+				"
+		]
+	];	
+	
+	player createDiaryRecord ["perm",
+		[
+			"Söldner",
+				"
+				Aufgeführte Punkte in dieser Liste können zum Kick und<br/>
+				/ oder zum Ban führen, basierend auf der Entscheidung<br/>
+				der Admins<br/><br/><br/>
+
+				- Söldner sind im legalen Bereich nur in der Verteidigung<br/>
+				angesiedelt. Ihre dafür vorgesehen Waffe darf nur im<br/>
+				legalen Bereich zur Verterdigung genutzt werden<br/><br/>
+				- Falls Söldner im illegalen Bereich aktiv sind, gelten die<br/>
+				gleiche Rechte wie Rebellen und Zivilisten. Die für den<br/>
+				legalen Bereich vorhandene Waffe ist nun illegal<br/><br/>
+				"
+		]
+	];	
+	
+	player createDiaryRecord ["perm",
+		[
+			"Waffenschmuggler",
+				"
+				Aufgeführte Punkte in dieser Liste können zum Kick und<br/> 
+				/ oder zum Ban führen, basierend auf der Entscheidung<br/>
+				der Admins<br/><br/><br/>
+
+				- Waffenschmuggler sollen ihren Lohn durch verkauf der<br/>
+				Ware erzielen, nicht durch andere illegale Aktivitäten<br/><br/>
+				- Die innerhalb der Waffenschmuggler erstellten Preise für<br/>
+				Waffen gelten für alle Spieler gleich<br/><br/>
+				"
+		]
+	];	
 	
 // Illegal Items Section
 	player createDiaryRecord ["illegalitems",
 		[
-			"Rebel Rules",
+			"Rebellen Regeln",
 				"
-				A rebel is one who rises in armed resistance against a government. In this case it would be the police. However, due to the small amount of police compared to the possible amount of rebels, do not attack the police without a reason, please be civil and use common sense, and don't take the word rebel literally, but instead how it will make this server fun for all.<br/><br/>
-				1. A rebel must first form a gang, and then declare intentions.<br/>
-				2. Resistance does not excuse RDMing (See RDMing in General Rules)<br/>
-				3. Resistance roleplay should be conducted in more ways than constantly robbing the bank or shooting police officers.<br/>
-				4. Resistance must be coordinated.<br/>
-				5. A PROPER reason must be behind each and every attack.<br/><br/>
-				"
-		]
-	];
-	player createDiaryRecord ["illegalitems",
-		[
-			"Gang Rules",
-				"
-				1. Being in a gang is not illegal. Only when illegal crimes are committed.<br/>
-				2. Being in a gang area is not illegal. Only when partaking in illegal activities.<br/>
-				3. Gangs may hold and control gang areas. Other gangs may attack a controlling gang to compete for control of a gang area.<br/>
-				4. To declare war on another gang, the leader must announce it in global and all gang members of both gangs must be notified. For a more long term gang war, a declaration should be made on the forums.<br/>
-				5. Gangs may not kill unarmed civilians, unless said civilian is part of a rival gang and in your gangs controlled area.<br/>
-				6. Gangs may not kill civilians, unless they are under threat. Killing unarmed civilians because they do not comply is considered RDM, but you can injure/damage.<br/><br/>
+				Ein Rebelle ist eine Person, die bewaffnet gegen den<br/>
+				Staat kämpft. In diesem Falle der Polizei von Altis.<br/>
+				Angriffe auf die Polizei müssen in ungefähr gleichen<br/>
+				Verhältnis stehen<br/><br/><br/>
+				
+				- Rebellen müssen zuerst eine Gang eröffnen und einen<br/>
+				Grund für den Kampf haben<br/><br/>
+				- Widerstand entschuldigt kein RDM (siehe RDM Regeln)<br/><br/>
+				- Widerstand gegen den Staat soll mehr sein, als Bank<br/>
+				überfälle und Polizisten töten<br/><br/>
+				- Widerstände sollen koordiniert statt finden.<br/><br/>
+				- Hinter jedem Angriff muss ein sinnvoller Grund stehen<br/><br/>
 				"
 		]
 	];
 	player createDiaryRecord ["illegalitems",
 		[
-			"Illegal Vehicles",
+			"Gang Regeln",
 				"
-				A civilian in control of the following prohibited vehicles is subject to the consequences defined in the unauthorized control of a prohibited vehicle law.<br/><br/>
+				- In einer Gang zu sein, ist nicht illegal, nur illegale<br/>
+				Aktivitäten<br/><br/>
+				- In einen Unterschlupf zu sein ist nichts illgales, nur<br/>
+				illegale Aktivitäten<br/><br/>
+				- Gangs können Unterschlüpfe halten und kontrollieren.<br/>
+				Andere Gangs können diesen Bereich angreifen und<br/>
+				einnehmen<br/><br/>
+				- Kriege zwischen Gangs müssen durch die Leiter der<br/>
+				Gang ausgerufen werden<br/><br/>
+				- Gangs sollen keine unbewaffnete Zivilisten töten, auch<br/>
+				nicht wenn dieser einer gegnerischen Gang angehört. Auch<br/>
+				nicht im ein genommenen Unterschlupf<br/><br/>
+				- Gangs sollten keine Geiseln töten. Unbewaffnete<br/>
+				Zivilisten zu töten entspricht gleich dem RDM. Verletzen<br/>
+				von Zivilsten ist erlaubt, sollte vermieden werden<br/><br/>
+				"
+		]
+	];
+	player createDiaryRecord ["illegalitems",
+		[
+			"Illegale Fahzeuge",
+				"
+				Zivilisten die mit einer von unten genannten Fahrzeuge im<br/>
+				Besitz unterwegs sind müssen mit den Konsequenzen<br/>
+				rechnen, das Sie mit einem illgalen Fahrzeug unterwegs<br/>
+				sind<br/><br/><br/>
 
-				1. Ifrit<br/>
-				2. Speedboat<br/>
-				3. Hunter<br/>
-				4. Police Offroad<br/>
+				- Ifrit<br/>
+				- Bewaffnete Offroader<br/>
+				- Polizei Flugzeuge<br/>
+				- Polizei Fahrzeuge<br/>
 				"
 		]
 	];
 	player createDiaryRecord ["illegalitems",
 		[
-			"Illegal Weapons",
+			"Illegale Waffen",
 				"
-				A civilian in possession of the following is subject to the consequences as defined in the illegal possession of a firearm law.<br/><br/>
+				Zivilisten die mit einer von unten genannten Waffe im<br/>
+				Besitz unterwegs sind müssen mit den Konsequenzen<br/>
+				rechnen,das Sie illegale Waffen tragen<br/><br/><br/>
 
-				1. MX Series<br/>
-				2. Katiba Series<br/>
-				3. TRG Series<br/>
-				4. Mk.20 Series<br/>
-				5. Mk.18 ABR<br/>
-				6. SDAR Rifle<br/>
-				7. Sting SMG<br/>
-				8. Silenced P07 (Taser)<br/>
-				9. Any explosives<br/><br/>
+				- MX Serie<br/>
+				- Katiba Serie<br/>
+				- TRG Serie<br/>
+				- Mk.20 Serie<br/>
+				- Mk.18 ABR<br/>
+				- SDAR<br/>
+				- Sting<br/>
+				- Silenced P07 (Taser)<br/>
+				- Flashbang<br/>
+				- Vermin<br/>
+				- Rauchgranaten<br/>
+				- IR Granaten<br/>
+				- Drohnen<br/><br/>
 				"
 		]
 	];
@@ -532,12 +803,12 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"Illegal Items",
 				"
-				The following items are illegal to posses:<br/><br/>
-				1. Turtle<br/>
-				2. Cocaine<br/>
-				3. Heroin<br/>
-				4. Cannabis<br/>
-				5. Marijuana<br/><br/>
+				Die folgenden Gegenstände werden als illegal betrachtet:<br/><br/><br/>
+				
+				- Schildkröten<br/><br/>
+				- Kokain in beiden Formen<br/><br/>
+				- Heroin in beiden Formen<br/><br/>
+				- Marihuana in fertiger Form<br/><br/>
 				"
 		]
 	];
@@ -549,15 +820,23 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"",
 				"
-				Y: Open Player Menu<br/>
-				U: Lock and unlock cars<br/>
-				F: Cop Siren (if cop)<br/>
-				T: Vehicle Trunk<br/>
-				Left Shift + R: Restrain (Cop Only)<br/>
-				Left Shift + G: Knock out / stun (Civ Only, used for robbing them)<br/>
-				Left Windows: Main Interaction key which is used for picking up items/money, gathering, interacting with cars (repair,etc) and for cops to interact with civilians. Can be rebound to a single key like H by pressing ESC->Configure->Controls->Custom->Use Action 10<br/>
-				Left Shift + L: Activates cop siren lights (as a cop).<br/>
-				Left Shift + H: Holster's your pistol<br/>
+				Z: öffnen des Spielermenüs<br/><br/>
+				U: Öffnen und schliessen  von Fahrzeugen und Häuser<br/><br/>
+				F: Sirene an- und ausschalten<br/><br/>
+				T: Kofferraum<br/><br/>
+				Links Shift + R: Fesseln<br/><br/>
+				Links Shift + G: KO schlagen (Waffe muss getragen sein)<br/><br/>
+				Links Shift + G: Ergeben (Waffe muss geholstert sein)<br/><br/>
+				Links Windows: Hauptfunktionstaste<br/><br/>
+				Links Shift + L: Aktiviert die Lichtsirenen.<br/><br/>
+				Links Shift + H: Waffe Holstern<br/><br/><br/>
+				
+				Links Windows wird verwendet zum aufheben<br/>
+				von Objekten, interagieren mit Personen und<br/>
+				Fahrzeugen<br/><br/>
+				Links Windows kann über ESC -> Konfigurerien -><br/>
+				Steuerung -> Induvieduelle Steuerung -> Aktion 10<br/>
+				verwenden angepasst werden<br/><br/>
 				"
 		]
 	];
